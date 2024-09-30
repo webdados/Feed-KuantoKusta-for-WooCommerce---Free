@@ -180,7 +180,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 					'marketplace' => true,
 				),
 				'upc_ean' => array(
-					'desc'        => __( 'The product EAN barcode from the KuantoKusta metabox on the product edit screen.', 'feed-kuantokusta-for-woocommerce' ),
+					'desc'        =>
+						version_compare( WC_VERSION, '9.2', '>=' )
+						?
+						__( 'The product GTIN, UPC, EAN or ISBN (or EAN from the KuantoKusta metabox on the product edit screen - deprecated).', 'feed-kuantokusta-for-woocommerce' )
+						:
+						__( 'The product EAN barcode from the KuantoKusta metabox on the product edit screen.', 'feed-kuantokusta-for-woocommerce' ),
 					'filter'      => true,
 					'comparison'  => true,
 					'marketplace' => true,

@@ -315,6 +315,8 @@ final class WC_Feed_KuantoKusta {
 		return $tabs;
 	}
 	public function woocommerce_product_data_panels() {
+		global $post;
+		$product = wc_get_product( $post->ID );
 		?>
 		<div id="kuantokusta" class="panel woocommerce_options_panel">
 			<div class="options_group">
@@ -327,12 +329,38 @@ final class WC_Feed_KuantoKusta {
 					'id'			=> '_kuantokusta_hide',
 					'label'			=> __( 'Hide from feed', 'feed-kuantokusta-for-woocommerce' ),
 				) );
-				//EAN - It should be by variation...
-				woocommerce_wp_text_input( array(
-					'id'			=> '_kuantokusta_ean',
-					'label'			=> __( 'EAN / UPC', 'feed-kuantokusta-for-woocommerce' ),
-					'placeholder'	=> __( 'Barcode', 'feed-kuantokusta-for-woocommerce' ),
-				) );
+				//EAN - It should be by variation... - It is on the Pro Add-on
+				if (
+					version_compare( WC_VERSION, '9.2', '<' )
+					||
+					(
+						version_compare( WC_VERSION, '9.2', '>=' )
+						&&
+						empty( $product->get_global_unique_id() )
+						&&
+						! empty( $product->get_meta( '_kuantokusta_ean' ) )
+					)
+				) {
+					$ean_description = '';
+					if ( version_compare( WC_VERSION, '9.2', '>=' ) ) {
+						$ean_description = '<span style="color: red">' . esc_html__( 'The EAN / UPC should now be set on the WooCommerce "GTIN, UPC, EAN or ISBN" field on the Inventory tab - once you fill that field, this one will be removed', 'feed-kuantokusta-for-woocommerce' ) . '</span>';
+					}
+					woocommerce_wp_text_input( array(
+						'id'			=> '_kuantokusta_ean',
+						'label'			=> __( 'EAN / UPC', 'feed-kuantokusta-for-woocommerce' ),
+						'placeholder'	=> __( 'Barcode', 'feed-kuantokusta-for-woocommerce' ),
+						'description'   => $ean_description
+					) );
+				} else {
+					?>
+					<p class="form-field _kuantokusta_brand_field ">
+						<label for="_kuantokusta_brand">
+							<?php esc_html_e( 'EAN / UPC', 'feed-kuantokusta-for-woocommerce' ); ?>
+						</label>
+						<?php esc_html_e( 'The EAN / UPC is now set on the WooCommerce "GTIN, UPC, EAN or ISBN" field on the Inventory tab', 'feed-kuantokusta-for-woocommerce' ); ?>
+					</p>
+					<?php
+				}
 				//Brand
 				woocommerce_wp_text_input( array(
 					'id'			=> '_kuantokusta_brand',
@@ -404,11 +432,17 @@ final class WC_Feed_KuantoKusta {
 
 	/* Admin - Save fields */
 	public function woocommerce_process_product_meta( $post_id ) {
-		$meta = array();
+		$meta    = array();
+		$product = wc_get_product( $post_id );
 		//Hide
-		$meta['_kuantokusta_hide'] =  ! empty( $_POST['_kuantokusta_hide'] ) ? wc_clean( $_POST['_kuantokusta_hide'] ) : '';
+		$meta['_kuantokusta_hide'] = ! empty( $_POST['_kuantokusta_hide'] ) ? wc_clean( $_POST['_kuantokusta_hide'] ) : '';
 		//EAN
-		$meta['_kuantokusta_ean'] =  ! empty( $_POST['_kuantokusta_ean'] ) ? wc_clean( $_POST['_kuantokusta_ean'] ) : '';
+		$meta['_kuantokusta_ean'] = ! empty( $_POST['_kuantokusta_ean'] ) ? wc_clean( $_POST['_kuantokusta_ean'] ) : '';
+		if ( version_compare( WC_VERSION, '9.2', '>=' ) && ! empty( $_POST['_global_unique_id'] ) ) {
+			// If the core field is filled in, remove ours from the database
+			unset( $meta['_kuantokusta_ean'] );
+			$product->delete_meta_data( '_kuantokusta_ean' );
+		}
 		//Brand
 		$meta['_kuantokusta_brand'] = ! empty( $_POST['_kuantokusta_brand'] ) ? wc_clean( $_POST['_kuantokusta_brand'] ) : '';
 		//Shipping
@@ -420,7 +454,6 @@ final class WC_Feed_KuantoKusta {
 		//Filter for integration ( Use this filter to add to $meta the keys/values of the fields added by the `kuantokusta_product_data_panel_end` action )
 		$meta = apply_filters( 'kuantokusta_process_product_meta', $meta );
 		//Update meta - CRUD
-		$product = wc_get_product( $post_id );
 		foreach ( $meta as $key => $value ) {
 			$product->update_meta_data( $key, $value );
 		}
@@ -521,7 +554,7 @@ final class WC_Feed_KuantoKusta {
 		$image         = apply_filters( 'kuantokusta_product_node_default_image', $this->get_product_image( $product ), $product, $product_type );
 		$description   = apply_filters( 'kuantokusta_product_node_default_description', $this->get_product_description( $product ), $product, $product_type );
 		$brand         = apply_filters( 'kuantokusta_product_node_default_brand', $product->get_meta( '_kuantokusta_brand' ), $product, $product_type );
-		$ean           = apply_filters( 'kuantokusta_product_node_default_ean', $product->get_meta( '_kuantokusta_ean' ), $product, $product_type );
+		$ean           = apply_filters( 'kuantokusta_product_node_default_ean', $this->get_product_ean( $product ), $product, $product_type );
 		$reference     = apply_filters( 'kuantokusta_product_node_default_reference', $product->get_sku(),  $product, $product_type );
 		$weight        = apply_filters( 'kuantokusta_product_node_default_weight', $product->get_weight(),  $product, $product_type );
 		$shipping_cost = apply_filters( 'kuantokusta_product_node_default_shipping', $this->get_product_shipping_cost( $product ), $product, $product_type );
@@ -671,7 +704,7 @@ final class WC_Feed_KuantoKusta {
 		$image         = apply_filters( 'kuantokusta_product_node_variation_image', $this->get_product_variation_image( $product, $variation ), $product, $variation );
 		$description   = apply_filters( 'kuantokusta_product_node_variation_description', $this->get_product_variation_description( $product, $variation ), $product, $variation );
 		$brand         = apply_filters( 'kuantokusta_product_node_variation_brand', $product->get_meta( '_kuantokusta_brand' ), $product, $variation );
-		$ean           = apply_filters( 'kuantokusta_product_node_variation_ean', $product->get_meta( '_kuantokusta_ean' ), $product, $variation );
+		$ean           = apply_filters( 'kuantokusta_product_node_variation_ean', $this->get_product_ean( $product ), $product, $variation ); // On the free version we only read EAN from the main product
 		if ( trim( $reference ) == '' ) $reference = $product->get_sku();
 		$reference     = apply_filters( 'kuantokusta_product_node_variation_reference', $reference, $product, $variation );
 		$weight        = $variation->get_weight();
@@ -925,6 +958,17 @@ final class WC_Feed_KuantoKusta {
 		$delivery_days_max = $product->get_meta( '_kuantokusta_delivery_days_max' );
 		if ( empty( $delivery_days_max ) ) $delivery_days_max = $this->get_setting( 'delivery_days_max_default' );
 		return $delivery_days_max;
+	}
+
+	/* Get product EAN */
+	public function get_product_ean( $product ) {
+		if ( version_compare( WC_VERSION, '9.2', '>=' ) ) {
+			$ean = $product->get_global_unique_id();
+			if ( ! empty( trim( $ean ) ) ) {
+				return trim( $ean );
+			}
+		}
+		return $product->get_meta( '_kuantokusta_ean' );
 	}
 
 	/* Track order */

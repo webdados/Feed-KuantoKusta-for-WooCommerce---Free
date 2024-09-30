@@ -1,0 +1,691 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Feed KuantoKusta for WooCommerce\n"
+"POT-Creation-Date: 2023-11-16 13:05+0000\n"
+"PO-Revision-Date: 2018-05-23 11:04+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: feed-kuantokusta-for-woocommerce.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: feed-kuantokusta-for-woocommerce.php:86
+msgid ""
+"<strong>Feed KuantoKusta for WooCommerce</strong> is installed and active "
+"but <strong>WooCommerce (5.0 or above)</strong> is not."
+msgstr ""
+
+#: includes/admin/settings-page-documentation-before-fields.php:5
+msgid "KuantoKusta feed URL"
+msgstr ""
+
+#: includes/admin/settings-page-documentation-before-fields.php:10
+msgid "This is the feed you should provide to KuantoKusta"
+msgstr ""
+
+#: includes/admin/settings-page-documentation-before-fields.php:19
+#, php-format
+msgid ""
+"If you get an error when opening the feed link, you need to %sflush/save the "
+"permalinks%s"
+msgstr ""
+
+#: includes/admin/settings-page-documentation-before-fields.php:26
+msgid ""
+"The <code>TOTAL_PRODUTOS</code> and <code>LIMIT</code> arguments should be "
+"used to control the feed pagination."
+msgstr ""
+
+#: includes/admin/settings-page-documentation-before-fields.php:28
+msgid ""
+"For example, to show 100 products at a time, KuantoKusta should fetch the "
+"feed like this:"
+msgstr ""
+
+#: includes/admin/settings-page-documentation-before-fields.php:41
+msgid "&hellip; and so on, until no more products are returned"
+msgstr ""
+
+#: includes/admin/settings-page.php:7
+#, php-format
+msgid "KuantoKusta settings (%s)"
+msgstr ""
+
+#: includes/admin/settings-page.php:15
+msgid "Commercial information"
+msgstr ""
+
+#: includes/admin/settings-page.php:16 includes/admin/settings-page.php:18
+#, php-format
+msgid "Please contact %s"
+msgstr ""
+
+#: includes/admin/settings-page.php:17
+msgid "Technical support or custom WordPress/WooCommerce development"
+msgstr ""
+
+#: includes/admin/settings-page.php:19
+msgid "Please rate our plugin at WordPress.org"
+msgstr ""
+
+#: includes/admin/settings-page.php:25
+msgid "Useful links:"
+msgstr ""
+
+#: includes/admin/settings-page.php:30
+msgid "Buy PRO add-on"
+msgstr ""
+
+#: includes/admin/settings-page.php:34
+msgid "Create an account on KuantoKusta"
+msgstr ""
+
+#: includes/admin/settings-page.php:38
+msgid "Free plugin on WordPress.org"
+msgstr ""
+
+#: includes/admin/settings-page.php:39
+msgid "https://wordpress.org/plugins/feed-kuantokusta-for-woocommerce/"
+msgstr ""
+
+#: includes/admin/settings-page.php:42
+msgid "PRO add-on technical support"
+msgstr ""
+
+#: includes/admin/settings-page.php:46
+msgid "Free plugin support forum"
+msgstr ""
+
+#: includes/admin/settings-page.php:75
+msgid "Get the PRO add-on and get more features"
+msgstr ""
+
+#: includes/admin/settings-page.php:85
+msgid "Show / hide feed URL and documentation"
+msgstr ""
+
+#: includes/admin/settings-page.php:92
+msgid "Documentation"
+msgstr ""
+
+#: includes/admin/settings-page.php:99
+msgid "The mode the plugin is running on."
+msgstr ""
+
+#: includes/admin/settings-page.php:105
+msgid "The WooCommerce product type."
+msgstr ""
+
+#: includes/admin/settings-page.php:111
+msgid "From the database product id."
+msgstr ""
+
+#: includes/admin/settings-page.php:117
+msgid "The product URL."
+msgstr ""
+
+#: includes/admin/settings-page.php:123
+msgid ""
+"The product title. (In variations the variation description field is "
+"concatenated to the product title)."
+msgstr ""
+
+#: includes/admin/settings-page.php:129
+msgid "The product regular price."
+msgstr ""
+
+#: includes/admin/settings-page.php:135
+msgid "The product current price."
+msgstr ""
+
+#: includes/admin/settings-page.php:141
+msgid ""
+"The product stock status (Y/N) or quantity, depending on the global and "
+"product settings."
+msgstr ""
+
+#: includes/admin/settings-page.php:147
+msgid "The product stock quantity."
+msgstr ""
+
+#: includes/admin/settings-page.php:153
+msgid "The product stock status (Y/N)."
+msgstr ""
+
+#: includes/admin/settings-page.php:159
+msgid ""
+"The product category tree. Only the first category found is used and it's "
+"entire path is used."
+msgstr ""
+
+#: includes/admin/settings-page.php:165
+msgid "The product main image url."
+msgstr ""
+
+#: includes/admin/settings-page.php:171
+msgid ""
+"The product long or short description (depending on the settings above). (In "
+"variations the variation description field is concatenated to the product "
+"description)"
+msgstr ""
+
+#: includes/admin/settings-page.php:177
+msgid ""
+"The product brand from the KuantoKusta metabox on the product edit screen."
+msgstr ""
+
+#: includes/admin/settings-page.php:183
+msgid ""
+"The product EAN barcode from the KuantoKusta metabox on the product edit "
+"screen."
+msgstr ""
+
+#: includes/admin/settings-page.php:189
+msgid "The product SKU."
+msgstr ""
+
+#: includes/admin/settings-page.php:195
+msgid "The product weight in kg."
+msgstr ""
+
+#: includes/admin/settings-page.php:201
+msgid ""
+"The product shipping cost from the KuantoKusta metabox on the product edit "
+"screen. If not set, the default value above is used."
+msgstr ""
+
+#: includes/admin/settings-page.php:207
+msgid ""
+"The maximum amount of days a product takes to be prepared before it is "
+"shipped, from the KuantoKusta metabox on the product edit screen. If not "
+"set, the default value above is used."
+msgstr ""
+
+#: includes/admin/settings-page.php:213
+msgid ""
+"The maximum amount of days the shipping of a product takes, from the "
+"KuantoKusta metabox on the product edit screen. If not set, the default "
+"value above is used."
+msgstr ""
+
+#: includes/admin/settings-page.php:222
+msgid "KuantoKusta feed fields"
+msgstr ""
+
+#: includes/admin/settings-page.php:230
+msgid "Filterable."
+msgstr ""
+
+#: includes/admin/settings-page.php:231
+msgid "Comparison."
+msgstr ""
+
+#: includes/admin/settings-page.php:232
+msgid "Marketplace."
+msgstr ""
+
+#: includes/admin/settings-page.php:246
+msgid "Add settings to this page."
+msgstr ""
+
+#: includes/admin/settings-page.php:252
+msgid "Products query arguments for the wc_get_products function."
+msgstr ""
+
+#: includes/admin/settings-page.php:260
+msgid "Either to include (or not) the product on the feed."
+msgstr ""
+
+#: includes/admin/settings-page.php:268
+msgid "Either to include (or not) the product variation on the feed."
+msgstr ""
+
+#: includes/admin/settings-page.php:276
+msgid "Filter on the product node XML."
+msgstr ""
+
+#: includes/admin/settings-page.php:284
+msgid "Filter on the product variation node XML."
+msgstr ""
+
+#: includes/admin/settings-page.php:284 includes/admin/settings-page.php:300
+#: includes/admin/settings-page.php:316 includes/admin/settings-page.php:332
+#: includes/admin/settings-page.php:364 includes/admin/settings-page.php:372
+#: includes/admin/settings-page.php:380 includes/admin/settings-page.php:396
+#: includes/admin/settings-page.php:412 includes/admin/settings-page.php:428
+#: includes/admin/settings-page.php:444 includes/admin/settings-page.php:460
+#: includes/admin/settings-page.php:476 includes/admin/settings-page.php:492
+#: includes/admin/settings-page.php:508 includes/admin/settings-page.php:524
+#: includes/admin/settings-page.php:540
+msgid "If \"Include each product variation\" is choosen."
+msgstr ""
+
+#: includes/admin/settings-page.php:292
+msgid "Filter on the product title."
+msgstr ""
+
+#: includes/admin/settings-page.php:300
+msgid "Filter on the product variation title."
+msgstr ""
+
+#: includes/admin/settings-page.php:308
+msgid "Filter on the product regular price."
+msgstr ""
+
+#: includes/admin/settings-page.php:316
+msgid "Filter on the product variation regular price."
+msgstr ""
+
+#: includes/admin/settings-page.php:324
+msgid "Filter on the product current price."
+msgstr ""
+
+#: includes/admin/settings-page.php:332
+msgid "Filter on the product variation current price."
+msgstr ""
+
+#: includes/admin/settings-page.php:340
+msgid "Filter on the product stock in comparison mode."
+msgstr ""
+
+#: includes/admin/settings-page.php:348
+msgid "Filter on the product stock in marketplace mode."
+msgstr ""
+
+#: includes/admin/settings-page.php:356
+msgid "Filter on the product availability in marketplace mode."
+msgstr ""
+
+#: includes/admin/settings-page.php:364
+msgid "Filter on the product variation stock in comparison mode."
+msgstr ""
+
+#: includes/admin/settings-page.php:372
+msgid "Filter on the product variation stock in marketplace mode."
+msgstr ""
+
+#: includes/admin/settings-page.php:380
+msgid "Filter on the product variation availability in marketplace mode."
+msgstr ""
+
+#: includes/admin/settings-page.php:388
+msgid "Filter on the product categories."
+msgstr ""
+
+#: includes/admin/settings-page.php:396
+msgid "Filter on the product variation categories."
+msgstr ""
+
+#: includes/admin/settings-page.php:404
+msgid "Filter on the product image url."
+msgstr ""
+
+#: includes/admin/settings-page.php:412
+msgid "Filter on the product variation image url."
+msgstr ""
+
+#: includes/admin/settings-page.php:420
+msgid "Filter on the product description."
+msgstr ""
+
+#: includes/admin/settings-page.php:428
+msgid "Filter on the product variation description."
+msgstr ""
+
+#: includes/admin/settings-page.php:436
+msgid "Filter on the product brand."
+msgstr ""
+
+#: includes/admin/settings-page.php:444
+msgid "Filter on the product variation brand."
+msgstr ""
+
+#: includes/admin/settings-page.php:452
+msgid "Filter on the product ean barcode."
+msgstr ""
+
+#: includes/admin/settings-page.php:460
+msgid "Filter on the product variation ean barcode."
+msgstr ""
+
+#: includes/admin/settings-page.php:468
+msgid "Filter on the product sku."
+msgstr ""
+
+#: includes/admin/settings-page.php:476
+msgid "Filter on the product variation sku."
+msgstr ""
+
+#: includes/admin/settings-page.php:484
+msgid "Filter on the product weight."
+msgstr ""
+
+#: includes/admin/settings-page.php:492
+msgid "Filter on the product variation weight."
+msgstr ""
+
+#: includes/admin/settings-page.php:500
+msgid "Filter on the product shipping cost."
+msgstr ""
+
+#: includes/admin/settings-page.php:508
+msgid "Filter on the product variation shipping cost."
+msgstr ""
+
+#: includes/admin/settings-page.php:516
+msgid "Filter on the product maximum preparation time."
+msgstr ""
+
+#: includes/admin/settings-page.php:524
+msgid "Filter on the product variation maximum preparation time."
+msgstr ""
+
+#: includes/admin/settings-page.php:532
+msgid "Filter on the product maximum delivery time."
+msgstr ""
+
+#: includes/admin/settings-page.php:540
+msgid "Filter on the product variation maximum delivery time."
+msgstr ""
+
+#: includes/admin/settings-page.php:564 includes/admin/settings-page.php:572
+msgid "Allows to add extra fields to the product node XML."
+msgstr ""
+
+#: includes/admin/settings-page.php:578
+msgid ""
+"Allows to save to the database the extra fields of the KuantoKusta panel on "
+"the product edit screen, by adding them to the $meta array."
+msgstr ""
+
+#: includes/admin/settings-page.php:584
+msgid "Filter for this documentation fields array."
+msgstr ""
+
+#: includes/admin/settings-page.php:590
+msgid "Filter for this documentation hooks array."
+msgstr ""
+
+#: includes/admin/settings-page.php:597
+msgid ""
+"Allows to add extra fields to the KuantoKusta panel on the product edit "
+"screen."
+msgstr ""
+
+#: includes/admin/settings-page.php:603
+msgid ""
+"Allows to save to the database the extra fields of the KuantoKusta panel on "
+"the product edit screen, if the `kuantokusta_process_product_meta` filter "
+"was not used, which is the preferred method."
+msgstr ""
+
+#: includes/admin/settings-page.php:611
+msgid "Developer hooks"
+msgstr ""
+
+#: includes/admin/settings-page.php:623
+msgid "Arguments"
+msgstr ""
+
+#: includes/admin/settings-page.php:639
+msgid "Available on the PRO add-on"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:99
+#: includes/class-wc-feed-kuantokusta.php:309
+msgid "KuantoKusta"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:107
+msgid "General"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:111
+msgid "Mode"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:113
+msgid "Are you using KuantoKusta in Price comparison or Marketplace mode?"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:117
+msgid "Price comparison"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:118
+msgid "Marketplace"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:122
+msgid "Product types"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:124
+msgid "Select which product types should be included in the KuantoKusta feed"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:138
+msgid "Tracking"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:140
+msgid ""
+"KuantoKusta tracking code functionalities, so that you can see navigation "
+"and conversion stats on their dashboard."
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:143
+msgid "Tracking code"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:145
+msgid "The tracking code provided by KuantoKusta (optional)"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:161
+msgid "Variable products"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:163
+msgid ""
+"If you choose to include each product variation to the KuantoKusta feed, the "
+"product variation title will be set from the base variable product title "
+"concatenated with the variation description."
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:166
+msgid "Include"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:168
+msgid "How should variable products be included in the feed"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:172
+msgid "Only base variable product (with lower price)"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:173
+msgid "Each product variation"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:185
+msgid "Product description"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:189
+msgid "Get description from"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:191
+msgid "Where to get the product description from"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:195
+msgid "Full product description (defaults to short description if empty)"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:196
+msgid "Short product description"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:209
+msgid "Product stock"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:211
+msgid ""
+"KuantoKusta marketplace requires the definition of a numeric stock value for "
+"all the products."
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:214
+msgid "Default stock"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:216
+msgid "Default stock value for products not managing stock"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:233
+msgid "Product shipping"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:235
+msgid ""
+"KuantoKusta requires the definition of a shipping value for each product "
+"submitted to the feed. According to how WooCommerce calculates the shipping "
+"costs, it may not be possible to include the exact value in the feed. If you "
+"need exact shipping cost, custom development will be needed."
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:238
+msgid "Default cost"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:240
+msgid ""
+"Default shipping cost (with tax) per product (can be overriden at the "
+"product level)"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:248
+#: includes/class-wc-feed-kuantokusta.php:351
+msgid "Maximum preparation time"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:248
+#: includes/class-wc-feed-kuantokusta.php:258
+#: includes/class-wc-feed-kuantokusta.php:351
+#: includes/class-wc-feed-kuantokusta.php:361
+msgid "days"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:250
+msgid ""
+"The default maximum amount of days a product takes to be prepared before it "
+"is shipped"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:258
+#: includes/class-wc-feed-kuantokusta.php:361
+msgid "Maximum delivery time"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:260
+msgid "The default maximum amount of days the shipping of a product takes"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:301
+msgid "Settings"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:321
+msgid "The fields below are only used on the KuantoKusta products feed"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:327
+msgid "Hide from feed"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:332
+msgid "EAN / UPC"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:333
+msgid "Barcode"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:338
+msgid "Brand"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:343
+msgid "Shipping cost"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:344
+#, php-format
+msgid "With tax - Blank for default (%s)"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:352
+#: includes/class-wc-feed-kuantokusta.php:362
+#, php-format
+msgid "Blank for default (%s)"
+msgstr ""
+
+#: webdados_invoicexpress_nag/webdados_invoicexpress_nag.php:25
+msgid "Are you already issuing automatic invoices on your WooCommerce store?"
+msgstr ""
+
+#: webdados_invoicexpress_nag/webdados_invoicexpress_nag.php:28
+#, php-format
+msgid ""
+"If not, get to know our new plugin: %1$sInvoicing with InvoiceXpress for "
+"WooCommerce%2$s"
+msgstr ""
+
+#: webdados_invoicexpress_nag/webdados_invoicexpress_nag.php:31
+msgid "https://invoicewoo.com/"
+msgstr ""
+
+#: webdados_invoicexpress_nag/webdados_invoicexpress_nag.php:36
+#, php-format
+msgid "Use the coupon <strong>webdados</strong> for 10% discount!"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Feed KuantoKusta for WooCommerce - Free"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid ""
+"https://www.webdados.pt/wordpress/plugins/feed-kuantokusta-para-woocommerce/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"This plugin allows you to generate a WooCommerce product feed to submit to "
+"KuantoKusta, a portuguese price comparison website and marketplace."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "PT Woo Plugins (by Webdados)"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://ptwooplugins.com"
+msgstr ""

@@ -107,7 +107,7 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 
 == Changelog ==
 
-= 3.0 - ?? =
+= 3.0 - 2024-10-07 =
 * [NEW] Use the new "GTIN, UPC, EAN or ISBN" field from WooCommerce 9.2 and above instead of our field for EAN
 * [NEW] Migration utility to move our EAN field value to the new WooCommerce 9.2 and above field [only on the Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [DEV] Requires WooCommerce 7.0

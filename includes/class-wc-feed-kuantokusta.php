@@ -354,7 +354,7 @@ final class WC_Feed_KuantoKusta {
 				} else {
 					?>
 					<p class="form-field _kuantokusta_brand_field ">
-						<label for="_kuantokusta_brand">
+						<label>
 							<?php esc_html_e( 'EAN / UPC', 'feed-kuantokusta-for-woocommerce' ); ?>
 						</label>
 						<?php esc_html_e( 'The EAN / UPC is now set on the WooCommerce "GTIN, UPC, EAN or ISBN" field on the Inventory tab', 'feed-kuantokusta-for-woocommerce' ); ?>

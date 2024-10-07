@@ -9,7 +9,7 @@
  * Text Domain: feed-kuantokusta-for-woocommerce
  * Domain Path: /languages
  * Requires at least: 5.4
- * Tested up to: 6.6
+ * Tested up to: 6.7
  * Requires PHP: 7.0
  * WC requires at least: 7.0
  * WC tested up to: 9.4

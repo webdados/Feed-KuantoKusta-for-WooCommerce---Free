@@ -4,7 +4,7 @@ Tags: marketplace, feed, comparison, ecommerce, portugal
 Requires at least: 5.4
 Tested up to: 6.6
 Requires PHP: 7.0
-Stable tag: 2.8
+Stable tag: 3.1
 License: GPLv3
 
 This plugin allows you to generate a WooCommerce product feed to submit to Kuanto Kusta, a portuguese price comparison website and marketplace.
@@ -106,6 +106,10 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 2. Product level settings
 
 == Changelog ==
+
+= 3.1 - 2024-10-08 =
+* [FIX] Load text domain at the right time to avoid PHP notices on WordPress 6.7 and above
+* [DEV] Change plugin loading to `init` instead of `plugins_loaded`
 
 = 3.0 - 2024-10-07 =
 * [NEW] Use the new "GTIN, UPC, EAN or ISBN" field from WooCommerce 9.2 and above instead of our field for EAN

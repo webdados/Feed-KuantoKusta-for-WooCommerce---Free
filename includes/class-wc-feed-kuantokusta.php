@@ -23,7 +23,7 @@ final class WC_Feed_KuantoKusta {
 	/* Constructor */
 	public function __construct() {
 		if ( ! function_exists( 'get_plugin_data' ) ) require_once( ABSPATH . 'wp-admin/includes/plugin.php' ); //Should not be necessary, but we never know...
-		$data = get_plugin_data( KUANTOKUSTA_FREE_PLUGIN_FILE );
+		$data = get_plugin_data( KUANTOKUSTA_FREE_PLUGIN_FILE, false, false );
 		$this->version = $data['Version'];
 		//Hooks
 		$this->init_hooks();

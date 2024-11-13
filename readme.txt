@@ -2,9 +2,9 @@
 Contributors: webdados, ptwooplugins 
 Tags: marketplace, feed, comparison, ecommerce, portugal
 Requires at least: 5.4
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 7.0
-Stable tag: 3.1
+Stable tag: 3.2
 License: GPLv3
 
 This plugin allows you to generate a WooCommerce product feed to submit to Kuanto Kusta, a portuguese price comparison website and marketplace.
@@ -51,6 +51,7 @@ In addition to all you can do with the free plugin, the [paid add-on](https://pt
 * [Invoicing with InvoiceXpress for WooCommerce](https://invoicewoo.com/) - Automatically issue invoices directly from the WooCommerce order
 * [DPD Portugal for WooCommerce](https://ptwooplugins.com/product/dpd-portugal-for-woocommerce/) - Create shipping and return guide in the DPD webservice directly from the WooCommerce order
 * [Multibanco, MBWAY, Credit card, Payshop and Cofidis Pay for WooCommerce – PRO add-on](https://ptwooplugins.com/product/multibanco-mbway-credit-card-payshop-ifthenpay-woocommerce-pro-add-on/) - Extra features for the plugin you already trust to receive payments on your WooCommerce store
+* [Advanced Coupon Restrictions for WooCommerce](https://ptwooplugins.com/product/advanced-coupon-restrictions-for-woocommerce/) - Create coupons for any Product Taxonomy, User details, and Order destination.
 * [Simple Custom Fields for WooCommerce Blocks Checkout](https://ptwooplugins.com/product/simple-custom-fields-for-woocommerce-blocks-checkout/) - Add custom fields to the new WooCommerce Block-based Checkout
 * [Simple WooCommerce Order Approval](https://ptwooplugins.com/product/simple-woocommerce-order-approval/) - The hassle-free solution for WooCommerce order approval before payment
 * [Shop as Client for WooCommerce](https://ptwooplugins.com/product/shop-as-client-for-woocommerce-pro-add-on/) - Quickly create orders on behalf of your customers
@@ -106,6 +107,12 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 2. Product level settings
 
 == Changelog ==
+
+= 3.2 - 2024-11-13 =
+* [FIX] Fatal error when WooCommerce is running update routines for 9.4 [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [DEV] License validation on websites with WPML set to have different domains per language [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [DEV] Recheck for the free plugin class again on the pro class (just in case) [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [DEV] Tested with WordPress 6.7 and WooCommerce 9.4.1
 
 = 3.1 - 2024-10-08 =
 * [FIX] Load text domain at the right time to avoid PHP notices on WordPress 6.7 and above

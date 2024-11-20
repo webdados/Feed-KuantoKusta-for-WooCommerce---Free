@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 			<?php _e( 'This is the feed you should provide to KuantoKusta', 'feed-kuantokusta-for-woocommerce' ); ?>:
 			<?php
 			$url = get_feed_link( 'kuantokusta' );
-			echo '<a href="'.esc_url( $url ).'?TOTAL_PRODUTOS=100&LIMIT=0" target="_blank">'.$url.'</a>';
+			echo '<a href="'.esc_url( $url ).'?TOTAL_PRODUTOS=1000&LIMIT=0" target="_blank">'.$url.'</a>';
 			?>
 		</p>
 		<p>
@@ -25,17 +25,20 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		<p>
 			<?php _e( 'The <code>TOTAL_PRODUTOS</code> and <code>LIMIT</code> arguments should be used to control the feed pagination.', 'feed-kuantokusta-for-woocommerce' ); ?>
 			<br/>
-			<?php _e( 'For example, to show 100 products at a time, KuantoKusta should fetch the feed like this:', 'feed-kuantokusta-for-woocommerce' ); ?>
+			<?php _e( 'For example, to show 1000 products at a time, KuantoKusta should fetch the feed like this:', 'feed-kuantokusta-for-woocommerce' ); ?>
 		</p>
 		<ul>
 			<li>
-				- <a href="<?php echo esc_url( $url ); ?>?TOTAL_PRODUTOS=100&amp;LIMIT=0" target="_blank"><?php echo esc_url( $url ); ?>?TOTAL_PRODUTOS=100&amp;LIMIT=0</a>
+				- <a href="<?php echo esc_url( $url ); ?>?TOTAL_PRODUTOS=1000&amp;LIMIT=0" target="_blank"><?php echo esc_url( $url ); ?>?TOTAL_PRODUTOS=1000&amp;LIMIT=0</a>
 			</li>
 			<li>
-				- <a href="<?php echo esc_url( $url ); ?>?TOTAL_PRODUTOS=100&amp;LIMIT=100" target="_blank"><?php echo esc_url( $url ); ?>?TOTAL_PRODUTOS=100&amp;LIMIT=100</a>
+				- <a href="<?php echo esc_url( $url ); ?>?TOTAL_PRODUTOS=1000&amp;LIMIT=1000" target="_blank"><?php echo esc_url( $url ); ?>?TOTAL_PRODUTOS=1000&amp;LIMIT=1000</a>
 			</li>
 			<li>
-				- <a href="<?php echo esc_url( $url ); ?>?TOTAL_PRODUTOS=100&amp;LIMIT=200" target="_blank"><?php echo esc_url( $url ); ?>?TOTAL_PRODUTOS=100&amp;LIMIT=200</a>
+				- <a href="<?php echo esc_url( $url ); ?>?TOTAL_PRODUTOS=1000&amp;LIMIT=2000" target="_blank"><?php echo esc_url( $url ); ?>?TOTAL_PRODUTOS=1000&amp;LIMIT=2000</a>
+			</li>
+			<li>
+				- <a href="<?php echo esc_url( $url ); ?>?TOTAL_PRODUTOS=1000&amp;LIMIT=3000" target="_blank"><?php echo esc_url( $url ); ?>?TOTAL_PRODUTOS=1000&amp;LIMIT=3000</a>
 			</li>
 			<li>
 				- <?php _e( '&hellip; and so on, until no more products are returned', 'feed-kuantokusta-for-woocommerce' ); ?>

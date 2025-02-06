@@ -881,14 +881,14 @@ final class WC_Feed_KuantoKusta {
 		if ( $product->managing_stock() ) {
 			return intval( $product->get_stock_quantity() );
 		} else {
-			return $product->is_in_stock() ? 'Y' : 'N';
+			return $product->is_in_stock() ? 1 : 0;
 		}
 	}
 	public function get_marketplace_product_stock( $product ) {
 		if ( $product->managing_stock() ) {
 			return intval( $product->get_stock_quantity() );
 		} else {
-			return intval( $product->is_in_stock() ? $this->get_setting( 'stock_default' ) : 0 );
+			return intval( $product->is_in_stock() ? ( intval( $this->get_setting( 'stock_default' ) ) > 0 ? intval( $this->get_setting( 'stock_default' ) ) : 1 ) : 0 );
 		}
 	}
 
@@ -919,12 +919,12 @@ final class WC_Feed_KuantoKusta {
 			if ( $managing_stock ) {
 				$stock_qty = $variation->get_stock_quantity();
 				if ( is_null( $stock_qty ) ) {
-					return intval( $this->get_setting( 'stock_default' ) );
+					return intval( $this->get_setting( 'stock_default' ) ) > 0 ? intval( $this->get_setting( 'stock_default' ) ) : 1;
 				} else {
 					return $stock_qty;
 				}
 			} else {
-				return intval( $variation->is_in_stock() ? $this->get_setting( 'stock_default' ) : 0 );
+				return intval( $variation->is_in_stock() ? ( intval( $this->get_setting( 'stock_default' ) ) > 0 ? intval( $this->get_setting( 'stock_default' ) ) : 1 ) : 0 );
 			}
 		} else {
 			switch ( $managing_stock ) {

@@ -1,19 +1,19 @@
 <?php
 /**
- * Plugin Name: Feed KuantoKusta for WooCommerce - Free
- * Plugin URI: https://www.webdados.pt/wordpress/plugins/feed-kuantokusta-para-woocommerce/
- * Description: This plugin allows you to generate a WooCommerce product feed to submit to KuantoKusta, a portuguese price comparison website and marketplace.
- * Version: 3.2
- * Author: PT Woo Plugins (by Webdados)
- * Author URI: https://ptwooplugins.com
- * Text Domain: feed-kuantokusta-for-woocommerce
- * Domain Path: /languages
- * Requires at least: 5.4
- * Tested up to: 6.7
- * Requires PHP: 7.0
+ * Plugin Name:          Feed KuantoKusta for WooCommerce - Free
+ * Plugin URI:           https://www.webdados.pt/wordpress/plugins/feed-kuantokusta-para-woocommerce/
+ * Description:          This plugin allows you to generate a WooCommerce product feed to submit to KuantoKusta, a portuguese price comparison website and marketplace.
+ * Version:              3.3
+ * Author:               PT Woo Plugins (by Webdados)
+ * Author URI:           https://ptwooplugins.com
+ * Text Domain:          feed-kuantokusta-for-woocommerce
+ * Domain Path:          /languages
+ * Requires at least:    5.4
+ * Tested up to:         6.7
+ * Requires PHP:         7.0
  * WC requires at least: 7.0
- * WC tested up to: 9.4
- * Requires Plugins: woocommerce
+ * WC tested up to:      9.7
+ * Requires Plugins:     woocommerce
 **/
 
 /* WooCommerce CRUD ready (except products exclusion via the _kuantokusta_hide meta) - Can be fixed with the wc_get_products meta argument (slow? need to measure query speed) */

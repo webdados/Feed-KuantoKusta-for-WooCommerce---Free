@@ -4,7 +4,7 @@ Tags: marketplace, feed, comparison, ecommerce, portugal
 Requires at least: 5.4
 Tested up to: 6.7
 Requires PHP: 7.0
-Stable tag: 3.2
+Stable tag: 3.3
 License: GPLv3
 
 This plugin allows you to generate a WooCommerce product feed to submit to Kuanto Kusta, a portuguese price comparison website and marketplace.
@@ -37,6 +37,7 @@ In addition to all you can do with the free plugin, the [paid add-on](https://pt
 * Default values for express shipping cost, minimum preparation time, minimum delivery time and maximum and minimum delivery time on express shipping;
 * Product-level options for express shipping cost, minimum preparation time, minimum delivery time and maximum, minimum delivery time on express shipping and brand sku;
 * Variation-level EAN/UPC and Brand SKU / MPN;
+* Get EAN/UPC from the WooCommerce "unique identifier" product field (default), any taxonomy or any custom field (for integration with other plugins)
 * Get Brand, Brand SKU / MPN and EAN/UPC from our product field (default), any taxonomy or any custom field (for integration with other plugins), or from the default brand settings field;
 * Get Category from the native WooCommerce product categories, any taxonomy or any custom field (for integration with other plugins);
 * Integration with [BigBuy Dropshipping Connector for WooCommerce](https://wordpress.org/plugins/bigbuy-wc-dropshipping-connector/): get EAN from the BigBuy's reference table
@@ -52,7 +53,7 @@ In addition to all you can do with the free plugin, the [paid add-on](https://pt
 * [DPD Portugal for WooCommerce](https://ptwooplugins.com/product/dpd-portugal-for-woocommerce/) - Create shipping and return guide in the DPD webservice directly from the WooCommerce order
 * [Multibanco, MBWAY, Credit card, Payshop and Cofidis Pay for WooCommerce – PRO add-on](https://ptwooplugins.com/product/multibanco-mbway-credit-card-payshop-ifthenpay-woocommerce-pro-add-on/) - Extra features for the plugin you already trust to receive payments on your WooCommerce store
 * [Advanced Coupon Restrictions for WooCommerce](https://ptwooplugins.com/product/advanced-coupon-restrictions-for-woocommerce/) - Create coupons for any Product Taxonomy, User details, and Order destination.
-* [Simple Custom Fields for WooCommerce Blocks Checkout](https://ptwooplugins.com/product/simple-custom-fields-for-woocommerce-blocks-checkout/) - Add custom fields to the new WooCommerce Block-based Checkout
+* [Simple Checkout Fields Manager for WooCommerce](https://ptwooplugins.com/product/simple-custom-fields-for-woocommerce-blocks-checkout/) - Add custom fields and manage (remove, make required or optional) core fields on the new WooCommerce Block-based Checkout
 * [Simple WooCommerce Order Approval](https://ptwooplugins.com/product/simple-woocommerce-order-approval/) - The hassle-free solution for WooCommerce order approval before payment
 * [Shop as Client for WooCommerce](https://ptwooplugins.com/product/shop-as-client-for-woocommerce-pro-add-on/) - Quickly create orders on behalf of your customers
 * [Taxonomy/Term and Role based Discounts for WooCommerce](https://ptwooplugins.com/product/taxonomy-term-and-role-based-discounts-for-woocommerce-pro-add-on/) - Easily create bulk discount rules for products based on any taxonomy terms (built-in or custom)
@@ -107,6 +108,12 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 2. Product level settings
 
 == Changelog ==
+
+= 3.3 - 2025-02-06 =
+* [TWEAK] In comparison mode, if product does not have managed stock, return 1 or 0 in the stock field instead of "Y" and "N"
+* [TWEAK] In marketplace mode, if product does not have managed stock, return 1 instead of 0 if the deafult stock setting is not set
+* [TWEAK] Change feed instructions from 100 to 1000 products at a time
+* [DEV] Tested with WordPress 6.8-alpha-59604 and WooCommerce 9.7.0-beta.1
 
 = 3.2 - 2024-11-13 =
 * [FIX] Fatal error when WooCommerce is running update routines for 9.4 [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)

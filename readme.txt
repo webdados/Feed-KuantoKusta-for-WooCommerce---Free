@@ -40,7 +40,7 @@ In addition to all you can do with the free plugin, the [paid add-on](https://pt
 * Variation-level EAN/UPC and Brand SKU/MPN;
 * Append variation description to the product title;
 * Get EAN/UPC from the WooCommerce “unique identifier” product field (default since WooCommerce 9.2 - our field before that), any taxonomy, or any custom field (for integration with other plugins)
-* Get Brand, Brand SKU/MPN and EAN/UPC from our product field (default), any taxonomy or any custom field (for integration with other plugins), or from the default brand settings field;
+* Get Brand, Brand SKU/MPN and EAN/UPC from our product field (default), any taxonomy, any custom field (for integration with other plugins), or from the default brand settings field;
 * Get Category from the native WooCommerce product categories, any other taxonomy, or any custom field (for integration with other plugins);
 * Integration with [BigBuy Dropshipping Connector for WooCommerce](https://wordpress.org/plugins/bigbuy-wc-dropshipping-connector/): get EAN from the BigBuy’s reference table
 * Up to 5 photos per product;

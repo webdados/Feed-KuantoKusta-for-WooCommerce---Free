@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Feed KuantoKusta for WooCommerce\n"
-"POT-Creation-Date: 2025-03-18 12:05+0000\n"
+"POT-Creation-Date: 2025-03-18 12:47+0000\n"
 "PO-Revision-Date: 2018-05-23 11:04+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -526,7 +526,7 @@ msgid "Available on the PRO add-on"
 msgstr ""
 
 #: includes/class-wc-feed-kuantokusta.php:100
-#: includes/class-wc-feed-kuantokusta.php:310
+#: includes/class-wc-feed-kuantokusta.php:319
 msgid "KuantoKusta"
 msgstr ""
 
@@ -543,11 +543,15 @@ msgid "Are you using KuantoKusta in Price comparison or Marketplace mode?"
 msgstr ""
 
 #: includes/class-wc-feed-kuantokusta.php:118
+msgid "Marketplace"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:119
 msgid "Price comparison"
 msgstr ""
 
 #: includes/class-wc-feed-kuantokusta.php:119
-msgid "Marketplace"
+msgid "Deprecated"
 msgstr ""
 
 #: includes/class-wc-feed-kuantokusta.php:123
@@ -558,94 +562,100 @@ msgstr ""
 msgid "Select which product types should be included in the KuantoKusta feed"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:139
+#: includes/class-wc-feed-kuantokusta.php:141
+msgid ""
+"The “Price comparison” mode is deprecated and we don’t recommend you use it "
+"anymore, as it will be removed shortly"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:148
 msgid "Tracking"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:141
+#: includes/class-wc-feed-kuantokusta.php:150
 msgid ""
 "KuantoKusta tracking code functionalities, so that you can see navigation "
 "and conversion stats on their dashboard."
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:144
+#: includes/class-wc-feed-kuantokusta.php:153
 msgid "Tracking code"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:146
+#: includes/class-wc-feed-kuantokusta.php:155
 msgid "The tracking code provided by KuantoKusta (optional)"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:162
+#: includes/class-wc-feed-kuantokusta.php:171
 msgid "Variable products"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:164
+#: includes/class-wc-feed-kuantokusta.php:173
 msgid ""
 "If you choose to include each product variation to the KuantoKusta feed, the "
 "product variation title will be set from the base variable product title "
 "concatenated with the variation description."
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:167
+#: includes/class-wc-feed-kuantokusta.php:176
 msgid "Include"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:169
+#: includes/class-wc-feed-kuantokusta.php:178
 msgid "How should variable products be included in the feed"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:173
+#: includes/class-wc-feed-kuantokusta.php:182
 msgid "Only base variable product (with lower price)"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:174
+#: includes/class-wc-feed-kuantokusta.php:183
 msgid "Each product variation"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:186
+#: includes/class-wc-feed-kuantokusta.php:195
 msgid "Product description"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:190
+#: includes/class-wc-feed-kuantokusta.php:199
 msgid "Get description from"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:192
+#: includes/class-wc-feed-kuantokusta.php:201
 msgid "Where to get the product description from"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:196
+#: includes/class-wc-feed-kuantokusta.php:205
 msgid "Full product description (defaults to short description if empty)"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:197
+#: includes/class-wc-feed-kuantokusta.php:206
 msgid "Short product description"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:210
+#: includes/class-wc-feed-kuantokusta.php:219
 msgid "Product stock"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:212
+#: includes/class-wc-feed-kuantokusta.php:221
 msgid ""
 "KuantoKusta marketplace requires the definition of a numeric stock value for "
 "all the products."
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:215
+#: includes/class-wc-feed-kuantokusta.php:224
 msgid "Default stock"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:217
+#: includes/class-wc-feed-kuantokusta.php:226
 msgid "Default stock value for products not managing stock"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:234
+#: includes/class-wc-feed-kuantokusta.php:243
 msgid "Product shipping"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:236
+#: includes/class-wc-feed-kuantokusta.php:245
 msgid ""
 "KuantoKusta requires the definition of a shipping value for each product "
 "submitted to the feed. According to how WooCommerce calculates the shipping "
@@ -653,92 +663,92 @@ msgid ""
 "need exact shipping cost, custom development will be needed."
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:239
+#: includes/class-wc-feed-kuantokusta.php:248
 msgid "Default cost"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:241
+#: includes/class-wc-feed-kuantokusta.php:250
 msgid ""
 "Default shipping cost (with tax) per product (can be overriden at the "
 "product level)"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:249
-#: includes/class-wc-feed-kuantokusta.php:380
+#: includes/class-wc-feed-kuantokusta.php:258
+#: includes/class-wc-feed-kuantokusta.php:389
 msgid "Maximum preparation time"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:249
-#: includes/class-wc-feed-kuantokusta.php:259
-#: includes/class-wc-feed-kuantokusta.php:380
-#: includes/class-wc-feed-kuantokusta.php:390
+#: includes/class-wc-feed-kuantokusta.php:258
+#: includes/class-wc-feed-kuantokusta.php:268
+#: includes/class-wc-feed-kuantokusta.php:389
+#: includes/class-wc-feed-kuantokusta.php:399
 msgid "days"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:251
+#: includes/class-wc-feed-kuantokusta.php:260
 msgid ""
 "The default maximum amount of days a product takes to be prepared before it "
 "is shipped"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:259
-#: includes/class-wc-feed-kuantokusta.php:390
+#: includes/class-wc-feed-kuantokusta.php:268
+#: includes/class-wc-feed-kuantokusta.php:399
 msgid "Maximum delivery time"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:261
+#: includes/class-wc-feed-kuantokusta.php:270
 msgid "The default maximum amount of days the shipping of a product takes"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:302
+#: includes/class-wc-feed-kuantokusta.php:311
 msgid "Settings"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:324
+#: includes/class-wc-feed-kuantokusta.php:333
 msgid "The fields below are only used on the KuantoKusta products feed"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:330
+#: includes/class-wc-feed-kuantokusta.php:339
 msgid "Hide from feed"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:346
+#: includes/class-wc-feed-kuantokusta.php:355
 msgid ""
 "The EAN / UPC should now be set on the WooCommerce \"GTIN, UPC, EAN or "
 "ISBN\" field on the Inventory tab - once you fill that field, this one will "
 "be removed"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:350
-#: includes/class-wc-feed-kuantokusta.php:358
+#: includes/class-wc-feed-kuantokusta.php:359
+#: includes/class-wc-feed-kuantokusta.php:367
 msgid "EAN / UPC"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:351
+#: includes/class-wc-feed-kuantokusta.php:360
 msgid "Barcode"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:360
+#: includes/class-wc-feed-kuantokusta.php:369
 msgid ""
 "The EAN / UPC is now set on the WooCommerce \"GTIN, UPC, EAN or ISBN\" field "
 "on the Inventory tab"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:367
+#: includes/class-wc-feed-kuantokusta.php:376
 msgid "Brand"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:372
+#: includes/class-wc-feed-kuantokusta.php:381
 msgid "Shipping cost"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:373
+#: includes/class-wc-feed-kuantokusta.php:382
 #, php-format
 msgid "With tax - Blank for default (%s)"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:381
-#: includes/class-wc-feed-kuantokusta.php:391
+#: includes/class-wc-feed-kuantokusta.php:390
+#: includes/class-wc-feed-kuantokusta.php:400
 #, php-format
 msgid "Blank for default (%s)"
 msgstr ""

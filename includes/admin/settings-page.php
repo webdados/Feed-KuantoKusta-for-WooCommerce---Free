@@ -162,14 +162,14 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 				'stock_qty' => array(
 					'desc'        => __( 'The product stock quantity.', 'feed-kuantokusta-for-woocommerce' ),
 					'filter'      => true,
-					'comparison'  => true,
-					'marketplace' => false,
+					'comparison'  => false,
+					'marketplace' => true,
 				),
 				'stock_availability' => array(
 					'desc'        => __( 'The product stock status (Y/N).', 'feed-kuantokusta-for-woocommerce' ),
 					'filter'      => true,
-					'comparison'  => true,
-					'marketplace' => false,
+					'comparison'  => false,
+					'marketplace' => true,
 				),
 				'category' => array(
 					'desc'        => __( 'The product category tree. Only the first category found is used and it\'s entire path is used.', 'feed-kuantokusta-for-woocommerce' ),

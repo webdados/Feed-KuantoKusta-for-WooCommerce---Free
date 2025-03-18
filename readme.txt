@@ -34,7 +34,7 @@ This plugin was developed in partnership with KuantoKusta and it’s the WooComm
 In addition to all you can do with the free plugin, the [paid add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin) offers you several additional features:
 
 * Priority technical support;
-* In the next version: Adjust price to send to Kuanto Kusta: add/subtract percentage, round up/down, and add/subtract value to all products;
+* In the next version: Adjust price to send to KuantoKusta: add/subtract percentage, round up/down, and add/subtract value to all products;
 * Default values for Brand, Express shipping cost, Minimum preparation time, Minimum delivery time, and Maximum and Minimum delivery time on express shipping;
 * Product-level options for Express shipping cost, Minimum preparation time, Minimum delivery time, Maximum and Minimum delivery time on express shipping, and Brand SKU;
 * Variation-level EAN/UPC and Brand SKU/MPN;
@@ -111,8 +111,12 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 
 == Changelog ==
 
+= 4.0 ? =
+* [NEW] Deprecate “Price comparison” mode
+
 = 3.4 - 2025-03-18 =
 * [TWEAK] Show Pro add-on functionalities on the settings screen
+* [FIX] Error on the settings page in comparison mode [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 
 = 3.3 - 2025-02-06 =
 * [TWEAK] In comparison mode, if product does not have managed stock, return 1 or 0 in the stock field instead of “Y” and “N”

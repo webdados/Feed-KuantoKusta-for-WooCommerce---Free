@@ -75,6 +75,22 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 						<?php _e( 'Get the PRO add-on and get more features', 'feed-kuantokusta-for-woocommerce' ); ?>
 					</a>
 				</h3>
+				<ul>
+					<li><?php esc_html_e( 'Priority technical support;', 'feed-kuantokusta-for-woocommerce' ); ?>
+					<li><?php esc_html_e( 'In the next version: Adjust price to send to Kuanto Kusta: add/subtract percentage, round up/down, and add/subtract value to all products;', 'feed-kuantokusta-for-woocommerce' ); ?>
+					<li><?php esc_html_e( 'Default values for Brand, Express shipping cost, Minimum preparation time, Minimum delivery time, and Maximum and Minimum delivery time on express shipping;', 'feed-kuantokusta-for-woocommerce' ); ?>
+					<li><?php esc_html_e( 'Product-level options for Express shipping cost, Minimum preparation time, Minimum delivery time, Maximum and Minimum delivery time on express shipping, and Brand SKU;', 'feed-kuantokusta-for-woocommerce' ); ?>
+					<li><?php esc_html_e( 'Variation-level EAN/UPC and Brand SKU/MPN;', 'feed-kuantokusta-for-woocommerce' ); ?>
+					<li><?php esc_html_e( 'Append variation description to the product title;', 'feed-kuantokusta-for-woocommerce' ); ?>
+					<li><?php esc_html_e( 'Get EAN/UPC from the WooCommerce “unique identifier” product field (default since WooCommerce 9.2 - our field before that), any taxonomy, or any custom field (for integration with other plugins)', 'feed-kuantokusta-for-woocommerce' ); ?>
+					<li><?php esc_html_e( 'Get Brand, Brand SKU/MPN and EAN/UPC from our product field (default), any taxonomy or any custom field (for integration with other plugins), or from the default brand settings field;', 'feed-kuantokusta-for-woocommerce' ); ?>
+					<li><?php esc_html_e( 'Get Category from the native WooCommerce product categories, any other taxonomy, or any custom field (for integration with other plugins);', 'feed-kuantokusta-for-woocommerce' ); ?>
+					<li><?php esc_html_e( 'Integration with BigBuy Dropshipping Connector for WooCommerce: get EAN from the BigBuy’s reference table', 'feed-kuantokusta-for-woocommerce' ); ?>
+					<li><?php esc_html_e( 'Up to 5 photos per product;', 'feed-kuantokusta-for-woocommerce' ); ?>
+					<li><?php esc_html_e( 'Custom attributes (like flavor, colour, genre, material, size, etc.) based on WooCommerce product attributes;', 'feed-kuantokusta-for-woocommerce' ); ?>
+					<li><?php esc_html_e( 'Discount Rules for WooCommerce beta and limited compatibility;', 'feed-kuantokusta-for-woocommerce' ); ?>
+					<li><?php esc_html_e( 'Continued development;', 'feed-kuantokusta-for-woocommerce' ); ?>
+				</ul>
 				<hr/>
 			<?php } ?>
 			<?php woocommerce_admin_fields( $this->get_settings() ); ?>
@@ -668,6 +684,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		}
 		.forminp .description {
 			display: block;
+		}
+		#kk_settings ul {
+			list-style: disc;
+			padding-left: 1em;
 		}
 		<?php if ( ! apply_filters( 'kuantokusta_hide_settings_right_bar', false ) ) { ?>
 			#kk_rightbar {

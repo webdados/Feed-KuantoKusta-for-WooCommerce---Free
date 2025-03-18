@@ -547,7 +547,7 @@ final class WC_Feed_KuantoKusta {
 		$id_product    = $product->get_id();
 		$url           = $product->get_permalink();
 		$title         = apply_filters( 'kuantokusta_product_node_default_title', trim( $product->get_title() ), $product, $product_type );
-		$regular_price = apply_filters( 'kuantokusta_product_node_default_regular_price', wc_get_price_including_tax( $product, array( 'price' => $product->get_regular_price() ) ),  $product, $product_type ); //With VAT
+		$regular_price = apply_filters( 'kuantokusta_product_node_default_regular_price', wc_get_price_including_tax( $product, array( 'price' => $product->get_regular_price() ) ), $product, $product_type ); //With VAT
 		$current_price = apply_filters( 'kuantokusta_product_node_default_current_price', wc_get_price_including_tax( $product ),  $product, $product_type ); //With VAT
 		$stock         = apply_filters( 'kuantokusta_product_node_default_comparison_stock', $this->get_comparison_product_stock( $product ), $product, $product_type );
 		$categories    = apply_filters( 'kuantokusta_product_node_default_categories', $this->get_product_category( $id_product ), $product, $product_type );

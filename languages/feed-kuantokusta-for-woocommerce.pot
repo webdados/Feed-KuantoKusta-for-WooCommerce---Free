@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Feed KuantoKusta for WooCommerce\n"
-"POT-Creation-Date: 2024-11-20 10:42+0000\n"
+"POT-Creation-Date: 2025-03-18 12:05+0000\n"
 "PO-Revision-Date: 2018-05-23 11:04+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -112,340 +112,416 @@ msgstr ""
 msgid "Get the PRO add-on and get more features"
 msgstr ""
 
+#: includes/admin/settings-page.php:79
+msgid "Priority technical support;"
+msgstr ""
+
+#: includes/admin/settings-page.php:80
+msgid ""
+"In the next version: Adjust price to send to Kuanto Kusta: add/subtract "
+"percentage, round up/down, and add/subtract value to all products;"
+msgstr ""
+
+#: includes/admin/settings-page.php:81
+msgid ""
+"Default values for Brand, Express shipping cost, Minimum preparation time, "
+"Minimum delivery time, and Maximum and Minimum delivery time on express "
+"shipping;"
+msgstr ""
+
+#: includes/admin/settings-page.php:82
+msgid ""
+"Product-level options for Express shipping cost, Minimum preparation time, "
+"Minimum delivery time, Maximum and Minimum delivery time on express "
+"shipping, and Brand SKU;"
+msgstr ""
+
+#: includes/admin/settings-page.php:83
+msgid "Variation-level EAN/UPC and Brand SKU/MPN;"
+msgstr ""
+
+#: includes/admin/settings-page.php:84
+msgid "Append variation description to the product title;"
+msgstr ""
+
 #: includes/admin/settings-page.php:85
-msgid "Show / hide feed URL and documentation"
+msgid ""
+"Get EAN/UPC from the WooCommerce “unique identifier” product field (default "
+"since WooCommerce 9.2 - our field before that), any taxonomy, or any custom "
+"field (for integration with other plugins)"
+msgstr ""
+
+#: includes/admin/settings-page.php:86
+msgid ""
+"Get Brand, Brand SKU/MPN and EAN/UPC from our product field (default), any "
+"taxonomy or any custom field (for integration with other plugins), or from "
+"the default brand settings field;"
+msgstr ""
+
+#: includes/admin/settings-page.php:87
+msgid ""
+"Get Category from the native WooCommerce product categories, any other "
+"taxonomy, or any custom field (for integration with other plugins);"
+msgstr ""
+
+#: includes/admin/settings-page.php:88
+msgid ""
+"Integration with BigBuy Dropshipping Connector for WooCommerce: get EAN from "
+"the BigBuy’s reference table"
+msgstr ""
+
+#: includes/admin/settings-page.php:89
+msgid "Up to 5 photos per product;"
+msgstr ""
+
+#: includes/admin/settings-page.php:90
+msgid ""
+"Custom attributes (like flavor, colour, genre, material, size, etc.) based "
+"on WooCommerce product attributes;"
+msgstr ""
+
+#: includes/admin/settings-page.php:91
+msgid "Discount Rules for WooCommerce beta and limited compatibility;"
 msgstr ""
 
 #: includes/admin/settings-page.php:92
+msgid "Continued development;"
+msgstr ""
+
+#: includes/admin/settings-page.php:101
+msgid "Show / hide feed URL and documentation"
+msgstr ""
+
+#: includes/admin/settings-page.php:108
 msgid "Documentation"
 msgstr ""
 
-#: includes/admin/settings-page.php:99
+#: includes/admin/settings-page.php:115
 msgid "The mode the plugin is running on."
 msgstr ""
 
-#: includes/admin/settings-page.php:105
+#: includes/admin/settings-page.php:121
 msgid "The WooCommerce product type."
 msgstr ""
 
-#: includes/admin/settings-page.php:111
+#: includes/admin/settings-page.php:127
 msgid "From the database product id."
 msgstr ""
 
-#: includes/admin/settings-page.php:117
+#: includes/admin/settings-page.php:133
 msgid "The product URL."
 msgstr ""
 
-#: includes/admin/settings-page.php:123
+#: includes/admin/settings-page.php:139
 msgid ""
 "The product title. (In variations the variation description field is "
 "concatenated to the product title)."
 msgstr ""
 
-#: includes/admin/settings-page.php:129
+#: includes/admin/settings-page.php:145
 msgid "The product regular price."
 msgstr ""
 
-#: includes/admin/settings-page.php:135
+#: includes/admin/settings-page.php:151
 msgid "The product current price."
 msgstr ""
 
-#: includes/admin/settings-page.php:141
+#: includes/admin/settings-page.php:157
 msgid ""
 "The product stock status (Y/N) or quantity, depending on the global and "
 "product settings."
 msgstr ""
 
-#: includes/admin/settings-page.php:147
+#: includes/admin/settings-page.php:163
 msgid "The product stock quantity."
 msgstr ""
 
-#: includes/admin/settings-page.php:153
+#: includes/admin/settings-page.php:169
 msgid "The product stock status (Y/N)."
 msgstr ""
 
-#: includes/admin/settings-page.php:159
+#: includes/admin/settings-page.php:175
 msgid ""
 "The product category tree. Only the first category found is used and it's "
 "entire path is used."
 msgstr ""
 
-#: includes/admin/settings-page.php:165
+#: includes/admin/settings-page.php:181
 msgid "The product main image url."
 msgstr ""
 
-#: includes/admin/settings-page.php:171
+#: includes/admin/settings-page.php:187
 msgid ""
 "The product long or short description (depending on the settings above). (In "
 "variations the variation description field is concatenated to the product "
 "description)"
 msgstr ""
 
-#: includes/admin/settings-page.php:177
+#: includes/admin/settings-page.php:193
 msgid ""
 "The product brand from the KuantoKusta metabox on the product edit screen."
 msgstr ""
 
-#: includes/admin/settings-page.php:186
+#: includes/admin/settings-page.php:202
 msgid ""
 "The product GTIN, UPC, EAN or ISBN (or EAN from the KuantoKusta metabox on "
 "the product edit screen - deprecated)."
 msgstr ""
 
-#: includes/admin/settings-page.php:188
+#: includes/admin/settings-page.php:204
 msgid ""
 "The product EAN barcode from the KuantoKusta metabox on the product edit "
 "screen."
 msgstr ""
 
-#: includes/admin/settings-page.php:194
+#: includes/admin/settings-page.php:210
 msgid "The product SKU."
 msgstr ""
 
-#: includes/admin/settings-page.php:200
+#: includes/admin/settings-page.php:216
 msgid "The product weight in kg."
 msgstr ""
 
-#: includes/admin/settings-page.php:206
+#: includes/admin/settings-page.php:222
 msgid ""
 "The product shipping cost from the KuantoKusta metabox on the product edit "
 "screen. If not set, the default value above is used."
 msgstr ""
 
-#: includes/admin/settings-page.php:212
+#: includes/admin/settings-page.php:228
 msgid ""
 "The maximum amount of days a product takes to be prepared before it is "
 "shipped, from the KuantoKusta metabox on the product edit screen. If not "
 "set, the default value above is used."
 msgstr ""
 
-#: includes/admin/settings-page.php:218
+#: includes/admin/settings-page.php:234
 msgid ""
 "The maximum amount of days the shipping of a product takes, from the "
 "KuantoKusta metabox on the product edit screen. If not set, the default "
 "value above is used."
 msgstr ""
 
-#: includes/admin/settings-page.php:227
+#: includes/admin/settings-page.php:243
 msgid "KuantoKusta feed fields"
 msgstr ""
 
-#: includes/admin/settings-page.php:235
+#: includes/admin/settings-page.php:251
 msgid "Filterable."
 msgstr ""
 
-#: includes/admin/settings-page.php:236
+#: includes/admin/settings-page.php:252
 msgid "Comparison."
 msgstr ""
 
-#: includes/admin/settings-page.php:237
+#: includes/admin/settings-page.php:253
 msgid "Marketplace."
 msgstr ""
 
-#: includes/admin/settings-page.php:251
+#: includes/admin/settings-page.php:267
 msgid "Add settings to this page."
 msgstr ""
 
-#: includes/admin/settings-page.php:257
+#: includes/admin/settings-page.php:273
 msgid "Products query arguments for the wc_get_products function."
 msgstr ""
 
-#: includes/admin/settings-page.php:265
+#: includes/admin/settings-page.php:281
 msgid "Either to include (or not) the product on the feed."
 msgstr ""
 
-#: includes/admin/settings-page.php:273
+#: includes/admin/settings-page.php:289
 msgid "Either to include (or not) the product variation on the feed."
 msgstr ""
 
-#: includes/admin/settings-page.php:281
+#: includes/admin/settings-page.php:297
 msgid "Filter on the product node XML."
 msgstr ""
 
-#: includes/admin/settings-page.php:289
+#: includes/admin/settings-page.php:305
 msgid "Filter on the product variation node XML."
 msgstr ""
 
-#: includes/admin/settings-page.php:289 includes/admin/settings-page.php:305
-#: includes/admin/settings-page.php:321 includes/admin/settings-page.php:337
-#: includes/admin/settings-page.php:369 includes/admin/settings-page.php:377
-#: includes/admin/settings-page.php:385 includes/admin/settings-page.php:401
-#: includes/admin/settings-page.php:417 includes/admin/settings-page.php:433
-#: includes/admin/settings-page.php:449 includes/admin/settings-page.php:465
-#: includes/admin/settings-page.php:481 includes/admin/settings-page.php:497
-#: includes/admin/settings-page.php:513 includes/admin/settings-page.php:529
-#: includes/admin/settings-page.php:545
+#: includes/admin/settings-page.php:305 includes/admin/settings-page.php:321
+#: includes/admin/settings-page.php:337 includes/admin/settings-page.php:353
+#: includes/admin/settings-page.php:385 includes/admin/settings-page.php:393
+#: includes/admin/settings-page.php:401 includes/admin/settings-page.php:417
+#: includes/admin/settings-page.php:433 includes/admin/settings-page.php:449
+#: includes/admin/settings-page.php:465 includes/admin/settings-page.php:481
+#: includes/admin/settings-page.php:497 includes/admin/settings-page.php:513
+#: includes/admin/settings-page.php:529 includes/admin/settings-page.php:545
+#: includes/admin/settings-page.php:561
 msgid "If \"Include each product variation\" is choosen."
 msgstr ""
 
-#: includes/admin/settings-page.php:297
+#: includes/admin/settings-page.php:313
 msgid "Filter on the product title."
 msgstr ""
 
-#: includes/admin/settings-page.php:305
+#: includes/admin/settings-page.php:321
 msgid "Filter on the product variation title."
 msgstr ""
 
-#: includes/admin/settings-page.php:313
+#: includes/admin/settings-page.php:329
 msgid "Filter on the product regular price."
 msgstr ""
 
-#: includes/admin/settings-page.php:321
+#: includes/admin/settings-page.php:337
 msgid "Filter on the product variation regular price."
 msgstr ""
 
-#: includes/admin/settings-page.php:329
+#: includes/admin/settings-page.php:345
 msgid "Filter on the product current price."
 msgstr ""
 
-#: includes/admin/settings-page.php:337
+#: includes/admin/settings-page.php:353
 msgid "Filter on the product variation current price."
 msgstr ""
 
-#: includes/admin/settings-page.php:345
+#: includes/admin/settings-page.php:361
 msgid "Filter on the product stock in comparison mode."
 msgstr ""
 
-#: includes/admin/settings-page.php:353
+#: includes/admin/settings-page.php:369
 msgid "Filter on the product stock in marketplace mode."
 msgstr ""
 
-#: includes/admin/settings-page.php:361
+#: includes/admin/settings-page.php:377
 msgid "Filter on the product availability in marketplace mode."
 msgstr ""
 
-#: includes/admin/settings-page.php:369
+#: includes/admin/settings-page.php:385
 msgid "Filter on the product variation stock in comparison mode."
 msgstr ""
 
-#: includes/admin/settings-page.php:377
+#: includes/admin/settings-page.php:393
 msgid "Filter on the product variation stock in marketplace mode."
 msgstr ""
 
-#: includes/admin/settings-page.php:385
+#: includes/admin/settings-page.php:401
 msgid "Filter on the product variation availability in marketplace mode."
 msgstr ""
 
-#: includes/admin/settings-page.php:393
+#: includes/admin/settings-page.php:409
 msgid "Filter on the product categories."
 msgstr ""
 
-#: includes/admin/settings-page.php:401
+#: includes/admin/settings-page.php:417
 msgid "Filter on the product variation categories."
 msgstr ""
 
-#: includes/admin/settings-page.php:409
+#: includes/admin/settings-page.php:425
 msgid "Filter on the product image url."
 msgstr ""
 
-#: includes/admin/settings-page.php:417
+#: includes/admin/settings-page.php:433
 msgid "Filter on the product variation image url."
 msgstr ""
 
-#: includes/admin/settings-page.php:425
+#: includes/admin/settings-page.php:441
 msgid "Filter on the product description."
 msgstr ""
 
-#: includes/admin/settings-page.php:433
+#: includes/admin/settings-page.php:449
 msgid "Filter on the product variation description."
 msgstr ""
 
-#: includes/admin/settings-page.php:441
+#: includes/admin/settings-page.php:457
 msgid "Filter on the product brand."
 msgstr ""
 
-#: includes/admin/settings-page.php:449
+#: includes/admin/settings-page.php:465
 msgid "Filter on the product variation brand."
 msgstr ""
 
-#: includes/admin/settings-page.php:457
+#: includes/admin/settings-page.php:473
 msgid "Filter on the product ean barcode."
 msgstr ""
 
-#: includes/admin/settings-page.php:465
+#: includes/admin/settings-page.php:481
 msgid "Filter on the product variation ean barcode."
 msgstr ""
 
-#: includes/admin/settings-page.php:473
+#: includes/admin/settings-page.php:489
 msgid "Filter on the product sku."
 msgstr ""
 
-#: includes/admin/settings-page.php:481
+#: includes/admin/settings-page.php:497
 msgid "Filter on the product variation sku."
 msgstr ""
 
-#: includes/admin/settings-page.php:489
+#: includes/admin/settings-page.php:505
 msgid "Filter on the product weight."
 msgstr ""
 
-#: includes/admin/settings-page.php:497
+#: includes/admin/settings-page.php:513
 msgid "Filter on the product variation weight."
 msgstr ""
 
-#: includes/admin/settings-page.php:505
+#: includes/admin/settings-page.php:521
 msgid "Filter on the product shipping cost."
 msgstr ""
 
-#: includes/admin/settings-page.php:513
+#: includes/admin/settings-page.php:529
 msgid "Filter on the product variation shipping cost."
 msgstr ""
 
-#: includes/admin/settings-page.php:521
+#: includes/admin/settings-page.php:537
 msgid "Filter on the product maximum preparation time."
 msgstr ""
 
-#: includes/admin/settings-page.php:529
+#: includes/admin/settings-page.php:545
 msgid "Filter on the product variation maximum preparation time."
 msgstr ""
 
-#: includes/admin/settings-page.php:537
+#: includes/admin/settings-page.php:553
 msgid "Filter on the product maximum delivery time."
 msgstr ""
 
-#: includes/admin/settings-page.php:545
+#: includes/admin/settings-page.php:561
 msgid "Filter on the product variation maximum delivery time."
 msgstr ""
 
-#: includes/admin/settings-page.php:569 includes/admin/settings-page.php:577
+#: includes/admin/settings-page.php:585 includes/admin/settings-page.php:593
 msgid "Allows to add extra fields to the product node XML."
 msgstr ""
 
-#: includes/admin/settings-page.php:583
+#: includes/admin/settings-page.php:599
 msgid ""
 "Allows to save to the database the extra fields of the KuantoKusta panel on "
 "the product edit screen, by adding them to the $meta array."
 msgstr ""
 
-#: includes/admin/settings-page.php:589
+#: includes/admin/settings-page.php:605
 msgid "Filter for this documentation fields array."
 msgstr ""
 
-#: includes/admin/settings-page.php:595
+#: includes/admin/settings-page.php:611
 msgid "Filter for this documentation hooks array."
 msgstr ""
 
-#: includes/admin/settings-page.php:602
+#: includes/admin/settings-page.php:618
 msgid ""
 "Allows to add extra fields to the KuantoKusta panel on the product edit "
 "screen."
 msgstr ""
 
-#: includes/admin/settings-page.php:608
+#: includes/admin/settings-page.php:624
 msgid ""
 "Allows to save to the database the extra fields of the KuantoKusta panel on "
 "the product edit screen, if the `kuantokusta_process_product_meta` filter "
 "was not used, which is the preferred method."
 msgstr ""
 
-#: includes/admin/settings-page.php:616
+#: includes/admin/settings-page.php:632
 msgid "Developer hooks"
 msgstr ""
 
-#: includes/admin/settings-page.php:628
+#: includes/admin/settings-page.php:644
 msgid "Arguments"
 msgstr ""
 
-#: includes/admin/settings-page.php:644
+#: includes/admin/settings-page.php:660
 msgid "Available on the PRO add-on"
 msgstr ""
 

@@ -1,13 +1,13 @@
 === Feed KuantoKusta for WooCommerce - Free ===
 Contributors: webdados, ptwooplugins 
-Tags: marketplace, feed, comparison, ecommerce, portugal
+Tags: marketplace, feed, comparison, e-commerce, Portugal
 Requires at least: 5.4
 Tested up to: 6.7
 Requires PHP: 7.0
-Stable tag: 3.3
+Stable tag: 3.4
 License: GPLv3
 
-This plugin allows you to generate a WooCommerce product feed to submit to Kuanto Kusta, a portuguese price comparison website and marketplace.
+This plugin allows you to generate a WooCommerce product feed to submit to Kuanto Kusta, a Portuguese price comparison website and marketplace.
 
 == Description ==
 
@@ -15,34 +15,36 @@ This plugin generates a compatible [KuantoKusta](https://www.kuantokusta.pt/?utm
 
 The store owner should first [sign up with KuantoKusta](https://mystore.kuantokusta.pt/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin).
 
-This plugin was developed in partnership with KuantoKusta and it’s the WooCommerce approved and advised solution by this price comparison website and marketplace. The KuantoKusta logo and brand are copyrighted and are used with their permission.
+This plugin was developed in partnership with KuantoKusta and it’s the WooCommerce-approved and advised solution by this price comparison website and marketplace. The KuantoKusta logo and brand are copyrighted and are used with their permission.
 
 == Features ==
 
 * Price comparison and Marketplace modes;
 * Choose product types to include in the feed;
 * Include product variations;
-* Default values for stock, shipping cost, maximum preparation time and maximum delivery time;
+* Default values for stock, shipping cost, maximum preparation time, and maximum delivery time;
 * Product-level options to hide from feed, EAN/UPC, brand, shipping cost, maximum preparation time and maximum delivery time;
 * One photo per product;
 * Integration with the KuantoKusta javascript tracking code (experimental);
 * Developer hooks;
-* Very limited technical support (bug fixing only);
+* Minimal technical support (bug fixing only);
 
 == PRO add-on features ==
 
-In addition to all you can do with the free plugin, the [paid add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin) offers you a number of additional features:
+In addition to all you can do with the free plugin, the [paid add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin) offers you several additional features:
 
 * Priority technical support;
-* Default values for express shipping cost, minimum preparation time, minimum delivery time and maximum and minimum delivery time on express shipping;
-* Product-level options for express shipping cost, minimum preparation time, minimum delivery time and maximum, minimum delivery time on express shipping and brand sku;
-* Variation-level EAN/UPC and Brand SKU / MPN;
-* Get EAN/UPC from the WooCommerce "unique identifier" product field (default), any taxonomy or any custom field (for integration with other plugins)
-* Get Brand, Brand SKU / MPN and EAN/UPC from our product field (default), any taxonomy or any custom field (for integration with other plugins), or from the default brand settings field;
-* Get Category from the native WooCommerce product categories, any taxonomy or any custom field (for integration with other plugins);
-* Integration with [BigBuy Dropshipping Connector for WooCommerce](https://wordpress.org/plugins/bigbuy-wc-dropshipping-connector/): get EAN from the BigBuy's reference table
+* In the next version: Adjust price to send to Kuanto Kusta: add/subtract percentage, round up/down, and add/subtract value to all products;
+* Default values for Brand, Express shipping cost, Minimum preparation time, Minimum delivery time, and Maximum and Minimum delivery time on express shipping;
+* Product-level options for Express shipping cost, Minimum preparation time, Minimum delivery time, Maximum and Minimum delivery time on express shipping, and Brand SKU;
+* Variation-level EAN/UPC and Brand SKU/MPN;
+* Append variation description to the product title;
+* Get EAN/UPC from the WooCommerce “unique identifier” product field (default since WooCommerce 9.2 - our field before that), any taxonomy, or any custom field (for integration with other plugins)
+* Get Brand, Brand SKU/MPN and EAN/UPC from our product field (default), any taxonomy or any custom field (for integration with other plugins), or from the default brand settings field;
+* Get Category from the native WooCommerce product categories, any other taxonomy, or any custom field (for integration with other plugins);
+* Integration with [BigBuy Dropshipping Connector for WooCommerce](https://wordpress.org/plugins/bigbuy-wc-dropshipping-connector/): get EAN from the BigBuy’s reference table
 * Up to 5 photos per product;
-* Custom attributes (like flavour, colour, genre, material, size, etc.) based on WooCommerce product attributes;
+* Custom attributes (like flavor, colour, genre, material, size, etc.) based on WooCommerce product attributes;
 * [Discount Rules for WooCommerce](https://wordpress.org/plugins/woo-discount-rules/) beta and limited compatibility;
 * Continued development;
 
@@ -50,7 +52,7 @@ In addition to all you can do with the free plugin, the [paid add-on](https://pt
 
 * [Portuguese Postcodes for WooCommerce](https://ptwooplugins.com/product/portuguese-postcodes-for-woocommerce-technical-support/) - Automatic filling of the address details at the checkout, including street name and neighborhood, based on the postal code
 * [Invoicing with InvoiceXpress for WooCommerce](https://invoicewoo.com/) - Automatically issue invoices directly from the WooCommerce order
-* [DPD Portugal for WooCommerce](https://ptwooplugins.com/product/dpd-portugal-for-woocommerce/) - Create shipping and return guide in the DPD webservice directly from the WooCommerce order
+* [DPD Portugal for WooCommerce](https://ptwooplugins.com/product/dpd-portugal-for-woocommerce/) - Create shipping and return guide in the DPD API directly from the WooCommerce order
 * [Multibanco, MBWAY, Credit card, Payshop and Cofidis Pay for WooCommerce – PRO add-on](https://ptwooplugins.com/product/multibanco-mbway-credit-card-payshop-ifthenpay-woocommerce-pro-add-on/) - Extra features for the plugin you already trust to receive payments on your WooCommerce store
 * [Advanced Coupon Restrictions for WooCommerce](https://ptwooplugins.com/product/advanced-coupon-restrictions-for-woocommerce/) - Create coupons for any Product Taxonomy, User details, and Order destination.
 * [Simple Checkout Fields Manager for WooCommerce](https://ptwooplugins.com/product/simple-custom-fields-for-woocommerce-blocks-checkout/) - Add custom fields and manage (remove, make required or optional) core fields on the new WooCommerce Block-based Checkout
@@ -62,15 +64,15 @@ In addition to all you can do with the free plugin, the [paid add-on](https://pt
 == Installation ==
 
 * Use the included automatic install feature on your WordPress admin panel and search for “Feed KuantoKusta for WooCommerce”.
-* Go to WooCoomerce > Settings > KuantoKusta, choose the product types you want to include in the feed and set other options as you desire.
-* You can go to each product and set specific settings like hiding the product from the feed, it’s EAN/UPC code, brand, shipping cost, etc.
+* Go to WooCoomerce > Settings > KuantoKusta, select the product types you want to include in the feed, and set other options as you wish.
+* You can go to each product and set specific settings like hiding the product from the feed, its EAN/UPC code, brand, shipping cost, etc.
 
 == Frequently Asked Questions ==
 
 = I need some modifications to my feed structure or data. Is it possible? =
 
-The plugin has a pretty decent number of WordPress hooks you can use to manipulate which products are included in the feed, which fields are shown on the feed and even manipulate the content of each field.
-If you are not confortable with development, you can [hire us](https://www.webdados.pt/contactos/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin) to make the customization for you.
+The plugin has a large number of WordPress hooks you can use to manipulate which products are included in the feed, which fields are shown on the feed, and even manipulate the content of each field.
+If you are not comfortable with development, you can [hire us](https://www.webdados.pt/contactos/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin) to make the customization for you.
 
 = My feed URL is returning a 404 error =
 
@@ -86,17 +88,17 @@ Yes.
 
 = I need technical support. Who should I contact, KuantoKusta or PT Woo Plugins? =
 
-The development and support of this plugin is [PT Woo Plugins](https://ptwooplugins.com?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin) responsibility, although KuantoKusta can help you identify problems with your feed if your products are not successfully imported into their system (and that information will be helpfull when asking us for support).
+The development and support of this plugin is [PT Woo Plugins](https://ptwooplugins.com?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin) responsibility, although KuantoKusta can help you identify problems with your feed if your products are not successfully imported into their system (and that information will be helpful when asking us for support).
 
 We do not provide free support for this plugin, but bugs can be reported on the [support forum at WordPress.org](https://wordpress.org/support/plugin/feed-kuantokusta-for-woocommerce/)
 
 You’ll get included support if you buy the plugin [PRO add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin).
 
-For premium/urgent support or custom developments you should contact [Webdados](https://www.webdados.pt/contactos/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin) directly. Charges will apply.
+For premium/urgent support or custom development, you should contact [Webdados](https://www.webdados.pt/contactos/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin) directly. Charges will apply.
 
 = Where do I report security vulnerabilities found in this plugin? =  
  
-You can report any security bugs found in the source code of this plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/feed-kuantokusta-for-woocommerce). The Patchstack team will assist you with verification, CVE assignment and take care of notifying the developers of this plugin.
+You can report any security bugs found in the source code of this plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/feed-kuantokusta-for-woocommerce). The Patchstack team will assist you with verification, CVE assignment, and take care of notifying the developers of this plugin.
 
 = Can I contribute with a translation? =
 
@@ -109,8 +111,11 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 
 == Changelog ==
 
+= 3.4 - 2025-03-18 =
+* [TWEAK] Show Pro add-on functionalities on the settings screen
+
 = 3.3 - 2025-02-06 =
-* [TWEAK] In comparison mode, if product does not have managed stock, return 1 or 0 in the stock field instead of "Y" and "N"
+* [TWEAK] In comparison mode, if product does not have managed stock, return 1 or 0 in the stock field instead of “Y” and “N”
 * [TWEAK] In marketplace mode, if product does not have managed stock, return 1 instead of 0 if the deafult stock setting is not set
 * [TWEAK] Change feed instructions from 100 to 1000 products at a time
 * [DEV] Tested with WordPress 6.8-alpha-59604 and WooCommerce 9.7.0-beta.1
@@ -126,23 +131,23 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 * [DEV] Change plugin loading to `init` instead of `plugins_loaded`
 
 = 3.0 - 2024-10-07 =
-* [NEW] Use the new "GTIN, UPC, EAN or ISBN" field from WooCommerce 9.2 and above instead of our field for EAN
+* [NEW] Use the new “GTIN, UPC, EAN or ISBN” field from WooCommerce 9.2 and above instead of our field for EAN
 * [NEW] Migration utility to move our EAN field value to the new WooCommerce 9.2 and above field [only on the Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [DEV] Requires WooCommerce 7.0
 * [DEV] Tested with WordPress 6.7-beta1-59184 and WooCommerce 9.4.0-beta.2
 
 = 2.8 - 2024-08-02 =
-* [NEW] Get "Other attributes" from parent (variable) product when not present on the product variation (not used for variations) [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [NEW] Get “Other attributes” from parent (variable) product when not present on the product variation (not used for variations) [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [DEV] Tested with WordPress 6.7-alpha-58841 and WooCommerce 9.2.0-beta.1
 
 = 2.7 - 2024-04-30 =
 * [TWEAK] New `KK_IS_FEED` constant that is set to `true` when the feed is being shown
-* [NEW] "Default brand" setting, if not set on the chosen custom field or taxonomy, or our field [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [NEW] “Default brand” setting, if not set on the chosen custom field or taxonomy, or our field [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [DEV] Tested with WordPress 6.6-alpha-58055 and WooCommerce 9.0.0-dev
 
 = 2.6 - 2024-04-02 =
 * [FIX] Deprecated: Creation of dynamic property in PHP 8.3
-* [DEV] Add "Requires Plugins" header
+* [DEV] Add “Requires Plugins” header
 * [DEV] Improve plugin updater – Show translation update notices [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [DEV] Tested with WordPress 6.5-RC4-57894 and WooCommerce 8.8.0-beta.1
 
@@ -161,11 +166,11 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 * Tested with WordPress 6.5-alpha-57110 and WooCommerce 8.3.0-rc.3
 
 = 2.2 - 2023-10-06 =
-* Integration with BigBuy Dropshipping Connector for WooCommerce: New option to get EAN from the BigBuy's reference table [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* Integration with BigBuy Dropshipping Connector for WooCommerce: New option to get EAN from the BigBuy’s reference table [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * Tested with WordPress 6.4-beta2-56771 and WooCommerce 8.2.0-rc.1
 
 = 2.1 - 2023-09-11 =
-* Option to to our field if Brand, Brand SKU / MPN or EAN custom origins are empty [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* Option to to our field if Brand, Brand SKU/MPN or EAN custom origins are empty [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * Fix jQuery deprecations
 * Tested with WordPress 6.4-alpha-56530 and WooCommerce 8.1.0-rc.2
 

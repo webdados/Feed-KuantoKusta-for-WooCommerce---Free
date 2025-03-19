@@ -22,12 +22,12 @@ final class WC_Feed_KuantoKusta {
 
 	/* Constructor */
 	public function __construct() {
-		if ( ! function_exists( 'get_plugin_data' ) ) require_once( ABSPATH . 'wp-admin/includes/plugin.php' ); //Should not be necessary, but we never know...
+		if ( ! function_exists( 'get_plugin_data' ) ) require_once( ABSPATH . 'wp-admin/includes/plugin.php' ); // Should not be necessary, but we never know...
 		$data = get_plugin_data( KUANTOKUSTA_FREE_PLUGIN_FILE, false, false );
 		$this->version = $data['Version'];
-		//Hooks
+		// Hooks
 		$this->init_hooks();
-		//Settings
+		// Settings
 		$this->init_settings();
 	}
 
@@ -41,21 +41,21 @@ final class WC_Feed_KuantoKusta {
 
 	/* Hooks */
 	private function init_hooks() {
-		//Re-init settings to get the default values from the Pro version
-		add_filter( 'init', array( $this, 'init_settings' ), PHP_INT_MAX ); //After the Pro plugin
-		//Add settings
+		// Re-init settings to get the default values from the Pro version
+		add_filter( 'init', array( $this, 'init_settings' ), PHP_INT_MAX ); // After the Pro plugin
+		// Add settings
 		add_filter( 'woocommerce_settings_tabs_array', array( $this, 'add_settings_tab'), 999 );
 		add_action( 'woocommerce_settings_tabs_kuantokusta', array( $this, 'settings_tab' ) );
 		add_action( 'woocommerce_update_options_kuantokusta', array( $this, 'update_settings' ) );
-		//Add Documentation URL information
+		// Add Documentation URL information
 		add_action( 'kuantokusta_documentation_before_fields', array( $this, 'documentation_before_fields' ) );
-		//Custom product fields
+		// Custom product fields
 		add_filter( 'woocommerce_product_data_tabs', array( $this, 'woocommerce_product_data_tabs' ) );
 		add_action( 'woocommerce_product_data_panels', array( $this, 'woocommerce_product_data_panels' ) );
 		add_action( 'woocommerce_process_product_meta', array( $this, 'woocommerce_process_product_meta' ) );
-		//Add feed
+		// Add feed
 		add_action( 'init', array( $this, 'add_products_feed' ) );
-		//Add tracking
+		// Add tracking
 		add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ) );
 		add_action( 'woocommerce_order_details_after_order_table', array( $this, 'add_tracking_order' ) );
 	}
@@ -74,11 +74,11 @@ final class WC_Feed_KuantoKusta {
 
 	/* Init settings */
 	public function init_settings() {
-		//Vars
+		// Vars
 		$this->out_link_utm = '?utm_source='.rawurlencode( esc_url( home_url( '/' ) ) ).'&amp;utm_medium=link&amp;utm_campaign=kk_woocommerce_plugin';
-		//Mode
+		// Mode
 		$this->mode = get_option( $this->id.'_plugin_mode' ) != '' ? get_option( $this->id.'_plugin_mode' ) : 'comparison';
-		//Settings
+		// Settings
 		$temp = $this->get_settings();
 		foreach ( $temp as $key => $value ) {
 			if ( isset( $value['id_'] ) && $value['id_'] != '' ) {
@@ -102,7 +102,7 @@ final class WC_Feed_KuantoKusta {
 	}
 	public function get_settings() {
 
-		//General
+		// General
 		$settings = array(
 			'general_section_title' => array(
 				'name'		=> __( 'General', 'feed-kuantokusta-for-woocommerce' ),
@@ -142,7 +142,7 @@ final class WC_Feed_KuantoKusta {
 			);
 		}
 		
-		//Tracking
+		// Tracking
 		$settings = array_merge( $settings, array(
 			'tracking_section_title' => array(
 				'name'		=> __( 'Tracking', 'feed-kuantokusta-for-woocommerce' ),
@@ -165,7 +165,7 @@ final class WC_Feed_KuantoKusta {
 			)
 		) );
 		
-		//Variable products
+		// Variable products
 		$settings = array_merge( $settings, array(
 			'variations_section_title' => array(
 				'name'		=> __( 'Variable products', 'feed-kuantokusta-for-woocommerce' ),
@@ -189,7 +189,7 @@ final class WC_Feed_KuantoKusta {
 			)
 		) );
 		
-		//Product description
+		// Product description
 		$settings = array_merge( $settings, array(
 			'description_section_title' => array(
 				'name'		=> __( 'Product description', 'feed-kuantokusta-for-woocommerce' ),
@@ -213,7 +213,7 @@ final class WC_Feed_KuantoKusta {
 		) );
 
 		if ( $this->mode == 'marketplace' ) {
-			//Product stock
+			// Product stock
 			$settings = array_merge( $settings, array(
 				'stock_section_title' => array(
 					'name'		=> __( 'Product stock', 'feed-kuantokusta-for-woocommerce' ),
@@ -237,7 +237,7 @@ final class WC_Feed_KuantoKusta {
 			) );
 		}
 		
-		//Product shipping
+		// Product shipping
 		$settings = array_merge( $settings, array(
 			'shipping_section_title' => array(
 				'name'		=> __( 'Product shipping', 'feed-kuantokusta-for-woocommerce' ),
@@ -333,12 +333,12 @@ final class WC_Feed_KuantoKusta {
 					<strong><?php _e( 'The fields below are only used on the KuantoKusta products feed', 'feed-kuantokusta-for-woocommerce' ); ?></strong>
 				</p>
 				<?php
-				//Hide it?
+				// Hide it?
 				woocommerce_wp_checkbox( array(
 					'id'			=> '_kuantokusta_hide',
 					'label'			=> __( 'Hide from feed', 'feed-kuantokusta-for-woocommerce' ),
 				) );
-				//EAN - It should be by variation... - It is on the Pro Add-on
+				// EAN - It should be by variation... - It is on the Pro Add-on
 				if (
 					version_compare( WC_VERSION, '9.2', '<' )
 					||
@@ -352,7 +352,7 @@ final class WC_Feed_KuantoKusta {
 				) {
 					$ean_description = '';
 					if ( version_compare( WC_VERSION, '9.2', '>=' ) ) {
-						$ean_description = '<span style="color: red">' . esc_html__( 'The EAN / UPC should now be set on the WooCommerce "GTIN, UPC, EAN or ISBN" field on the Inventory tab - once you fill that field, this one will be removed', 'feed-kuantokusta-for-woocommerce' ) . '</span>';
+						$ean_description = '<span style="color: red">' . esc_html__( 'The EAN / UPC should now be set on the WooCommerce “GTIN, UPC, EAN or ISBN” field on the Inventory tab - once you fill that field, this one will be removed', 'feed-kuantokusta-for-woocommerce' ) . '</span>';
 					}
 					woocommerce_wp_text_input( array(
 						'id'			=> '_kuantokusta_ean',
@@ -362,20 +362,64 @@ final class WC_Feed_KuantoKusta {
 					) );
 				} else {
 					?>
-					<p class="form-field _kuantokusta_brand_field ">
+					<p class="form-field _kuantokusta_ean_field ">
 						<label>
 							<?php esc_html_e( 'EAN / UPC', 'feed-kuantokusta-for-woocommerce' ); ?>
 						</label>
-						<?php esc_html_e( 'The EAN / UPC is now set on the WooCommerce "GTIN, UPC, EAN or ISBN" field on the Inventory tab', 'feed-kuantokusta-for-woocommerce' ); ?>
+						<?php esc_html_e( 'The EAN / UPC is now set on the WooCommerce “GTIN, UPC, EAN or ISBN” field on the Inventory tab', 'feed-kuantokusta-for-woocommerce' ); ?>
 					</p>
 					<?php
 				}
-				//Brand
-				woocommerce_wp_text_input( array(
-					'id'			=> '_kuantokusta_brand',
-					'label'			=> __( 'Brand', 'feed-kuantokusta-for-woocommerce' ),
-				) );
-				//Shipping cost
+				// Brand
+				if (
+					version_compare( WC_VERSION, '9.6', '<' )
+					||
+					(
+						version_compare( WC_VERSION, '9.6', '>=' )
+						&&
+						empty( $this->get_product_brands_terms( $product ) )
+						&&
+						! empty( $product->get_meta( '_kuantokusta_brand' ) )
+					)
+				) {
+					$brand_description = '';
+					if ( version_compare( WC_VERSION, '9.6', '>=' ) ) {
+						$brand_description = '<span style="color: red">' . esc_html__( 'The Brand should now be set on the WooCommerce “Brands” taxonomy - once you set them there, this field will be removed', 'feed-kuantokusta-for-woocommerce' ) . '</span>';
+					}
+					woocommerce_wp_text_input( array(
+						'id'			=> '_kuantokusta_brand',
+						'label'			=> __( 'Brand', 'feed-kuantokusta-for-woocommerce' ),
+						'description'   => $brand_description
+					) );
+				} else {
+					?>
+					<p class="form-field _kuantokusta_ean_field ">
+						<label>
+							<?php esc_html_e( 'Brand', 'feed-kuantokusta-for-woocommerce' ); ?>
+						</label>
+						<?php esc_html_e( 'The Brand is now set on the WooCommerce “Brands” taxonomy', 'feed-kuantokusta-for-woocommerce' ); ?>
+						<?php
+						$brand_terms = $this->get_product_brands_terms( $product );
+						if ( count( $brand_terms ) > 1 ) {
+							?>
+							<br/>
+							<span style="color: red">
+								<?php
+								echo esc_html(
+									sprintf(
+										__( 'Kuanto Kusta only supports one brand, and you have more than one set. The current brand on the feed is “%s”.', 'feed-kuantokusta-for-woocommerce' ),
+										$brand_terms[0]->name
+									)
+								);
+								?>
+							</span>
+							<?php
+						}
+						?>
+					</p>
+					<?php
+				}
+				// Shipping cost
 				woocommerce_wp_text_input( array(
 					'id'			=> '_kuantokusta_shipping',
 					'label'			=> __( 'Shipping cost', 'feed-kuantokusta-for-woocommerce' ) . ' (' . get_woocommerce_currency_symbol() . ')',
@@ -383,7 +427,7 @@ final class WC_Feed_KuantoKusta {
 					'data_type'		=> 'price',
 				) );
 				if ( $this->mode == 'marketplace' ) {
-					//Preparation days
+					// Preparation days
 					woocommerce_wp_text_input( array(
 						'id'			    => '_kuantokusta_preparation_days_max',
 						'label'			    => __( 'Maximum preparation time', 'feed-kuantokusta-for-woocommerce' ).' ('.__( 'days', 'feed-kuantokusta-for-woocommerce' ).')',
@@ -393,7 +437,7 @@ final class WC_Feed_KuantoKusta {
 							'min' => 0,
 						),
 					) );
-					//Delivery days
+					// Delivery days
 					woocommerce_wp_text_input( array(
 						'id'			    => '_kuantokusta_delivery_days_max',
 						'label'			    => __( 'Maximum delivery time', 'feed-kuantokusta-for-woocommerce' ).' ('.__( 'days', 'feed-kuantokusta-for-woocommerce' ).')',
@@ -404,7 +448,7 @@ final class WC_Feed_KuantoKusta {
 						),
 					) );
 				}
-				//Action for integration...
+				// Action for integration...
 				do_action( 'kuantokusta_product_data_panel_end' );
 				?>
 			</div>
@@ -443,31 +487,36 @@ final class WC_Feed_KuantoKusta {
 	public function woocommerce_process_product_meta( $post_id ) {
 		$meta    = array();
 		$product = wc_get_product( $post_id );
-		//Hide
+		// Hide
 		$meta['_kuantokusta_hide'] = ! empty( $_POST['_kuantokusta_hide'] ) ? wc_clean( $_POST['_kuantokusta_hide'] ) : '';
-		//EAN
-		$meta['_kuantokusta_ean'] = ! empty( $_POST['_kuantokusta_ean'] ) ? wc_clean( $_POST['_kuantokusta_ean'] ) : '';
+		// EAN
+		$meta['_kuantokusta_ean'] = isset( $_POST['_kuantokusta_ean'] ) && ! empty( $_POST['_kuantokusta_ean'] ) ? wc_clean( $_POST['_kuantokusta_ean'] ) : '';
 		if ( version_compare( WC_VERSION, '9.2', '>=' ) && ! empty( $_POST['_global_unique_id'] ) ) {
 			// If the core field is filled in, remove ours from the database
 			unset( $meta['_kuantokusta_ean'] );
 			$product->delete_meta_data( '_kuantokusta_ean' );
 		}
-		//Brand
-		$meta['_kuantokusta_brand'] = ! empty( $_POST['_kuantokusta_brand'] ) ? wc_clean( $_POST['_kuantokusta_brand'] ) : '';
-		//Shipping
+		// Brand
+		$meta['_kuantokusta_brand'] = isset( $_POST['_kuantokusta_brand'] ) && ! empty( $_POST['_kuantokusta_brand'] ) ? wc_clean( $_POST['_kuantokusta_brand'] ) : '';
+		if ( version_compare( WC_VERSION, '9.6', '>=' ) && ! empty( $this->get_product_brands_terms( $product ) ) ) {
+			// If the core field is filled in, remove ours from the database
+			unset( $meta['_kuantokusta_brand'] );
+			$product->delete_meta_data( '_kuantokusta_brand' );
+		}
+		// Shipping
 		$meta['_kuantokusta_shipping'] = trim( $_POST['_kuantokusta_shipping'] ) != '' ? wc_clean( $_POST['_kuantokusta_shipping'] ) : '';
-		//Shipping
+		// Shipping
 		$meta['_kuantokusta_preparation_days_max'] = ! empty( $_POST['_kuantokusta_preparation_days_max'] ) ? wc_clean( $_POST['_kuantokusta_preparation_days_max'] ) : '';
-		//Shipping
+		// Shipping
 		$meta['_kuantokusta_delivery_days_max'] = ! empty( $_POST['_kuantokusta_delivery_days_max'] ) ? wc_clean( $_POST['_kuantokusta_delivery_days_max'] ) : '';
-		//Filter for integration ( Use this filter to add to $meta the keys/values of the fields added by the `kuantokusta_product_data_panel_end` action )
+		// Filter for integration ( Use this filter to add to $meta the keys/values of the fields added by the `kuantokusta_product_data_panel_end` action )
 		$meta = apply_filters( 'kuantokusta_process_product_meta', $meta );
-		//Update meta - CRUD
+		// Update meta - CRUD
 		foreach ( $meta as $key => $value ) {
 			$product->update_meta_data( $key, $value );
 		}
 		$product->save();
-		//Action for integration - ONLY if the filter above was not used
+		// Action for integration - ONLY if the filter above was not used
 		do_action( 'kuantokusta_process_product_meta_end', $post_id );
 	}
 
@@ -477,21 +526,30 @@ final class WC_Feed_KuantoKusta {
 	}
 
 	/* Render feed */
+	/**
+	 * Render feed.
+	 * KK rules at https://sites.google.com/kk.pt/estruturafeedskk/regras-para-cria%C3%A7%C3%A3o?authuser=0
+	 */
 	public function render_products_feed() {
+		// Missing plugins cache constant
 		define( 'KK_IS_FEED', true );
+		@define( 'DONOTCACHEPAGE', true ); // Cache plugins
 		header( 'Content-Type: application/rss+xml; charset=utf-8' );
 		header( 'Expires: ' . gmdate( 'D, d M Y H:i:s', time() - 1 ) . ' GMT' );
+		header( 'Cache-Control: no-store, no-cache, must-revalidate, max-age=0' );
+		header( 'Cache-Control: post-check=0, pre-check=0', false) ;
+		header( 'Pragma: no-cache' );
 		$offset = intval( isset( $_GET['LIMIT'] ) ? $_GET['LIMIT'] : 0 );
 		$posts_per_page = intval( isset( $_GET['TOTAL_PRODUTOS'] ) ? $_GET['TOTAL_PRODUTOS'] : -1 );
 		echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>
 ';
 		?>
 <products><?php
-		//Exclude products - Not CRUD ready
+		// Exclude products - Not CRUD ready
 		global $wpdb;
 		$exclude = array();
 		$sql_exclude = "SELECT DISTINCT post_id FROM $wpdb->postmeta WHERE ( meta_key = '_kuantokusta_hide' AND meta_value = 'yes' )";
-		//Debug and only include specific SKU
+		// Debug and only include specific SKU
 		if ( isset( $_GET['sku'] ) && trim( $_GET['sku'] ) != '' ) {
 			$sql_exclude .= " || ( meta_key = '_sku' AND meta_value NOT LIKE '%".sanitize_text_field( trim( $_GET['sku'] ) )."%' )";
 		}
@@ -502,7 +560,7 @@ final class WC_Feed_KuantoKusta {
 				}
 			}
 		}
-		//Query - Current WordPress
+		// Query - Current WordPress
 		$args = array(
 			'status' => 'publish',
 			'type' => $this->get_setting( 'product_types' ),
@@ -531,13 +589,13 @@ final class WC_Feed_KuantoKusta {
 									break;
 								case 'base':
 								default:
-									//Just like simple products
+									// Just like simple products
 									$product_node = $this->render_product_feed_default( $product, $product_type );
 									echo apply_filters( 'kuantokusta_product_node_default', $product_node, $product, $product_type );
 									break;
 							}
 							break;
-						default: //Including 'simple'
+						default: // Including 'simple'
 							$product_node = $this->render_product_feed_default( $product, $product_type );
 							echo apply_filters( 'kuantokusta_product_node_default', $product_node, $product, $product_type );
 							break;
@@ -556,19 +614,22 @@ final class WC_Feed_KuantoKusta {
 		$id_product    = $product->get_id();
 		$url           = $product->get_permalink();
 		$title         = apply_filters( 'kuantokusta_product_node_default_title', trim( $product->get_title() ), $product, $product_type );
-		$regular_price = apply_filters( 'kuantokusta_product_node_default_regular_price', wc_get_price_including_tax( $product, array( 'price' => $product->get_regular_price() ) ), $product, $product_type ); //With VAT
-		$current_price = apply_filters( 'kuantokusta_product_node_default_current_price', wc_get_price_including_tax( $product ),  $product, $product_type ); //With VAT
+		$regular_price = apply_filters( 'kuantokusta_product_node_default_regular_price', wc_get_price_including_tax( $product, array( 'price' => $product->get_regular_price() ) ), $product, $product_type ); // With VAT
+		$current_price = apply_filters( 'kuantokusta_product_node_default_current_price', wc_get_price_including_tax( $product ),  $product, $product_type ); // With VAT
+		if ( $current_price > $regular_price && apply_filters( 'kuantokusta_avoid_current_higher_regular', false ) ) {
+			$current_price = $regular_price;
+		}
 		$stock         = apply_filters( 'kuantokusta_product_node_default_comparison_stock', $this->get_comparison_product_stock( $product ), $product, $product_type );
 		$categories    = apply_filters( 'kuantokusta_product_node_default_categories', $this->get_product_category( $id_product ), $product, $product_type );
 		$image         = apply_filters( 'kuantokusta_product_node_default_image', $this->get_product_image( $product ), $product, $product_type );
 		$description   = apply_filters( 'kuantokusta_product_node_default_description', $this->get_product_description( $product ), $product, $product_type );
-		$brand         = apply_filters( 'kuantokusta_product_node_default_brand', $product->get_meta( '_kuantokusta_brand' ), $product, $product_type );
+		$brand         = apply_filters( 'kuantokusta_product_node_default_brand', $this->get_product_brand( $product ), $product, $product_type );
 		$ean           = apply_filters( 'kuantokusta_product_node_default_ean', $this->get_product_ean( $product ), $product, $product_type );
 		$reference     = apply_filters( 'kuantokusta_product_node_default_reference', $product->get_sku(),  $product, $product_type );
 		$weight        = apply_filters( 'kuantokusta_product_node_default_weight', $product->get_weight(),  $product, $product_type );
 		$shipping_cost = apply_filters( 'kuantokusta_product_node_default_shipping', $this->get_product_shipping_cost( $product ), $product, $product_type );
 
-		//Comparison and Marketplace
+		// Comparison and Marketplace
 		$xml_fields = array(
 			'mode'                     => array(
 				'value' => trim( $this->mode ),
@@ -636,7 +697,7 @@ final class WC_Feed_KuantoKusta {
 			),
 		);
 		if ( $this->mode == 'marketplace' ) {
-			//Marketplace
+			// Marketplace
 			unset( $xml_fields['stock'] );
 			$stock_qty            = apply_filters( 'kuantokusta_product_node_default_marketplace_stock', $this->get_marketplace_product_stock( $product ), $product, $product_type );
 			$stock_availability   = apply_filters( 'kuantokusta_product_node_default_marketplace_availability', $stock_qty > 0 ? 'Y' : 'N', $product, $product_type );
@@ -672,7 +733,7 @@ final class WC_Feed_KuantoKusta {
 		<<?php echo $key; ?>><?php echo $value['cdata'] ? '<![CDATA['.$value['value'].']]>' : $value['value'] ; ?></<?php echo $key; ?>>
 <?php
 		}
-		//We should remove this filter in the future
+		// We should remove this filter in the future
 		echo apply_filters( 'kuantokusta_product_node_default_extra_fields', '', $product, $product_type ); ?>
 	</product>
 <?php
@@ -691,28 +752,31 @@ final class WC_Feed_KuantoKusta {
 		$reference = $variation->get_sku();
 		if ( apply_filters( 'kuantokusta_product_node_variation_title_append_description', true, $product, $variation ) ) {
 			if ( trim( $variation->get_description() ) != '' ) {
-				//Variation description
+				// Variation description
 				$title .= apply_filters( 'woocommerce_product_variation_title_attributes_separator', ' - ', $variation ).trim( $variation->get_description() );
 			} else {
 				if ( apply_filters( 'kuantokusta_product_node_variation_title_append_sku_or_id', true, $product, $variation ) ) {
 					if ( trim( $reference ) != '' ) {
-						//Variation sku
+						// Variation sku
 						$title .= ' ('.trim( $reference ).')';
 					} else {
-						//Variation ID (absolute last resort)
+						// Variation ID (absolute last resort)
 						$title .= ' ('.trim( $id_variation ).')';
 					}
 				}
 			}
 		}
 		$title         = apply_filters( 'kuantokusta_product_node_variation_title', $title, $product, $variation );
-		$regular_price = apply_filters( 'kuantokusta_product_node_variation_regular_price', wc_get_price_including_tax( $variation, array( 'price' => $variation->get_regular_price() ) ), $product, $variation ); //With VAT
-		$current_price = apply_filters( 'kuantokusta_product_node_variation_current_price', wc_get_price_including_tax( $variation ), $product, $variation ); //With VAT
+		$regular_price = apply_filters( 'kuantokusta_product_node_variation_regular_price', wc_get_price_including_tax( $variation, array( 'price' => $variation->get_regular_price() ) ), $product, $variation ); // With VAT
+		$current_price = apply_filters( 'kuantokusta_product_node_variation_current_price', wc_get_price_including_tax( $variation ), $product, $variation ); // With VAT
+		if ( $current_price > $regular_price && apply_filters( 'kuantokusta_avoid_current_higher_regular', false ) ) {
+			$current_price = $regular_price;
+		}
 		$stock         = apply_filters( 'kuantokusta_product_node_variation_comparison_stock', $this->get_comparison_product_variation_stock( $product, $variation ), $product, $variation );
 		$categories    = apply_filters( 'kuantokusta_product_node_variation_categories', $this->get_product_category( $id_product ), $product, $variation );
 		$image         = apply_filters( 'kuantokusta_product_node_variation_image', $this->get_product_variation_image( $product, $variation ), $product, $variation );
 		$description   = apply_filters( 'kuantokusta_product_node_variation_description', $this->get_product_variation_description( $product, $variation ), $product, $variation );
-		$brand         = apply_filters( 'kuantokusta_product_node_variation_brand', $product->get_meta( '_kuantokusta_brand' ), $product, $variation );
+		$brand         = apply_filters( 'kuantokusta_product_node_variation_brand', $this->get_product_brand( $product ), $product, $variation );
 		$ean           = apply_filters( 'kuantokusta_product_node_variation_ean', $this->get_product_ean( $product ), $product, $variation ); // On the free version we only read EAN from the main product
 		if ( trim( $reference ) == '' ) $reference = $product->get_sku();
 		$reference     = apply_filters( 'kuantokusta_product_node_variation_reference', $reference, $product, $variation );
@@ -721,7 +785,7 @@ final class WC_Feed_KuantoKusta {
 		$weight        = apply_filters( 'kuantokusta_product_node_variation_weight', $weight, $product, $variation );
 		$shipping_cost = apply_filters( 'kuantokusta_product_node_variation_shipping', $this->get_product_shipping_cost( $product ), $product, $variation );
 
-		//Comparison and Marketplace
+		// Comparison and Marketplace
 		$xml_fields = array(
 			'mode'                     => array(
 				'value' => trim( $this->mode ),
@@ -789,7 +853,7 @@ final class WC_Feed_KuantoKusta {
 			),
 		);
 		if ( $this->mode == 'marketplace' ) {
-			//Marketplace
+			// Marketplace
 			unset( $xml_fields['stock'] );
 			$stock_qty            = apply_filters( 'kuantokusta_product_node_variation_marketplace_stock', $this->get_marketplace_product_variation_stock( $product, $variation ), $product, $variation );
 			$stock_availability   = apply_filters( 'kuantokusta_product_node_variation_marketplace_availability', $stock_qty > 0 ? 'Y' : 'N', $product, $variation );
@@ -825,7 +889,7 @@ final class WC_Feed_KuantoKusta {
 		<<?php echo $key; ?>><?php echo $value['cdata'] ? '<![CDATA['.$value['value'].']]>' : $value['value'] ; ?></<?php echo $key; ?>>
 <?php
 		}
-		//We should remove this filter in the future
+		// We should remove this filter in the future
 		echo apply_filters( 'kuantokusta_product_node_variation_extra_fields', '', $product, $variation ); ?>
 	</product>
 <?php
@@ -860,7 +924,7 @@ final class WC_Feed_KuantoKusta {
 			$description = trim( $product->get_short_description() );
 		}
 		if ( trim( $description ) == '' ) $description = trim( $product->get_title() );
-		//Necessário remover HTML e ou newlines?
+		// Necessário remover HTML e ou newlines?
 		return wpautop( $description );
 	}
 	public function get_product_variation_description( $product, $variation ) {
@@ -869,7 +933,7 @@ final class WC_Feed_KuantoKusta {
 		$description = trim( $product_description.'
 
 '.$variation_description );
-		//Necessário remover HTML e ou newlines?
+		// Necessário remover HTML e ou newlines?
 		return wpautop( $description );
 	}
 
@@ -916,7 +980,7 @@ final class WC_Feed_KuantoKusta {
 				case 'parent':
 					return $this->get_comparison_product_stock( $product );
 					break;
-				default: //???
+				default: // ???
 					return '';
 					break;
 			}
@@ -940,7 +1004,7 @@ final class WC_Feed_KuantoKusta {
 				case 'parent':
 					return $this->get_marketplace_product_stock( $product );
 					break;
-				default: //???
+				default: // ???
 					return '';
 					break;
 			}
@@ -980,11 +1044,39 @@ final class WC_Feed_KuantoKusta {
 		return $product->get_meta( '_kuantokusta_ean' );
 	}
 
+	/**
+	 * Get product brands terms as WooCommerce lacks this
+	 *
+	 * @param WC_Product $product The product.
+	 * @return array
+	 */
+	private function get_product_brands_terms( $product ) {
+		return get_the_terms( $product->get_id(), 'product_brand' );
+	}
+
+	/* Get product brand */
+	public function get_product_brand( $product ) {
+		if ( version_compare( WC_VERSION, '9.6', '>=' ) ) {
+			// $brands = $product->get_global_unique_id();
+			$brands = $this->get_product_brands_terms( $product );
+			if ( ! empty( $brands ) ) {
+				foreach ( $brands as $key => $brand ) {
+					// $brands[$key] = trim( $brand->name ); // KK does not support several brands (email 2025-03-19)
+					// Only one
+					return trim( $brand->name );
+				}
+				// return trim( implode( ', ', $brands ) ); // KK does not support several brands (email 2025-03-19)
+			}
+		}
+		// Return from old field if brands are not set as taxonomy terms
+		return $product->get_meta( '_kuantokusta_brand' );
+	}
+
 	/* Track order */
 	public function add_tracking_order( $order ) {
 		if ( $tracking_code = trim( get_option( $this->id.'_tracking_code' ) ) ) {
 			if ( $order ) {
-				//Revenue: get_total() - Includes taxes, so the item prices will also include taxes
+				// Revenue: get_total() - Includes taxes, so the item prices will also include taxes
 				?><script type="text/javascript">
 	__trackk( 'ecommerce:addTransaction', {
 		'id':       '<?php echo $order->get_id(); ?>',

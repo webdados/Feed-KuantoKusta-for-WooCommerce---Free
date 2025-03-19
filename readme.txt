@@ -1,10 +1,10 @@
 === Feed KuantoKusta for WooCommerce - Free ===
 Contributors: webdados, ptwooplugins 
 Tags: marketplace, feed, comparison, e-commerce, Portugal
-Requires at least: 5.4
-Tested up to: 6.7
+Requires at least: 6.2
+Tested up to: 6.8
 Requires PHP: 7.0
-Stable tag: 3.4
+Stable tag: 4.0-beta.1
 License: GPLv3
 
 This plugin allows you to generate a WooCommerce product feed to submit to Kuanto Kusta, a Portuguese price comparison website and marketplace.
@@ -34,7 +34,7 @@ This plugin was developed in partnership with KuantoKusta and it’s the WooComm
 In addition to all you can do with the free plugin, the [paid add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin) offers you several additional features:
 
 * Priority technical support;
-* In the next version: Adjust price to send to KuantoKusta: add/subtract percentage, round up/down, and add/subtract value to all products;
+* Adjust price to send to KuantoKusta: add/subtract percentage, round up/down, add/subtract value to all products, and avoid current/sale price higher than regular price;
 * Default values for Brand, Express shipping cost, Minimum preparation time, Minimum delivery time, and Maximum and Minimum delivery time on express shipping;
 * Product-level options for Express shipping cost, Minimum preparation time, Minimum delivery time, Maximum and Minimum delivery time on express shipping, and Brand SKU;
 * Variation-level EAN/UPC and Brand SKU/MPN;
@@ -112,7 +112,12 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 == Changelog ==
 
 = 4.0 ? =
+* [NEW] Adjust price to send to KuantoKusta: add/subtract percentage, round up/down, add/subtract value to all products, and avoid current/sale price higher than regular price [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [NEW] Use the new “Brands” taxonomy from WooCommerce 9.6 and above instead of our field for Brand
 * [NEW] Deprecate “Price comparison” mode
+* [DEV] Force “no-cache” php headers to make sure KuantoKusta is not using cache when reading the feed
+* [DEV] Requires WordPress 6.2 and WooCommerce 8.0
+* [DEV] Tested with WordPress 6.8-beta2-59993 and WooCommerce 9.8.0-beta.1
 
 = 3.4 - 2025-03-18 =
 * [TWEAK] Show Pro add-on functionalities on the settings screen

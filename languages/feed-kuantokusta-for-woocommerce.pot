@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Feed KuantoKusta for WooCommerce\n"
-"POT-Creation-Date: 2025-03-18 12:47+0000\n"
+"POT-Creation-Date: 2025-03-19 11:35+0000\n"
 "PO-Revision-Date: 2018-05-23 11:04+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -154,8 +154,8 @@ msgstr ""
 #: includes/admin/settings-page.php:86
 msgid ""
 "Get Brand, Brand SKU/MPN and EAN/UPC from our product field (default), any "
-"taxonomy or any custom field (for integration with other plugins), or from "
-"the default brand settings field;"
+"taxonomy, any custom field (for integration with other plugins), or from the "
+"default brand settings field;"
 msgstr ""
 
 #: includes/admin/settings-page.php:87
@@ -674,14 +674,14 @@ msgid ""
 msgstr ""
 
 #: includes/class-wc-feed-kuantokusta.php:258
-#: includes/class-wc-feed-kuantokusta.php:389
+#: includes/class-wc-feed-kuantokusta.php:433
 msgid "Maximum preparation time"
 msgstr ""
 
 #: includes/class-wc-feed-kuantokusta.php:258
 #: includes/class-wc-feed-kuantokusta.php:268
-#: includes/class-wc-feed-kuantokusta.php:389
-#: includes/class-wc-feed-kuantokusta.php:399
+#: includes/class-wc-feed-kuantokusta.php:433
+#: includes/class-wc-feed-kuantokusta.php:443
 msgid "days"
 msgstr ""
 
@@ -692,7 +692,7 @@ msgid ""
 msgstr ""
 
 #: includes/class-wc-feed-kuantokusta.php:268
-#: includes/class-wc-feed-kuantokusta.php:399
+#: includes/class-wc-feed-kuantokusta.php:443
 msgid "Maximum delivery time"
 msgstr ""
 
@@ -714,9 +714,9 @@ msgstr ""
 
 #: includes/class-wc-feed-kuantokusta.php:355
 msgid ""
-"The EAN / UPC should now be set on the WooCommerce \"GTIN, UPC, EAN or "
-"ISBN\" field on the Inventory tab - once you fill that field, this one will "
-"be removed"
+"The EAN / UPC should now be set on the WooCommerce “GTIN, UPC, EAN or ISBN” "
+"field on the Inventory tab - once you fill that field, this one will be "
+"removed"
 msgstr ""
 
 #: includes/class-wc-feed-kuantokusta.php:359
@@ -730,25 +730,43 @@ msgstr ""
 
 #: includes/class-wc-feed-kuantokusta.php:369
 msgid ""
-"The EAN / UPC is now set on the WooCommerce \"GTIN, UPC, EAN or ISBN\" field "
+"The EAN / UPC is now set on the WooCommerce “GTIN, UPC, EAN or ISBN” field "
 "on the Inventory tab"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:376
+#: includes/class-wc-feed-kuantokusta.php:387
+msgid ""
+"The Brand should now be set on the WooCommerce “Brands” taxonomy - once you "
+"set them there, this field will be removed"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:391
+#: includes/class-wc-feed-kuantokusta.php:398
 msgid "Brand"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:381
+#: includes/class-wc-feed-kuantokusta.php:400
+msgid "The Brand is now set on the WooCommerce “Brands” taxonomy"
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:410
+#, php-format
+msgid ""
+"Kuanto Kusta only supports one brand, and you have more than one set. The "
+"current brand on the feed is “%s”."
+msgstr ""
+
+#: includes/class-wc-feed-kuantokusta.php:425
 msgid "Shipping cost"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:382
+#: includes/class-wc-feed-kuantokusta.php:426
 #, php-format
 msgid "With tax - Blank for default (%s)"
 msgstr ""
 
-#: includes/class-wc-feed-kuantokusta.php:390
-#: includes/class-wc-feed-kuantokusta.php:400
+#: includes/class-wc-feed-kuantokusta.php:434
+#: includes/class-wc-feed-kuantokusta.php:444
 #, php-format
 msgid "Blank for default (%s)"
 msgstr ""

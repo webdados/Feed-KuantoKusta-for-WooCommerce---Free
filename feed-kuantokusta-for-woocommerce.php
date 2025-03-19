@@ -3,16 +3,16 @@
  * Plugin Name:          Feed KuantoKusta for WooCommerce - Free
  * Plugin URI:           https://www.webdados.pt/wordpress/plugins/feed-kuantokusta-para-woocommerce/
  * Description:          This plugin allows you to generate a WooCommerce product feed to submit to KuantoKusta, a portuguese price comparison website and marketplace.
- * Version:              3.4
+ * Version:              4.0-beta.1
  * Author:               PT Woo Plugins (by Webdados)
  * Author URI:           https://ptwooplugins.com
  * Text Domain:          feed-kuantokusta-for-woocommerce
  * Domain Path:          /languages
- * Requires at least:    5.4
- * Tested up to:         6.7
+ * Requires at least:    6.2
+ * Tested up to:         6.8
  * Requires PHP:         7.0
- * WC requires at least: 7.0
- * WC tested up to:      9.7
+ * WC requires at least: 8.0
+ * WC tested up to:      9.8
  * Requires Plugins:     woocommerce
 **/
 
@@ -29,7 +29,7 @@ function fkkwc_load_textdomain() {
 /* Our own order class and the main classes */
 add_action( 'init', 'fkkwc_init', 1 );
 function fkkwc_init() {
-	if ( class_exists( 'WooCommerce' ) && version_compare( WC_VERSION, '7.0', '>=' ) ) { //We check again because WooCommerce could have "died"
+	if ( class_exists( 'WooCommerce' ) && version_compare( WC_VERSION, '8.0', '>=' ) ) { //We check again because WooCommerce could have "died"
 		define( 'KUANTOKUSTA_FREE_PLUGIN_FILE', __FILE__ );
 		require_once( dirname( __FILE__ ) . '/includes/class-wc-feed-kuantokusta.php' );
 		$GLOBALS['WC_Feed_KuantoKusta'] = WC_Feed_KuantoKusta();
@@ -65,7 +65,7 @@ add_action( 'admin_init', function() {
 function fkkwc_admin_notices_woocommerce_not_active() {
 	?>
 	<div class="notice notice-error is-dismissible">
-		<p><?php _e( '<strong>Feed KuantoKusta for WooCommerce</strong> is installed and active but <strong>WooCommerce (7.0 or above)</strong> is not.', 'feed-kuantokusta-for-woocommerce' ); ?></p>
+		<p><?php _e( '<strong>Feed KuantoKusta for WooCommerce</strong> is installed and active but <strong>WooCommerce (8.0 or above)</strong> is not.', 'feed-kuantokusta-for-woocommerce' ); ?></p>
 	</div>
 	<?php
 }

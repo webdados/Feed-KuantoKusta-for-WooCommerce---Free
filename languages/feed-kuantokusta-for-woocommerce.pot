@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Feed KuantoKusta for WooCommerce\n"
-"POT-Creation-Date: 2025-03-19 11:35+0000\n"
+"POT-Creation-Date: 2025-03-19 18:24+0000\n"
 "PO-Revision-Date: 2018-05-23 11:04+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -24,7 +24,7 @@ msgstr ""
 #: feed-kuantokusta-for-woocommerce.php:68
 msgid ""
 "<strong>Feed KuantoKusta for WooCommerce</strong> is installed and active "
-"but <strong>WooCommerce (7.0 or above)</strong> is not."
+"but <strong>WooCommerce (8.0 or above)</strong> is not."
 msgstr ""
 
 #: includes/admin/settings-page-documentation-before-fields.php:5
@@ -113,13 +113,14 @@ msgid "Get the PRO add-on and get more features"
 msgstr ""
 
 #: includes/admin/settings-page.php:79
-msgid "Priority technical support;"
+msgid "Technical support;"
 msgstr ""
 
 #: includes/admin/settings-page.php:80
 msgid ""
-"In the next version: Adjust price to send to Kuanto Kusta: add/subtract "
-"percentage, round up/down, and add/subtract value to all products;"
+"Adjust price to send to KuantoKusta: add/subtract percentage, round up/down, "
+"add/subtract value to all products, and avoid current/sale price higher than "
+"regular price;"
 msgstr ""
 
 #: includes/admin/settings-page.php:81
@@ -517,11 +518,15 @@ msgstr ""
 msgid "Developer hooks"
 msgstr ""
 
-#: includes/admin/settings-page.php:644
+#: includes/admin/settings-page.php:633
+msgid "The usage of developer hooks is not covered by the technical support."
+msgstr ""
+
+#: includes/admin/settings-page.php:645
 msgid "Arguments"
 msgstr ""
 
-#: includes/admin/settings-page.php:660
+#: includes/admin/settings-page.php:661
 msgid "Available on the PRO add-on"
 msgstr ""
 

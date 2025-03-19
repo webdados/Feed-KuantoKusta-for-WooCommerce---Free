@@ -400,7 +400,7 @@ final class WC_Feed_KuantoKusta {
 						<?php esc_html_e( 'The Brand is now set on the WooCommerce “Brands” taxonomy', 'feed-kuantokusta-for-woocommerce' ); ?>
 						<?php
 						$brand_terms = $this->get_product_brands_terms( $product );
-						if ( count( $brand_terms ) > 1 ) {
+						if ( ( ! empty( $brand_terms ) ) && is_array( $brand_terms ) && count( $brand_terms ) > 1 ) {
 							?>
 							<br/>
 							<span style="color: red">
@@ -525,7 +525,6 @@ final class WC_Feed_KuantoKusta {
 		add_feed( 'kuantokusta', array( $this, 'render_products_feed' ) );
 	}
 
-	/* Render feed */
 	/**
 	 * Render feed.
 	 * KK rules at https://sites.google.com/kk.pt/estruturafeedskk/regras-para-cria%C3%A7%C3%A3o?authuser=0
@@ -544,7 +543,8 @@ final class WC_Feed_KuantoKusta {
 		echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>
 ';
 		?>
-<products><?php
+<products>
+<?php
 		// Exclude products - Not CRUD ready
 		global $wpdb;
 		$exclude = array();
@@ -640,24 +640,30 @@ final class WC_Feed_KuantoKusta {
 				'cdata' => false,
 			),
 			'id_product'               => array(
-				'value' => trim( $id_product ),
-				'cdata' => false,
+				'value'     => trim( $id_product ),
+				'cdata'     => false,
+				'alias_key' => 'id',
 			),
 			'product_url'              => array(
-				'value' => trim( $url ),
-				'cdata' => true,
+				'value'     => trim( $url ),
+				'cdata'     => true,
+				'alias_key' => 'link',
 			),
 			'designation'              => array(
-				'value' => trim( $title ),
-				'cdata' => true,
+				'value'     => trim( $title ),
+				'cdata'     => true,
+				'alias_key' => 'name',
 			),
 			'regular_price'            => array(
-				'value' => round( floatval( $regular_price ), wc_get_price_decimals() ),
-				'cdata' => false,
+				'value'     => round( floatval( $regular_price ), wc_get_price_decimals() ),
+				'cdata'     => false,
+				'alias_key' => 'price',
 			),
 			'current_price'            => array(
-				'value' => round( floatval( $current_price ), wc_get_price_decimals() ),
-				'cdata' => false,
+				'value'                  => round( floatval( $current_price ), wc_get_price_decimals() ),
+				'cdata'                  => false,
+				'alias_key'              => 'sale_price',
+				'alias_convert_function' => 'convert_current_price_to_sale_price',
 			),
 			'stock'                    => array(
 				'value' => $stock,
@@ -668,8 +674,9 @@ final class WC_Feed_KuantoKusta {
 				'cdata' => true,
 			),
 			'image_url'                => array(
-				'value' => trim( $image ),
-				'cdata' => true,
+				'value'     => trim( $image ),
+				'cdata'     => true,
+				'alias_key' => 'image_link',
 			),
 			'description'              => array(
 				'value' => trim( $description ),
@@ -680,8 +687,9 @@ final class WC_Feed_KuantoKusta {
 				'cdata' => true,
 			),
 			'upc_ean'                  => array(
-				'value' => trim( $ean ),
-				'cdata' => true,
+				'value'     => trim( $ean ),
+				'cdata'     => true,
+				'alias_key' => 'gtin',
 			),
 			'reference'                => array(
 				'value' => trim( $reference ),
@@ -692,8 +700,9 @@ final class WC_Feed_KuantoKusta {
 				'cdata' => false,
 			),
 			'shipping_cost'            => array(
-				'value' =>  ( trim( $shipping_cost ) != '' && floatval( $shipping_cost ) >= 0 ) ? round( floatval( $shipping_cost ), wc_get_price_decimals() ) : '',
-				'cdata' => false,
+				'value'     =>  ( trim( $shipping_cost ) != '' && floatval( $shipping_cost ) >= 0 ) ? round( floatval( $shipping_cost ), wc_get_price_decimals() ) : '',
+				'cdata'     => false,
+				'alias_key' => 'shipping',
 			),
 		);
 		if ( $this->mode == 'marketplace' ) {
@@ -706,12 +715,15 @@ final class WC_Feed_KuantoKusta {
 
 			$xml_fields = array_merge( $xml_fields, array(
 				'stock_qty'                    => array(
-					'value' => $stock_qty,
-					'cdata' => false,
+					'value'     => $stock_qty,
+					'cdata'     => false,
+					'alias_key' => 'stock',
 				),
 				'stock_availability'           => array(
-					'value' => $stock_availability,
-					'cdata' => false,
+					'value'                  => $stock_availability,
+					'cdata'                  => false,
+					'alias_key'              => 'availability',
+					'alias_convert_function' => 'convert_stock_availability_to_availability',
 				),
 				'preparation_days_max'     => array(
 					'value' => ! empty( $preparation_days_max ) ? intval( $preparation_days_max ) : '',
@@ -732,6 +744,15 @@ final class WC_Feed_KuantoKusta {
 			?>
 		<<?php echo $key; ?>><?php echo $value['cdata'] ? '<![CDATA['.$value['value'].']]>' : $value['value'] ; ?></<?php echo $key; ?>>
 <?php
+			if ( isset( $value['alias_key'] ) && trim( $value['alias_key'] ) != '' ) {
+				$alias_value = $value['value'];
+				if ( isset( $value['alias_convert_function'] ) && trim( $value['alias_convert_function'] ) != '' ) {
+					$alias_value = $this->{$value['alias_convert_function']}( $alias_value, $xml_fields );
+				}
+				?>
+		<<?php echo $value['alias_key']; ?>><?php echo $value['cdata'] ? '<![CDATA['.$alias_value.']]>' : $alias_value ; ?></<?php echo $value['alias_key']; ?>>
+<?php
+			}
 		}
 		// We should remove this filter in the future
 		echo apply_filters( 'kuantokusta_product_node_default_extra_fields', '', $product, $product_type ); ?>
@@ -796,24 +817,30 @@ final class WC_Feed_KuantoKusta {
 				'cdata' => false,
 			),
 			'id_product'               => array(
-				'value' => trim( $id_product ),
-				'cdata' => false,
+				'value'     => trim( $id_product ),
+				'cdata'     => false,
+				'alias_key' => 'id',
 			),
 			'product_url'              => array(
-				'value' => trim( $url ),
-				'cdata' => true,
+				'value'     => trim( $url ),
+				'cdata'     => true,
+				'alias_key' => 'link',
 			),
 			'designation'              => array(
-				'value' => trim( $title ),
-				'cdata' => true,
+				'value'     => trim( $title ),
+				'cdata'     => true,
+				'alias_key' => 'name',
 			),
 			'regular_price'            => array(
-				'value' => ! empty( $regular_price ) ? round( floatval( $regular_price ), wc_get_price_decimals() ) : '',
-				'cdata' => false,
+				'value'     => ! empty( $regular_price ) ? round( floatval( $regular_price ), wc_get_price_decimals() ) : '',
+				'cdata'     => false,
+				'alias_key' => 'price',
 			),
 			'current_price'            => array(
-				'value' => ! empty( $current_price ) ? round( floatval( $current_price ), wc_get_price_decimals() ) : '',
-				'cdata' => false,
+				'value'                  => ! empty( $current_price ) ? round( floatval( $current_price ), wc_get_price_decimals() ) : '',
+				'cdata'                  => false,
+				'alias_key'              => 'sale_price',
+				'alias_convert_function' => 'convert_current_price_to_sale_price',
 			),
 			'stock'                    => array(
 				'value' => $stock,
@@ -824,8 +851,9 @@ final class WC_Feed_KuantoKusta {
 				'cdata' => true,
 			),
 			'image_url'                => array(
-				'value' => trim( $image ),
-				'cdata' => true,
+				'value'     => trim( $image ),
+				'cdata'     => true,
+				'alias_key' => 'image_link',
 			),
 			'description'              => array(
 				'value' => trim( $description ),
@@ -836,8 +864,9 @@ final class WC_Feed_KuantoKusta {
 				'cdata' => true,
 			),
 			'upc_ean'                  => array(
-				'value' => trim( $ean ),
-				'cdata' => true,
+				'value'     => trim( $ean ),
+				'cdata'     => true,
+				'alias_key' => 'gtin',
 			),
 			'reference'                => array(
 				'value' => trim( $reference ),
@@ -848,8 +877,9 @@ final class WC_Feed_KuantoKusta {
 				'cdata' => false,
 			),
 			'shipping_cost'            => array(
-				'value' => ( trim( $shipping_cost ) != '' && floatval( $shipping_cost ) >= 0 ) ? round( floatval( $shipping_cost ), wc_get_price_decimals() ) : '',
-				'cdata' => false,
+				'value'     => ( trim( $shipping_cost ) != '' && floatval( $shipping_cost ) >= 0 ) ? round( floatval( $shipping_cost ), wc_get_price_decimals() ) : '',
+				'cdata'     => false,
+				'alias_key' => 'shipping',
 			),
 		);
 		if ( $this->mode == 'marketplace' ) {
@@ -862,12 +892,15 @@ final class WC_Feed_KuantoKusta {
 
 			$xml_fields = array_merge( $xml_fields, array(
 				'stock_qty'                    => array(
-					'value' => $stock_qty,
-					'cdata' => false,
+					'value'     => $stock_qty,
+					'cdata'     => false,
+					'alias_key' => 'stock',
 				),
 				'stock_availability'           => array(
-					'value' => $stock_availability,
-					'cdata' => false,
+					'value'                  => $stock_availability,
+					'cdata'                  => false,
+					'alias_key'              => 'availability',
+					'alias_convert_function' => 'convert_stock_availability_to_availability',
 				),
 				'preparation_days_max'     => array(
 					'value' => ! empty( $preparation_days_max ) ? intval( $preparation_days_max ) : '',
@@ -888,6 +921,15 @@ final class WC_Feed_KuantoKusta {
 			?>
 		<<?php echo $key; ?>><?php echo $value['cdata'] ? '<![CDATA['.$value['value'].']]>' : $value['value'] ; ?></<?php echo $key; ?>>
 <?php
+			if ( isset( $value['alias_key'] ) && trim( $value['alias_key'] ) != '' ) {
+				$alias_value = $value['value'];
+				if ( isset( $value['alias_convert_function'] ) && trim( $value['alias_convert_function'] ) != '' ) {
+					$alias_value = $this->{$value['alias_convert_function']}( $alias_value, $xml_fields );
+				}
+				?>
+		<<?php echo $value['alias_key']; ?>><?php echo $value['cdata'] ? '<![CDATA['.$alias_value.']]>' : $alias_value ; ?></<?php echo $value['alias_key']; ?>>
+<?php
+			}
 		}
 		// We should remove this filter in the future
 		echo apply_filters( 'kuantokusta_product_node_variation_extra_fields', '', $product, $variation ); ?>
@@ -1070,6 +1112,23 @@ final class WC_Feed_KuantoKusta {
 		}
 		// Return from old field if brands are not set as taxonomy terms
 		return $product->get_meta( '_kuantokusta_brand' );
+	}
+
+	/**
+	 * Convert "stock_availability" to "availability" for the new field name
+	 */
+	function convert_stock_availability_to_availability( $value, $xml_fields ) {
+		return $value === 'Y' ? 'Sim' : 'Não';
+	}
+
+	/**
+	 * Convert "current_price" to "sale_price" for the new field name
+	 */
+	function convert_current_price_to_sale_price( $value, $xml_fields ) {
+		if ( $value < $xml_fields['regular_price']['value'] ) {
+			return $value;
+		}
+		return '';
 	}
 
 	/* Track order */

@@ -111,10 +111,22 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 
 == Changelog ==
 
-= 4.0 ? =
+= 4.0 - ? =
 * [NEW] Adjust price to send to KuantoKusta: add/subtract percentage, round up/down, add/subtract value to all products, and avoid current/sale price higher than regular price [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [NEW] Use the new “Brands” taxonomy from WooCommerce 9.6 and above instead of our field for Brand
 * [NEW] Deprecate “Price comparison” mode
+* [NEW] Replicate our fields to the field names recommended on the KuantoKusta documentation:
+    - `id_product` to `id`
+    - `product_url` to `link`
+    - `designation` to `name`
+    - `regular_price` to `price`
+    - `current_price` to `sale_price`, and set it to empty if it’s not lower than `regular_price`
+    - `image_url` to `image_link`
+    - `image_url_x` to `additional_image_link` [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+    - `stock_availability` to `availability`, and convert from `Y/N` to `Sim/Não`
+    - `stock_qty` to `stock`
+    - `upc_ean` to `gtin` [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+    - `shipping_cost` to `shipping`
 * [DEV] Force “no-cache” php headers to make sure KuantoKusta is not using cache when reading the feed
 * [DEV] Requires WordPress 6.2 and WooCommerce 8.0
 * [DEV] Tested with WordPress 6.8-beta2-59993 and WooCommerce 9.8.0-beta.1

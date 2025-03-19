@@ -76,8 +76,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 					</a>
 				</h3>
 				<ul>
-					<li><?php esc_html_e( 'Priority technical support;', 'feed-kuantokusta-for-woocommerce' ); ?>
-					<li><?php esc_html_e( 'In the next version: Adjust price to send to Kuanto Kusta: add/subtract percentage, round up/down, and add/subtract value to all products;', 'feed-kuantokusta-for-woocommerce' ); ?>
+					<li><?php esc_html_e( 'Technical support;', 'feed-kuantokusta-for-woocommerce' ); ?>
+					<li><?php esc_html_e( 'Adjust price to send to KuantoKusta: add/subtract percentage, round up/down, add/subtract value to all products, and avoid current/sale price higher than regular price;', 'feed-kuantokusta-for-woocommerce' ); ?>
 					<li><?php esc_html_e( 'Default values for Brand, Express shipping cost, Minimum preparation time, Minimum delivery time, and Maximum and Minimum delivery time on express shipping;', 'feed-kuantokusta-for-woocommerce' ); ?>
 					<li><?php esc_html_e( 'Product-level options for Express shipping cost, Minimum preparation time, Minimum delivery time, Maximum and Minimum delivery time on express shipping, and Brand SKU;', 'feed-kuantokusta-for-woocommerce' ); ?>
 					<li><?php esc_html_e( 'Variation-level EAN/UPC and Brand SKU/MPN;', 'feed-kuantokusta-for-woocommerce' ); ?>
@@ -629,7 +629,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 			foreach ( $hooks as $type => $thehooks ) {
 				?>
-				<h3><?php _e( 'Developer hooks', 'feed-kuantokusta-for-woocommerce' ); ?> - <?php echo ucfirst($type); ?></h3>
+				<h3><?php esc_html_e( 'Developer hooks', 'feed-kuantokusta-for-woocommerce' ); ?> - <?php echo esc_html( ucfirst( $type ) ); ?></h3>
+				<p><?php esc_html_e( 'The usage of developer hooks is not covered by the technical support.', 'feed-kuantokusta-for-woocommerce' ); ?></p>
 				<?php
 				foreach ( $thehooks as $filter => $args ) {
 					?>
@@ -681,6 +682,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		}
 		#kk_settings_section_docs {
 			display: none;
+		}
+		#kk_settings h2:not(:first-child) {
+			border-top: 1px solid #CCC;
+			padding-top: 2em;
+			margin-top: 1em;
 		}
 		.forminp .description {
 			display: block;

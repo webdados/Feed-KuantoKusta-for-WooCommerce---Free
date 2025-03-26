@@ -22,8 +22,10 @@ final class WC_Feed_KuantoKusta {
 
 	/* Constructor */
 	public function __construct() {
-		if ( ! function_exists( 'get_plugin_data' ) ) require_once( ABSPATH . 'wp-admin/includes/plugin.php' ); // Should not be necessary, but we never know...
-		$data = get_plugin_data( KUANTOKUSTA_FREE_PLUGIN_FILE, false, false );
+		if ( ! function_exists( 'get_plugin_data' ) ) {
+			require_once( ABSPATH . 'wp-admin/includes/plugin.php' ); // Should not be necessary, but we never know...
+		}
+		$data          = get_plugin_data( KUANTOKUSTA_FREE_PLUGIN_FILE, false, false );
 		$this->version = $data['Version'];
 		// Hooks
 		$this->init_hooks();
@@ -530,11 +532,12 @@ final class WC_Feed_KuantoKusta {
 	 * KK rules at https://sites.google.com/kk.pt/estruturafeedskk/regras-para-cria%C3%A7%C3%A3o?authuser=0
 	 */
 	public function render_products_feed() {
+		do_action( 'kuantokusta_render_products_feed_start' );
 		// Missing plugins cache constant
 		define( 'KK_IS_FEED', true );
 		@define( 'DONOTCACHEPAGE', true ); // Cache plugins
 		header( 'Content-Type: application/rss+xml; charset=utf-8' );
-		header( 'Expires: ' . gmdate( 'D, d M Y H:i:s', time() - 1 ) . ' GMT' );
+		header( 'Expires: ' . gmdate( 'D, d M Y H:i:s', time() - 86400 ) . ' GMT' ); // Yesterday
 		header( 'Cache-Control: no-store, no-cache, must-revalidate, max-age=0' );
 		header( 'Cache-Control: post-check=0, pre-check=0', false) ;
 		header( 'Pragma: no-cache' );
@@ -572,6 +575,7 @@ final class WC_Feed_KuantoKusta {
 		$products = wc_get_products( $args );
 		if ( count( $products ) > 0 ) {
 			foreach ( $products as $product ) {
+				do_action( 'kuantokusta_render_product_feed_product', $product );
 				$product_type = $product->get_type();
 				if ( apply_filters( 'kuantokusta_product_node_show', true, $product, $product_type ) ) {
 					switch ( $product_type ) {
@@ -744,6 +748,8 @@ final class WC_Feed_KuantoKusta {
 			?>
 		<<?php echo $key; ?>><?php echo $value['cdata'] ? '<![CDATA['.$value['value'].']]>' : $value['value'] ; ?></<?php echo $key; ?>>
 <?php
+			// We're not going to replicate the fiels - Call 2025-03-25
+			/*
 			if ( isset( $value['alias_key'] ) && trim( $value['alias_key'] ) != '' ) {
 				$alias_value = $value['value'];
 				if ( isset( $value['alias_convert_function'] ) && trim( $value['alias_convert_function'] ) != '' ) {
@@ -753,11 +759,13 @@ final class WC_Feed_KuantoKusta {
 		<<?php echo $value['alias_key']; ?>><?php echo $value['cdata'] ? '<![CDATA['.$alias_value.']]>' : $alias_value ; ?></<?php echo $value['alias_key']; ?>>
 <?php
 			}
+			*/
 		}
 		// We should remove this filter in the future
 		echo apply_filters( 'kuantokusta_product_node_default_extra_fields', '', $product, $product_type ); ?>
 	</product>
 <?php
+		do_action( 'kuantokusta_render_products_feed_start' );
 		return ob_get_clean();
 	}
 
@@ -921,6 +929,8 @@ final class WC_Feed_KuantoKusta {
 			?>
 		<<?php echo $key; ?>><?php echo $value['cdata'] ? '<![CDATA['.$value['value'].']]>' : $value['value'] ; ?></<?php echo $key; ?>>
 <?php
+			// We're not going to replicate the fiels - Call 2025-03-25
+			/*
 			if ( isset( $value['alias_key'] ) && trim( $value['alias_key'] ) != '' ) {
 				$alias_value = $value['value'];
 				if ( isset( $value['alias_convert_function'] ) && trim( $value['alias_convert_function'] ) != '' ) {
@@ -930,6 +940,7 @@ final class WC_Feed_KuantoKusta {
 		<<?php echo $value['alias_key']; ?>><?php echo $value['cdata'] ? '<![CDATA['.$alias_value.']]>' : $alias_value ; ?></<?php echo $value['alias_key']; ?>>
 <?php
 			}
+			*/
 		}
 		// We should remove this filter in the future
 		echo apply_filters( 'kuantokusta_product_node_variation_extra_fields', '', $product, $variation ); ?>
@@ -1116,6 +1127,7 @@ final class WC_Feed_KuantoKusta {
 
 	/**
 	 * Convert "stock_availability" to "availability" for the new field name
+	 * Not in use
 	 */
 	function convert_stock_availability_to_availability( $value, $xml_fields ) {
 		return $value === 'Y' ? 'Sim' : 'Não';
@@ -1123,6 +1135,7 @@ final class WC_Feed_KuantoKusta {
 
 	/**
 	 * Convert "current_price" to "sale_price" for the new field name
+	 * Not in use
 	 */
 	function convert_current_price_to_sale_price( $value, $xml_fields ) {
 		if ( $value < $xml_fields['regular_price']['value'] ) {

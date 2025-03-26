@@ -128,7 +128,7 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
     - `upc_ean` to `gtin` [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
     - `shipping_cost` to `shipping`
 * [DEV] Force “no-cache” php headers to make sure KuantoKusta is not using cache when reading the feed
-* [DEV] Requires WordPress 6.2 and WooCommerce 8.0
+* [DEV] Requires WordPress 6.2, WooCommerce 8.0, and PHP 7.2
 * [DEV] Tested with WordPress 6.8-beta2-59993 and WooCommerce 9.8.0-beta.1
 
 = 3.4 - 2025-03-18 =

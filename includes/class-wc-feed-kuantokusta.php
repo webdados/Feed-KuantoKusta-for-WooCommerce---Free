@@ -532,8 +532,6 @@ final class WC_Feed_KuantoKusta {
 	 * KK rules at https://sites.google.com/kk.pt/estruturafeedskk/regras-para-cria%C3%A7%C3%A3o?authuser=0
 	 */
 	public function render_products_feed() {
-		do_action( 'kuantokusta_render_products_feed_start' );
-		// Missing plugins cache constant
 		define( 'KK_IS_FEED', true );
 		@define( 'DONOTCACHEPAGE', true ); // Cache plugins
 		header( 'Content-Type: application/rss+xml; charset=utf-8' );
@@ -541,8 +539,9 @@ final class WC_Feed_KuantoKusta {
 		header( 'Cache-Control: no-store, no-cache, must-revalidate, max-age=0' );
 		header( 'Cache-Control: post-check=0, pre-check=0', false) ;
 		header( 'Pragma: no-cache' );
-		$offset = intval( isset( $_GET['LIMIT'] ) ? $_GET['LIMIT'] : 0 );
+		$offset         = intval( isset( $_GET['LIMIT'] ) ? $_GET['LIMIT'] : 0 );
 		$posts_per_page = intval( isset( $_GET['TOTAL_PRODUTOS'] ) ? $_GET['TOTAL_PRODUTOS'] : -1 );
+		do_action( 'kuantokusta_render_products_feed_start' );
 		echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>
 ';
 		?>
@@ -765,7 +764,7 @@ final class WC_Feed_KuantoKusta {
 		echo apply_filters( 'kuantokusta_product_node_default_extra_fields', '', $product, $product_type ); ?>
 	</product>
 <?php
-		do_action( 'kuantokusta_render_products_feed_start' );
+		do_action( 'kuantokusta_render_products_feed_end' );
 		return ob_get_clean();
 	}
 

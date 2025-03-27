@@ -1074,15 +1074,12 @@ final class WC_Feed_KuantoKusta {
 	/* Get product brand */
 	public function get_product_brand( $product ) {
 		if ( version_compare( WC_VERSION, '9.6', '>=' ) ) {
-			// $brands = $product->get_global_unique_id();
 			$brands = $this->get_product_brands_terms( $product );
 			if ( ! empty( $brands ) ) {
 				foreach ( $brands as $key => $brand ) {
-					// $brands[$key] = trim( $brand->name ); // KK does not support several brands (email 2025-03-19)
-					// Only one
+					// KK does not support several brands (email 2025-03-19)
 					return trim( $brand->name );
 				}
-				// return trim( implode( ', ', $brands ) ); // KK does not support several brands (email 2025-03-19)
 			}
 		}
 		// Return from old field if brands are not set as taxonomy terms

@@ -727,8 +727,7 @@ final class WC_Feed_KuantoKusta {
 			}
 			*/
 		}
-		// We should remove this filter in the future
-		echo apply_filters( 'kuantokusta_product_node_default_extra_fields', '', $product, $product_type ); ?>
+?>
 	</product>
 <?php
 		do_action( 'kuantokusta_render_products_feed_end' );
@@ -908,8 +907,7 @@ final class WC_Feed_KuantoKusta {
 			}
 			*/
 		}
-		// We should remove this filter in the future
-		echo apply_filters( 'kuantokusta_product_node_variation_extra_fields', '', $product, $variation ); ?>
+?>
 	</product>
 <?php
 		return ob_get_clean();

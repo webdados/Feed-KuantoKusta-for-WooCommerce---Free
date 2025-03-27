@@ -62,18 +62,6 @@ final class WC_Feed_KuantoKusta {
 		add_action( 'woocommerce_order_details_after_order_table', array( $this, 'add_tracking_order' ) );
 	}
 
-	/* Enqueue frontend scripts */
-	public function wp_enqueue_scripts() {
-		if ( $tracking_code = trim( get_option( $this->id.'_tracking_code' ) ) ) {
-			wp_enqueue_script( $this->id.'_tracking', plugin_dir_url( __FILE__ ) . '../assets/js/tracking.js', array(), $this->version, false );
-			$url = parse_url( get_home_url() );
-			wp_localize_script( $this->id.'_tracking', $this->id, array(
-				'storeId'    => $tracking_code,
-				'serverAddr' => $url['host'],
-			) );
-		}
-	}
-
 	/* Init settings */
 	public function init_settings() {
 		// Vars
@@ -145,29 +133,6 @@ final class WC_Feed_KuantoKusta {
 			);
 		}
 		*/
-		
-		// Tracking
-		$settings = array_merge( $settings, array(
-			'tracking_section_title' => array(
-				'name'		=> __( 'Tracking', 'feed-kuantokusta-for-woocommerce' ),
-				'type'		=> 'title',
-				'desc'		=> __( 'KuantoKusta tracking code functionalities, so that you can see navigation and conversion stats on their dashboard.', 'feed-kuantokusta-for-woocommerce' ),
-			),
-			'tracking_code'         => array(
-				'name'		        => __( 'Tracking code', 'feed-kuantokusta-for-woocommerce' ),
-				'type'		        => 'text',
-				'desc'		        => __( 'The tracking code provided by KuantoKusta (optional)', 'feed-kuantokusta-for-woocommerce' ),
-				'desc_tip'	        => true,
-				'id_'		        => 'tracking_code',
-				'placeholder'       => 'KK-XXXXX-XX',
-				'custom_attributes' => array(
-					'pattern'     => 'KK-([0-9]{4,9})-([0-9]{1,4})',
-				),
-			),
-			'tracking_section_end' => array(
-				'type'		 => 'sectionend',
-			)
-		) );
 		
 		// Variable products
 		$settings = array_merge( $settings, array(
@@ -1144,51 +1109,6 @@ final class WC_Feed_KuantoKusta {
 		}
 		return '';
 	}
-
-	/* Track order */
-	public function add_tracking_order( $order ) {
-		if ( $tracking_code = trim( get_option( $this->id.'_tracking_code' ) ) ) {
-			if ( $order ) {
-				// Revenue: get_total() - Includes taxes, so the item prices will also include taxes
-				?><script type="text/javascript">
-	__trackk( 'ecommerce:addTransaction', {
-		'id':       '<?php echo $order->get_id(); ?>',
-		'revenue':  '<?php echo $order->get_total(); ?>',
-		'shipping': '<?php echo $order->get_total_shipping(); ?>',
-		'tax':      '<?php echo $order->get_total_tax(); ?>',
-		'currency': '<?php echo get_woocommerce_currency(); ?>'
-	} );
-<?php
-				foreach ( $order->get_items() as $k => $item ) {
-					$sku = 'GENERATED_SKU_'.$item->get_product_id();
-					$cat = '-';
-					if ( $product = wc_get_product( $item->get_product_id() ) ) {
-						if ( $product->get_sku() ) {
-							$sku = $product->get_sku();
-						}
-						if ( $categories = $product->get_category_ids() ) {
-							$cat = get_term_by( 'id', $categories[0], 'product_cat' );
-							$cat = $cat->name;
-						}
-					}
-					?>
-	__trackk('ecommerce:addItem', {
-		'id':       '<?php echo $order->get_id(); ?>', 
-		'name':     '<?php echo esc_attr( trim( $item->get_name() ) ); ?>',
-		'sku':      '<?php echo esc_attr( trim( $sku ) ); ?>', 
-		'category': '<?php echo esc_attr( trim( $cat ) ); ?>', 
-		'price':    '<?php echo esc_attr( trim( $order->get_item_subtotal( $item, true, true ) ) ); ?>', 
-		'quantity': '<?php echo esc_attr( trim( $item->get_quantity() ) ); ?>' 
-	});
-<?php
-				}
-				?>
-	__trackk( 'ecommerce:send' );
-				</script><?php
-			}
-		}
-	}
-
 }
 
 /* If you're reading this you must know what you're doing ;-) Greetings from sunny Portugal! */

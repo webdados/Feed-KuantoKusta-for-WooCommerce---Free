@@ -117,8 +117,8 @@ final class WC_Feed_KuantoKusta {
 				'desc_tip' => true,
 				'id_'      => 'plugin_mode',
 				'options'  => array(
-					'marketplace' => __( 'Marketplace', 'feed-kuantokusta-for-woocommerce' ),
-					'comparison'  => __( 'Price comparison', 'feed-kuantokusta-for-woocommerce' ) . ' - ' . __( 'Deprecated', 'feed-kuantokusta-for-woocommerce' ),
+					'marketplace' => __( 'Marketplace or DUO', 'feed-kuantokusta-for-woocommerce' ),
+					'comparison'  => __( 'Price comparison', 'feed-kuantokusta-for-woocommerce' ),
 				),
 			),
 			'product_types' => array(
@@ -135,7 +135,8 @@ final class WC_Feed_KuantoKusta {
 			)
 		);
 
-		// Deprecate "Price comparison"
+		// Deprecate "Price comparison" - Not yet
+		/*
 		if ( $this->mode === 'comparison' ) {
 			$settings['plugin_mode']['desc_tip'] = false;
 			$settings['plugin_mode']['desc'] .= sprintf(
@@ -143,6 +144,7 @@ final class WC_Feed_KuantoKusta {
 				__( 'The “Price comparison” mode is deprecated and we don’t recommend you use it anymore, as it will be removed shortly', 'feed-kuantokusta-for-woocommerce' )
 			);
 		}
+		*/
 		
 		// Tracking
 		$settings = array_merge( $settings, array(

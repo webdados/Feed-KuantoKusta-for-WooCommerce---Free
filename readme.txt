@@ -4,7 +4,7 @@ Tags: marketplace, feed, comparison, e-commerce, Portugal
 Requires at least: 6.2
 Tested up to: 6.8
 Requires PHP: 7.0
-Stable tag: 4.0-beta.1
+Stable tag: 4.0
 License: GPLv3
 
 This plugin allows you to generate a WooCommerce product feed to submit to Kuanto Kusta, a Portuguese price comparison website and marketplace.
@@ -39,7 +39,7 @@ In addition to all you can do with the free plugin, the [paid add-on](https://pt
 * Product-level options for Express shipping cost, Minimum preparation time, Minimum delivery time, Maximum and Minimum delivery time on express shipping, and Brand SKU;
 * Variation-level EAN/UPC and Brand SKU/MPN;
 * Append variation description to the product title;
-* Get EAN/UPC from the WooCommerce “unique identifier” product field (default since WooCommerce 9.2 - our field before that), any taxonomy, or any custom field (for integration with other plugins)
+* Get EAN/UPC from the WooCommerce “unique identifier” product field (default since WooCommerce 9.2 - our field before that), any taxonomy, or any custom field (for integration with other plugins);
 * Get Brand, Brand SKU/MPN and EAN/UPC from our product field (default), any taxonomy, any custom field (for integration with other plugins), or from the default brand settings field;
 * Get Category from the native WooCommerce product categories, any other taxonomy, or any custom field (for integration with other plugins);
 * Integration with [BigBuy Dropshipping Connector for WooCommerce](https://wordpress.org/plugins/bigbuy-wc-dropshipping-connector/): get EAN from the BigBuy’s reference table

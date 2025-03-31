@@ -57,9 +57,6 @@ final class WC_Feed_KuantoKusta {
 		add_action( 'woocommerce_process_product_meta', array( $this, 'woocommerce_process_product_meta' ) );
 		// Add feed
 		add_action( 'init', array( $this, 'add_products_feed' ) );
-		// Add tracking
-		add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ) );
-		add_action( 'woocommerce_order_details_after_order_table', array( $this, 'add_tracking_order' ) );
 	}
 
 	/* Init settings */

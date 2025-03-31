@@ -111,7 +111,7 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 
 == Changelog ==
 
-= 4.0 - ? =
+= 4.0 - 2025-03-31 =
 * [NEW] Adjust price to send to KuantoKusta: add/subtract percentage, round up/down, add/subtract value to all products, and avoid current/sale price higher than regular price [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [NEW] Use the new “Brands” taxonomy from WooCommerce 9.6 and above instead of our field for Brand
 * [DEV] Force “no-cache” php headers to make sure KuantoKusta is not using cache when reading the feed

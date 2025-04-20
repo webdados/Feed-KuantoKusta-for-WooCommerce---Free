@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 				$links = array(
 					array(
 						'text' => __( 'Buy PRO add-on', 'feed-kuantokusta-for-woocommerce' ),
-						'url'  => 'https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/'.$this->out_link_utm,
+						'url'  => 'https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/'.$this->out_link_utm,
 					),
 					array(
 						'text' => __( 'Create an account on KuantoKusta', 'feed-kuantokusta-for-woocommerce' ),
@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 					),
 					array(
 						'text' => __( 'PRO add-on technical support', 'feed-kuantokusta-for-woocommerce' ),
-						'url'  => 'https://ptwooplugins.com/my-account/'.$this->out_link_utm,
+						'url'  => 'https://nakedcatplugins.com/my-account/'.$this->out_link_utm,
 					),
 					array(
 						'text' => __( 'Free plugin support forum', 'feed-kuantokusta-for-woocommerce' ),
@@ -71,7 +71,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		<div id="kk_settings">
 			<?php if ( ! apply_filters( 'kuantokusta_hide_settings_pro_ad', false ) ) { ?>
 				<h3>
-					<a href="https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/<?php echo esc_attr( $this->out_link_utm ); ?>" target="_blank">
+					<a href="https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/<?php echo esc_attr( $this->out_link_utm ); ?>" target="_blank">
 						<?php _e( 'Get the PRO add-on and get more features', 'feed-kuantokusta-for-woocommerce' ); ?>
 					</a>
 				</h3>
@@ -657,7 +657,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 		<div class="kk_settings_section kk_settings_section_hide_pro">
 			<p>
-				<a href="<?php echo esc_url( 'https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/'.$this->out_link_utm ); ?>" target="_blank">
+				<a href="<?php echo esc_url( 'https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/'.$this->out_link_utm ); ?>" target="_blank">
 					<?php _e( 'Available on the PRO add-on', 'feed-kuantokusta-for-woocommerce' ); ?>
 				</a>
 			</p>

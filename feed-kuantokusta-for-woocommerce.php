@@ -3,9 +3,9 @@
  * Plugin Name:          Feed KuantoKusta for WooCommerce - Free
  * Plugin URI:           https://www.webdados.pt/wordpress/plugins/feed-kuantokusta-para-woocommerce/
  * Description:          This plugin allows you to generate a WooCommerce product feed to submit to KuantoKusta, a portuguese price comparison website and marketplace.
- * Version:              4.0
- * Author:               PT Woo Plugins (by Webdados)
- * Author URI:           https://ptwooplugins.com
+ * Version:              4.1
+ * Author:               Naked Cat Plugins (by Webdados)
+ * Author URI:           https://nakedcatplugins.com
  * Text Domain:          feed-kuantokusta-for-woocommerce
  * Domain Path:          /languages
  * Requires at least:    6.2

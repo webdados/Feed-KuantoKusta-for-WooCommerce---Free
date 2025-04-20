@@ -1,11 +1,12 @@
 === Feed KuantoKusta for WooCommerce - Free ===
-Contributors: webdados, ptwooplugins 
+Contributors: nakedcatplugins, webdados 
 Tags: marketplace, feed, comparison, e-commerce, Portugal
 Requires at least: 6.2
 Tested up to: 6.8
-Requires PHP: 7.0
-Stable tag: 4.0
+Requires PHP: 7.2
+Stable tag: 4.1
 License: GPLv3
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 This plugin allows you to generate a WooCommerce product feed to submit to Kuanto Kusta, a Portuguese price comparison website and marketplace.
 
@@ -31,7 +32,7 @@ This plugin was developed in partnership with KuantoKusta and it’s the WooComm
 
 == PRO add-on features ==
 
-In addition to all you can do with the free plugin, the [paid add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin) offers you several additional features:
+In addition to all you can do with the free plugin, the [paid add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin) offers you several additional features:
 
 * Priority technical support;
 * Adjust price to send to KuantoKusta: add/subtract percentage, round up/down, add/subtract value to all products, and avoid current/sale price higher than regular price;
@@ -51,16 +52,16 @@ In addition to all you can do with the free plugin, the [paid add-on](https://pt
 
 == Already know our other WooCommerce (premium) plugins? ==
 
-* [Portuguese Postcodes for WooCommerce](https://ptwooplugins.com/product/portuguese-postcodes-for-woocommerce-technical-support/) - Automatic filling of the address details at the checkout, including street name and neighborhood, based on the postal code
+* [Portuguese Postcodes for WooCommerce](https://nakedcatplugins.com/product/portuguese-postcodes-for-woocommerce-technical-support/) - Automatic filling of the address details at the checkout, including street name and neighborhood, based on the postal code
 * [Invoicing with InvoiceXpress for WooCommerce](https://invoicewoo.com/) - Automatically issue invoices directly from the WooCommerce order
-* [DPD Portugal for WooCommerce](https://ptwooplugins.com/product/dpd-portugal-for-woocommerce/) - Create shipping and return guide in the DPD API directly from the WooCommerce order
-* [Multibanco, MBWAY, Credit card, Payshop and Cofidis Pay for WooCommerce – PRO add-on](https://ptwooplugins.com/product/multibanco-mbway-credit-card-payshop-ifthenpay-woocommerce-pro-add-on/) - Extra features for the plugin you already trust to receive payments on your WooCommerce store
-* [Advanced Coupon Restrictions for WooCommerce](https://ptwooplugins.com/product/advanced-coupon-restrictions-for-woocommerce/) - Create coupons for any Product Taxonomy, User details, and Order destination.
-* [Simple Checkout Fields Manager for WooCommerce](https://ptwooplugins.com/product/simple-custom-fields-for-woocommerce-blocks-checkout/) - Add custom fields and manage (remove, make required or optional) core fields on the new WooCommerce Block-based Checkout
-* [Simple WooCommerce Order Approval](https://ptwooplugins.com/product/simple-woocommerce-order-approval/) - The hassle-free solution for WooCommerce order approval before payment
-* [Shop as Client for WooCommerce](https://ptwooplugins.com/product/shop-as-client-for-woocommerce-pro-add-on/) - Quickly create orders on behalf of your customers
-* [Taxonomy/Term and Role based Discounts for WooCommerce](https://ptwooplugins.com/product/taxonomy-term-and-role-based-discounts-for-woocommerce-pro-add-on/) - Easily create bulk discount rules for products based on any taxonomy terms (built-in or custom)
-* [DPD / SEUR / Geopost Pickup and Lockers network for WooCommerce](https://ptwooplugins.com/product/dpd-seur-geopost-pickup-and-lockers-network-for-woocommerce/) - Deliver your WooCommerce orders on the DPD and SEUR Pickup network of Parcelshops and Lockers in 21 European countries
+* [DPD Portugal for WooCommerce](https://nakedcatplugins.com/product/dpd-portugal-for-woocommerce/) - Create shipping and return guide in the DPD API directly from the WooCommerce order
+* [Multibanco, MBWAY, Credit card, Payshop and Cofidis Pay for WooCommerce – PRO add-on](https://nakedcatplugins.com/product/multibanco-mbway-credit-card-payshop-ifthenpay-woocommerce-pro-add-on/) - Extra features for the plugin you already trust to receive payments on your WooCommerce store
+* [Advanced Coupon Restrictions for WooCommerce](https://nakedcatplugins.com/product/advanced-coupon-restrictions-for-woocommerce/) - Create coupons for any Product Taxonomy, User details, and Order destination.
+* [Simple Checkout Fields Manager for WooCommerce](https://nakedcatplugins.com/product/simple-custom-fields-for-woocommerce-blocks-checkout/) - Add custom fields and manage (remove, make required or optional) core fields on the new WooCommerce Block-based Checkout
+* [Simple WooCommerce Order Approval](https://nakedcatplugins.com/product/simple-woocommerce-order-approval/) - The hassle-free solution for WooCommerce order approval before payment
+* [Shop as Client for WooCommerce](https://nakedcatplugins.com/product/shop-as-client-for-woocommerce-pro-add-on/) - Quickly create orders on behalf of your customers
+* [Taxonomy/Term and Role based Discounts for WooCommerce](https://nakedcatplugins.com/product/taxonomy-term-and-role-based-discounts-for-woocommerce-pro-add-on/) - Easily create bulk discount rules for products based on any taxonomy terms (built-in or custom)
+* [DPD / SEUR / Geopost Pickup and Lockers network for WooCommerce](https://nakedcatplugins.com/product/dpd-seur-geopost-pickup-and-lockers-network-for-woocommerce/) - Deliver your WooCommerce orders on the DPD and SEUR Pickup network of Parcelshops and Lockers in 21 European countries
 
 == Installation ==
 
@@ -87,13 +88,13 @@ Yes.
 
 Yes.
 
-= I need technical support. Who should I contact, KuantoKusta or PT Woo Plugins? =
+= I need technical support. Who should I contact, KuantoKusta or Naked Cat Plugins? =
 
-The development and support of this plugin is [PT Woo Plugins](https://ptwooplugins.com?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin) responsibility, although KuantoKusta can help you identify problems with your feed if your products are not successfully imported into their system (and that information will be helpful when asking us for support).
+The development and support of this plugin is [Naked Cat Plugins](https://nakedcatplugins.com?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin) responsibility, although KuantoKusta can help you identify problems with your feed if your products are not successfully imported into their system (and that information will be helpful when asking us for support).
 
 We do not provide free support for this plugin, but bugs can be reported on the [support forum at WordPress.org](https://wordpress.org/support/plugin/feed-kuantokusta-for-woocommerce/)
 
-You’ll get included support if you buy the plugin [PRO add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin).
+You’ll get included support if you buy the plugin [PRO add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin).
 
 For premium/urgent support or custom development, you should contact [Webdados](https://www.webdados.pt/contactos/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin) directly. Charges will apply.
 
@@ -112,8 +113,11 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 
 == Changelog ==
 
+= 4.1 - 2025-04-20 =
+* [NEW] We are now called Naked Cat Plugins 😻
+
 = 4.0 - 2025-03-31 =
-* [NEW] Adjust price to send to KuantoKusta: add/subtract percentage, round up/down, add/subtract value to all products, and avoid current/sale price higher than regular price [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [NEW] Adjust price to send to KuantoKusta: add/subtract percentage, round up/down, add/subtract value to all products, and avoid current/sale price higher than regular price [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [NEW] Use the new “Brands” taxonomy from WooCommerce 9.6 and above instead of our field for Brand
 * [DEV] Force “no-cache” php headers to make sure KuantoKusta is not using cache when reading the feed
 * [TWEAK] Remove tracking as it was not being used by KuantoKusta anymore
@@ -123,7 +127,7 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 
 = 3.4 - 2025-03-18 =
 * [TWEAK] Show Pro add-on functionalities on the settings screen
-* [FIX] Error on the settings page in comparison mode [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [FIX] Error on the settings page in comparison mode [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 
 = 3.3 - 2025-02-06 =
 * [TWEAK] In comparison mode, if product does not have managed stock, return 1 or 0 in the stock field instead of “Y” and “N”
@@ -132,9 +136,9 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 * [DEV] Tested with WordPress 6.8-alpha-59604 and WooCommerce 9.7.0-beta.1
 
 = 3.2 - 2024-11-13 =
-* [FIX] Fatal error when WooCommerce is running update routines for 9.4 [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
-* [DEV] License validation on websites with WPML set to have different domains per language [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
-* [DEV] Recheck for the free plugin class again on the pro class (just in case) [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [FIX] Fatal error when WooCommerce is running update routines for 9.4 [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [DEV] License validation on websites with WPML set to have different domains per language [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [DEV] Recheck for the free plugin class again on the pro class (just in case) [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [DEV] Tested with WordPress 6.7 and WooCommerce 9.4.1
 
 = 3.1 - 2024-10-08 =
@@ -143,27 +147,27 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 
 = 3.0 - 2024-10-07 =
 * [NEW] Use the new “GTIN, UPC, EAN or ISBN” field from WooCommerce 9.2 and above instead of our field for EAN
-* [NEW] Migration utility to move our EAN field value to the new WooCommerce 9.2 and above field [only on the Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [NEW] Migration utility to move our EAN field value to the new WooCommerce 9.2 and above field [only on the Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [DEV] Requires WooCommerce 7.0
 * [DEV] Tested with WordPress 6.7-beta1-59184 and WooCommerce 9.4.0-beta.2
 
 = 2.8 - 2024-08-02 =
-* [NEW] Get “Other attributes” from parent (variable) product when not present on the product variation (not used for variations) [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [NEW] Get “Other attributes” from parent (variable) product when not present on the product variation (not used for variations) [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [DEV] Tested with WordPress 6.7-alpha-58841 and WooCommerce 9.2.0-beta.1
 
 = 2.7 - 2024-04-30 =
 * [TWEAK] New `KK_IS_FEED` constant that is set to `true` when the feed is being shown
-* [NEW] “Default brand” setting, if not set on the chosen custom field or taxonomy, or our field [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [NEW] “Default brand” setting, if not set on the chosen custom field or taxonomy, or our field [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [DEV] Tested with WordPress 6.6-alpha-58055 and WooCommerce 9.0.0-dev
 
 = 2.6 - 2024-04-02 =
 * [FIX] Deprecated: Creation of dynamic property in PHP 8.3
 * [DEV] Add “Requires Plugins” header
-* [DEV] Improve plugin updater – Show translation update notices [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [DEV] Improve plugin updater – Show translation update notices [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [DEV] Tested with WordPress 6.5-RC4-57894 and WooCommerce 8.8.0-beta.1
 
 = 2.5 - 2024-01-24 =
-* Feedback when the license is expired [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* Feedback when the license is expired [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * Tested with WordPress 6.5-alpha-57299 and WooCommerce 8.5.1
 
 = 2.4 - 2023-12-12 =
@@ -173,15 +177,15 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 
 = 2.3 - 2023-11-16 =
 * Instructions about flushing the permalinks if the feed URL is returning a 404 error
-* Clarification about Brand SKU being the MPN (Manufacturer Part Number) [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* Clarification about Brand SKU being the MPN (Manufacturer Part Number) [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * Tested with WordPress 6.5-alpha-57110 and WooCommerce 8.3.0-rc.3
 
 = 2.2 - 2023-10-06 =
-* Integration with BigBuy Dropshipping Connector for WooCommerce: New option to get EAN from the BigBuy’s reference table [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* Integration with BigBuy Dropshipping Connector for WooCommerce: New option to get EAN from the BigBuy’s reference table [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * Tested with WordPress 6.4-beta2-56771 and WooCommerce 8.2.0-rc.1
 
 = 2.1 - 2023-09-11 =
-* Option to to our field if Brand, Brand SKU/MPN or EAN custom origins are empty [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* Option to to our field if Brand, Brand SKU/MPN or EAN custom origins are empty [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * Fix jQuery deprecations
 * Tested with WordPress 6.4-alpha-56530 and WooCommerce 8.1.0-rc.2
 
@@ -192,7 +196,7 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 
 = 1.9.0 - 2023-02-01 =
 * Tested and confirmed WooCommerce HPOS compatibility
-* Force the inclusion of attribute names on the variation title even if it was removed via the `woocommerce_product_variation_title_include_attributes` filter [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* Force the inclusion of attribute names on the variation title even if it was removed via the `woocommerce_product_variation_title_include_attributes` filter [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * Tested with WordPress 6.2-alpha-55171 and WooCommerce 7.4.0-beta.2
 
 = 1.8.1 - 2022-06-27 =
@@ -202,15 +206,15 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 
 = 1.8.0 - 2022-05-23 =
 * New brand: PT Woo Plugins 🥳
-* Documentation link [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* Documentation link [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 
 = 1.7.0 - 2022-05-04 =
 * May the 4th be with you
-* Option to remove description from variation designation [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* Option to remove description from variation designation [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * Tested with WordPress 6.0-beta2-53236 and WooCommerce 6.5.0-rc.1
 
 = 1.6.0 =
-* [Discount Rules for WooCommerce](https://wordpress.org/plugins/woo-discount-rules/) beta and limited compatibility [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin) - Sponsored by [Royal Work](https://www.royalwork.pt/)
+* [Discount Rules for WooCommerce](https://wordpress.org/plugins/woo-discount-rules/) beta and limited compatibility [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin) - Sponsored by [Royal Work](https://www.royalwork.pt/)
 * PHP 7.0 minimum requirement
 * Bugfix: “WP_Scripts::localize was called incorrectly” after WordPress 5.7.0
 
@@ -293,7 +297,7 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 = 1.0 =
 * New KuantoKusta Marketplace mode
 * New fields
-* Integration with [Pro add-on](https://ptwooplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* Integration with [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * Tested with WordPress 5.0.2 and WooCommerce 3.5.3
 * Dropped WooCommerce legacy support (before 3.0)
 

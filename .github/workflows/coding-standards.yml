@@ -69,8 +69,8 @@ jobs:
       #- name: Install Composer dependencies
       #  uses: ramsey/composer-install@v3
 
-      - name: Update Composer autoloader
-        run: composer dump-autoload --optimize
+      #- name: Update Composer autoloader
+      #  run: composer dump-autoload --optimize
 
       - name: Make Composer packages available globally
         run: composer config --absolute bin-dir >> $GITHUB_PATH

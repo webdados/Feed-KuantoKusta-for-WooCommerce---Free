@@ -68,15 +68,15 @@ jobs:
 #
       #- name: Install Composer dependencies
       #  uses: ramsey/composer-install@v3
-#
-      #- name: Update Composer autoloader
-      #  run: composer dump-autoload --optimize
-#
-      #- name: Make Composer packages available globally
-      #  run: composer config --absolute bin-dir >> $GITHUB_PATH
-#
-      #- name: Log PHPCS debug information
-      #  run: composer phpcs-i
+
+      - name: Update Composer autoloader
+        run: composer dump-autoload --optimize
+
+      - name: Make Composer packages available globally
+        run: composer config --absolute bin-dir >> $GITHUB_PATH
+
+      - name: Log PHPCS debug information
+        run: composer phpcs-i
 
       - name: Run the PHP code sniffer
         continue-on-error: true

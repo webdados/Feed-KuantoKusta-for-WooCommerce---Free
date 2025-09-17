@@ -75,11 +75,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 				?>
 				<ul>
 					<?php
-					foreach ( $links as $link ) {
+					foreach ( $links as $linktoshow ) {
 						?>
 						<li>
-							<a href="<?php echo esc_url( trim( $link['url'] ) ); ?>" target="_blank">
-								<?php echo wp_kses_post( $link['text'] ); ?>
+							<a href="<?php echo esc_url( trim( $linktoshow['url'] ) ); ?>" target="_blank">
+								<?php echo wp_kses_post( $linktoshow['text'] ); ?>
 							</a>
 						</li>
 						<?php
@@ -270,12 +270,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 			foreach ( $fields as $field => $args ) {
 				?>
 				<p>
-					<code><strong><?php echo $field; ?></strong></code>
+					<code><strong><?php echo esc_html( $field ); ?></strong></code>
 					<br/>
-					<?php echo $args['desc']; ?>
-					<?php echo $args['filter'] ? __( 'Filterable.', 'feed-kuantokusta-for-woocommerce' ) : ''; ?>
-					<?php echo $args['comparison'] ? __( 'Comparison.', 'feed-kuantokusta-for-woocommerce' ) : ''; ?>
-					<?php echo $args['marketplace'] ? __( 'Marketplace.', 'feed-kuantokusta-for-woocommerce' ) : ''; ?>
+					<?php echo esc_html( $args['desc'] ); ?>
+					<?php echo esc_html( $args['filter'] ? __( 'Filterable.', 'feed-kuantokusta-for-woocommerce' ) : '' ); ?>
+					<?php echo esc_html( $args['comparison'] ? __( 'Comparison.', 'feed-kuantokusta-for-woocommerce' ) : '' ); ?>
+					<?php echo esc_html( $args['marketplace'] ? __( 'Marketplace.', 'feed-kuantokusta-for-woocommerce' ) : '' ); ?>
 				</p>
 				<?php
 			}
@@ -585,6 +585,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						),
 						'desc'      => __( 'Filter on the product variation maximum delivery time.', 'feed-kuantokusta-for-woocommerce' ) . ' ' . __( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
 					),
+					// phpcs:disable
 					// 'kuantokusta_product_node_default_extra_fields' => array(
 					// 'arguments' => array(
 					// '$empty',
@@ -601,6 +602,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					// ),
 					// 'desc' => __( 'Allows to add extra fields to the product variation node XML.', 'feed-kuantokusta-for-woocommerce' ).' '.__( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
 					// ),
+					// phpcs:enable
 					'kuantokusta_product_node_default_xml_fields' => array(
 						'arguments' => array(
 							'$xml_fields',
@@ -651,26 +653,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 			);
 			$hooks = apply_filters( 'kuantokusta_documentation_hooks', $hooks );
 
-			foreach ( $hooks as $type => $thehooks ) {
+			foreach ( $hooks as $hooktype => $thehooks ) {
 				?>
-				<h3><?php esc_html_e( 'Developer hooks', 'feed-kuantokusta-for-woocommerce' ); ?> - <?php echo esc_html( ucfirst( $type ) ); ?></h3>
+				<h3><?php esc_html_e( 'Developer hooks', 'feed-kuantokusta-for-woocommerce' ); ?> - <?php echo esc_html( ucfirst( $hooktype ) ); ?></h3>
 				<p><?php esc_html_e( 'The usage of developer hooks is not covered by the technical support.', 'feed-kuantokusta-for-woocommerce' ); ?></p>
 				<?php
 				foreach ( $thehooks as $filter => $args ) {
 					?>
 					<p>
-						<code><strong><?php echo $filter; ?></strong></code>
+						<code><strong><?php echo esc_html( $filter ); ?></strong></code>
 						<?php
 						$temp_args = array();
 						foreach ( $args['arguments'] as $argument ) {
-							$temp_args[] = '<code>' . $argument . '</code>';
+							$temp_args[] = '<code>' . esc_html( $argument ) . '</code>';
 						}
 						if ( count( $temp_args ) > 0 ) {
-							echo '<br/>' . __( 'Arguments', 'feed-kuantokusta-for-woocommerce' ) . ': ' . implode( ', ', $temp_args );
+							echo '<br/>' . esc_html( __( 'Arguments', 'feed-kuantokusta-for-woocommerce' ) ) . ': ' . esc_html( implode( ', ', $temp_args ) );
 						}
 						?>
 						<br/>
-						<?php echo $args['desc']; ?>
+						<?php echo esc_html( $args['desc'] ); ?>
 					</p>
 					<?php
 				}

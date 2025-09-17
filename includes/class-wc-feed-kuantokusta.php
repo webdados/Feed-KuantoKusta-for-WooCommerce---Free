@@ -50,8 +50,6 @@ final class WC_Feed_KuantoKusta {
 
 	/**
 	 * Get the unique instance of the class
-	 *
-	 * @return void
 	 */
 	public static function instance() {
 		if ( is_null( self::$_instance ) ) {
@@ -104,7 +102,7 @@ final class WC_Feed_KuantoKusta {
 	/**
 	 * Get a specific setting value
 	 *
-	 * @param string $setting
+	 * @param string $setting The setting to fetch.
 	 * @return mixed
 	 */
 	public function get_setting( $setting ) {
@@ -117,7 +115,7 @@ final class WC_Feed_KuantoKusta {
 	/**
 	 * Add settings tab
 	 *
-	 * @param array $settings_tabs
+	 * @param array $settings_tabs The current tabs.
 	 * @return array
 	 */
 	public function add_settings_tab( $settings_tabs ) {
@@ -162,6 +160,7 @@ final class WC_Feed_KuantoKusta {
 			),
 		);
 
+		// phpcs:disable
 		// Deprecate "Price comparison" - Not yet
 		/*
 		if ( $this->mode === 'comparison' ) {
@@ -172,6 +171,7 @@ final class WC_Feed_KuantoKusta {
 			);
 		}
 		*/
+		// phpcs:enable
 
 		// Variable products
 		$settings = array_merge(
@@ -344,7 +344,7 @@ final class WC_Feed_KuantoKusta {
 	/**
 	 * Add settings link to plugin actions
 	 *
-	 * @param array $links
+	 * @param array $links The current links.
 	 * @return array
 	 */
 	public function add_settings_link( $links ) {
@@ -357,7 +357,7 @@ final class WC_Feed_KuantoKusta {
 	/**
 	 * Add product data tabs
 	 *
-	 * @param array $tabs
+	 * @param array $tabs The current tabs.
 	 * @return array
 	 */
 	public function woocommerce_product_data_tabs( $tabs ) {
@@ -380,7 +380,9 @@ final class WC_Feed_KuantoKusta {
 		<div id="kuantokusta" class="panel woocommerce_options_panel">
 			<div class="options_group">
 				<p>
-					<strong><?php _e( 'The fields below are only used on the KuantoKusta products feed', 'feed-kuantokusta-for-woocommerce' ); ?></strong>
+					<strong>
+						<?php esc_html_e( 'The fields below are only used on the KuantoKusta products feed', 'feed-kuantokusta-for-woocommerce' ); ?>
+					</strong>
 				</p>
 				<?php
 				// Hide it?
@@ -463,6 +465,7 @@ final class WC_Feed_KuantoKusta {
 								<?php
 								echo esc_html(
 									sprintf(
+										/* translators: 1: brand names. */
 										__( 'Kuanto Kusta only supports one brand, and you have more than one set. The current brand on the feed is “%s”.', 'feed-kuantokusta-for-woocommerce' ),
 										$brand_terms[0]->name
 									)
@@ -480,7 +483,11 @@ final class WC_Feed_KuantoKusta {
 					array(
 						'id'          => '_kuantokusta_shipping',
 						'label'       => __( 'Shipping cost', 'feed-kuantokusta-for-woocommerce' ) . ' (' . get_woocommerce_currency_symbol() . ')',
-						'placeholder' => sprintf( __( 'With tax - Blank for default (%s)', 'feed-kuantokusta-for-woocommerce' ), $this->get_setting( 'shipping_cost_default' ) ),
+						'placeholder' => sprintf(
+							/* translators: 1: default shipping cost. */
+							__( 'With tax - Blank for default (%s)', 'feed-kuantokusta-for-woocommerce' ),
+							$this->get_setting( 'shipping_cost_default' )
+						),
 						'data_type'   => 'price',
 					)
 				);
@@ -490,7 +497,11 @@ final class WC_Feed_KuantoKusta {
 				array(
 					'id'                => '_kuantokusta_preparation_days_max',
 					'label'             => __( 'Maximum preparation time', 'feed-kuantokusta-for-woocommerce' ) . ' (' . __( 'days', 'feed-kuantokusta-for-woocommerce' ) . ')',
-					'placeholder'       => sprintf( __( 'Blank for default (%s)', 'feed-kuantokusta-for-woocommerce' ), $this->get_setting( 'preparation_days_max_default' ) ),
+					'placeholder'       => sprintf(
+						/* translators: 1: default preparation days. */
+						__( 'Blank for default (%s)', 'feed-kuantokusta-for-woocommerce' ),
+						$this->get_setting( 'preparation_days_max_default' )
+					),
 					'type'              => 'number',
 					'custom_attributes' => array(
 						'min' => 0,
@@ -502,7 +513,11 @@ final class WC_Feed_KuantoKusta {
 				array(
 					'id'                => '_kuantokusta_delivery_days_max',
 					'label'             => __( 'Maximum delivery time', 'feed-kuantokusta-for-woocommerce' ) . ' (' . __( 'days', 'feed-kuantokusta-for-woocommerce' ) . ')',
-					'placeholder'       => sprintf( __( 'Blank for default (%s)', 'feed-kuantokusta-for-woocommerce' ), $this->get_setting( 'delivery_days_max_default' ) ),
+					'placeholder'       => sprintf(
+						/* translators: 1: default delivery days. */
+						__( 'Blank for default (%s)', 'feed-kuantokusta-for-woocommerce' ),
+						$this->get_setting( 'delivery_days_max_default' )
+					),
 					'type'              => 'number',
 					'custom_attributes' => array(
 						'min' => 0,
@@ -548,7 +563,7 @@ final class WC_Feed_KuantoKusta {
 	/**
 	 * Save product meta data.
 	 *
-	 * @param int $post_id
+	 * @param int $post_id The product/post ID.
 	 */
 	public function woocommerce_process_product_meta( $post_id ) {
 		$meta    = array();
@@ -586,7 +601,9 @@ final class WC_Feed_KuantoKusta {
 		do_action( 'kuantokusta_process_product_meta_end', $post_id );
 	}
 
-	/* Add feed */
+	/**
+	 * Add our feed to WordPress
+	 */
 	public function add_products_feed() {
 		add_feed( 'kuantokusta', array( $this, 'render_products_feed' ) );
 	}
@@ -619,7 +636,8 @@ final class WC_Feed_KuantoKusta {
 		if ( isset( $_GET['sku'] ) && trim( $_GET['sku'] ) != '' ) {
 			$sql_exclude .= " || ( meta_key = '_sku' AND meta_value NOT LIKE '%" . sanitize_text_field( trim( $_GET['sku'] ) ) . "%' )";
 		}
-		if ( $results = $wpdb->get_results( $sql_exclude, ARRAY_A ) ) {
+		$results = $wpdb->get_results( $sql_exclude, ARRAY_A );
+		if ( ! empty( $results ) ) {
 			if ( count( $results ) > 0 ) {
 				foreach ( $results as $value ) {
 					$exclude[] = intval( $value['post_id'] );
@@ -678,7 +696,13 @@ final class WC_Feed_KuantoKusta {
 		<?php
 	}
 
-	/* Render default/simple feed */
+	/**
+	 * Render default/simple feed
+	 *
+	 * @param WC_Product $product      The product.
+	 * @param string     $product_type The product type.
+	 * @return string
+	 */
 	public function render_product_feed_default( $product, $product_type ) {
 		$id_product    = $product->get_id();
 		$url           = $product->get_permalink();
@@ -729,10 +753,9 @@ final class WC_Feed_KuantoKusta {
 				'alias_key' => 'price',
 			),
 			'current_price'            => array(
-				'value'                  => round( floatval( $current_price ), wc_get_price_decimals() ),
-				'cdata'                  => false,
-				'alias_key'              => 'sale_price',
-				'alias_convert_function' => 'convert_current_price_to_sale_price',
+				'value'     => round( floatval( $current_price ), wc_get_price_decimals() ),
+				'cdata'     => false,
+				'alias_key' => 'sale_price',
 			),
 			'stock'                    => array(
 				'value' => $stock,
@@ -791,10 +814,9 @@ final class WC_Feed_KuantoKusta {
 						'alias_key' => 'stock',
 					),
 					'stock_availability'   => array(
-						'value'                  => $stock_availability,
-						'cdata'                  => false,
-						'alias_key'              => 'availability',
-						'alias_convert_function' => 'convert_stock_availability_to_availability',
+						'value'     => $stock_availability,
+						'cdata'     => false,
+						'alias_key' => 'availability',
 					),
 					'preparation_days_max' => array(
 						'value' => ! empty( $preparation_days_max ) ? intval( $preparation_days_max ) : '',
@@ -816,18 +838,6 @@ final class WC_Feed_KuantoKusta {
 			?>
 		<<?php echo $key; ?>><?php echo $value['cdata'] ? '<![CDATA[' . $value['value'] . ']]>' : $value['value']; ?></<?php echo $key; ?>>
 			<?php
-			// We're not going to replicate the fiels - Call 2025-03-25
-			/*
-			if ( isset( $value['alias_key'] ) && trim( $value['alias_key'] ) != '' ) {
-				$alias_value = $value['value'];
-				if ( isset( $value['alias_convert_function'] ) && trim( $value['alias_convert_function'] ) != '' ) {
-					$alias_value = $this->{$value['alias_convert_function']}( $alias_value, $xml_fields );
-				}
-				?>
-			<<?php echo $value['alias_key']; ?>><?php echo $value['cdata'] ? '<![CDATA['.$alias_value.']]>' : $alias_value ; ?></<?php echo $value['alias_key']; ?>>
-			<?php
-			}
-			*/
 		}
 		?>
 	</product>
@@ -836,7 +846,13 @@ final class WC_Feed_KuantoKusta {
 		return ob_get_clean();
 	}
 
-	/* Render variation feed */
+	/**
+	 * Render variation feed
+	 *
+	 * @param WC_Product           $product   The product.
+	 * @param WC_Product_Variation $variation The variation.
+	 * @return string
+	 */
 	public function render_product_feed_variation( $product, $variation ) {
 		$id_variation = $variation->get_id();
 		$id_product   = $product->get_id() . '-' . $id_variation;
@@ -914,10 +930,9 @@ final class WC_Feed_KuantoKusta {
 				'alias_key' => 'price',
 			),
 			'current_price'            => array(
-				'value'                  => ! empty( $current_price ) ? round( floatval( $current_price ), wc_get_price_decimals() ) : '',
-				'cdata'                  => false,
-				'alias_key'              => 'sale_price',
-				'alias_convert_function' => 'convert_current_price_to_sale_price',
+				'value'     => ! empty( $current_price ) ? round( floatval( $current_price ), wc_get_price_decimals() ) : '',
+				'cdata'     => false,
+				'alias_key' => 'sale_price',
 			),
 			'stock'                    => array(
 				'value' => $stock,
@@ -976,10 +991,9 @@ final class WC_Feed_KuantoKusta {
 						'alias_key' => 'stock',
 					),
 					'stock_availability'   => array(
-						'value'                  => $stock_availability,
-						'cdata'                  => false,
-						'alias_key'              => 'availability',
-						'alias_convert_function' => 'convert_stock_availability_to_availability',
+						'value'     => $stock_availability,
+						'cdata'     => false,
+						'alias_key' => 'availability',
 					),
 					'preparation_days_max' => array(
 						'value' => ! empty( $preparation_days_max ) ? intval( $preparation_days_max ) : '',
@@ -1001,18 +1015,6 @@ final class WC_Feed_KuantoKusta {
 			?>
 		<<?php echo $key; ?>><?php echo $value['cdata'] ? '<![CDATA[' . $value['value'] . ']]>' : $value['value']; ?></<?php echo $key; ?>>
 			<?php
-			// We're not going to replicate the fiels - Call 2025-03-25
-			/*
-			if ( isset( $value['alias_key'] ) && trim( $value['alias_key'] ) != '' ) {
-				$alias_value = $value['value'];
-				if ( isset( $value['alias_convert_function'] ) && trim( $value['alias_convert_function'] ) != '' ) {
-					$alias_value = $this->{$value['alias_convert_function']}( $alias_value, $xml_fields );
-				}
-				?>
-			<<?php echo $value['alias_key']; ?>><?php echo $value['cdata'] ? '<![CDATA['.$alias_value.']]>' : $alias_value ; ?></<?php echo $value['alias_key']; ?>>
-			<?php
-			}
-			*/
 		}
 		?>
 	</product>
@@ -1020,17 +1022,23 @@ final class WC_Feed_KuantoKusta {
 		return ob_get_clean();
 	}
 
-	/* Get product categories */
+	/**
+	 * Get product categories
+	 *
+	 * @param int $id_product The product ID.
+	 * @return string
+	 */
 	public function get_product_category( $id_product ) {
 		$category = '';
-		if ( $terms = wc_get_product_terms(
+		$terms    = wc_get_product_terms(
 			$id_product,
 			'product_cat',
 			array(
 				'orderby' => 'parent',
 				'order'   => 'DESC',
 			)
-		) ) {
+		);
+		if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
 			$category = '';
 			// From class-wc-breadcrumb.php
 			$main_term = apply_filters( 'woocommerce_breadcrumb_main_term', $terms[0], $terms );
@@ -1046,7 +1054,12 @@ final class WC_Feed_KuantoKusta {
 		return $category;
 	}
 
-	/* Get product description */
+	/**
+	 * Get the product description
+	 *
+	 * @param WC_Product $product The product object.
+	 * @return string The product description.
+	 */
 	public function get_product_description( $product ) {
 		if ( $this->get_setting( 'description_type' ) == 'full' ) {
 			$description = trim( $product->get_description() );
@@ -1074,11 +1087,24 @@ final class WC_Feed_KuantoKusta {
 		return wpautop( $description );
 	}
 
-	/* Get product image */
+	/**
+	 * Get the product image
+	 *
+	 * @param WC_Product $product The product object.
+	 * @return string The product image URL.
+	 */
 	public function get_product_image( $product ) {
 		$id_image = $product->get_image_id();
 		return $id_image > 0 ? wp_get_attachment_url( $id_image ) : '';
 	}
+
+	/**
+	 * Get the product variation image
+	 *
+	 * @param WC_Product           $product   The product object.
+	 * @param WC_Product_Variation $variation The variation object.
+	 * @return string The product image URL.
+	 */
 	public function get_product_variation_image( $product, $variation ) {
 		$id_image = $variation->get_image_id();
 		$image    = $id_image > 0 ? wp_get_attachment_url( $id_image ) : '';
@@ -1088,14 +1114,26 @@ final class WC_Feed_KuantoKusta {
 		return $image;
 	}
 
-	/* Get product stock */
+	/**
+	 * Get the product stock for Comparison
+	 *
+	 * @param WC_Product $product The product object.
+	 * @return int The product stock quantity.
+	 */
 	public function get_comparison_product_stock( $product ) {
 		if ( $product->managing_stock() ) {
-			return intval( $product->get_stock_quantity() );
+			return intval( $product->get_stock_quantity() ); // Might need to be changed as WooCommerce now supports float stock
 		} else {
 			return $product->is_in_stock() ? 1 : 0;
 		}
 	}
+
+	/**
+	 * Get the product stock for Marketplace
+	 *
+	 * @param WC_Product $product The product object.
+	 * @return int The product stock quantity.
+	 */
 	public function get_marketplace_product_stock( $product ) {
 		if ( $product->managing_stock() ) {
 			return intval( $product->get_stock_quantity() );
@@ -1104,7 +1142,13 @@ final class WC_Feed_KuantoKusta {
 		}
 	}
 
-	/* Get variation stock */
+	/**
+	 * Get the product variation stock for Comparison
+	 *
+	 * @param WC_Product           $product   The product object.
+	 * @param WC_Product_Variation $variation The variation object.
+	 * @return int The product stock quantity.
+	 */
 	public function get_comparison_product_variation_stock( $product, $variation ) {
 		$managing_stock = $variation->managing_stock();
 		if ( is_bool( $managing_stock ) ) {
@@ -1125,6 +1169,14 @@ final class WC_Feed_KuantoKusta {
 			}
 		}
 	}
+
+	/**
+	 * Get the product variation stock for Marketplace
+	 *
+	 * @param WC_Product           $product   The product object.
+	 * @param WC_Product_Variation $variation The variation object.
+	 * @return int The product stock quantity.
+	 */
 	public function get_marketplace_product_variation_stock( $product, $variation ) {
 		$managing_stock = $variation->managing_stock();
 		if ( is_bool( $managing_stock ) ) {
@@ -1150,7 +1202,13 @@ final class WC_Feed_KuantoKusta {
 		}
 	}
 
-	/* Get product shipping cost - It should be by variation... */
+	/**
+	 * Get the product shipping cost
+	 * It should be by variation...
+	 *
+	 * @param WC_Product $product The product object.
+	 * @return float The product shipping cost.
+	 */
 	public function get_product_shipping_cost( $product ) {
 		$shipping_cost = $product->get_meta( '_kuantokusta_shipping' );
 		// We do not use empty() because the shop owner might want to offer free shipping
@@ -1160,7 +1218,12 @@ final class WC_Feed_KuantoKusta {
 		return $shipping_cost;
 	}
 
-	/* Get product maximum preparation time */
+	/**
+	 * Get the product maximum preparation time in days
+	 *
+	 * @param WC_Product $product The product object.
+	 * @return int The product maximum preparation time in days.
+	 */
 	public function get_product_preparation_days_max( $product ) {
 		$preparation_days_max = $product->get_meta( '_kuantokusta_preparation_days_max' );
 		if ( empty( $preparation_days_max ) ) {
@@ -1169,7 +1232,12 @@ final class WC_Feed_KuantoKusta {
 		return $preparation_days_max;
 	}
 
-	/* Get product maximum delivery time */
+	/**
+	 * Get the product maximum delivery time in days
+	 *
+	 * @param WC_Product $product The product object.
+	 * @return int The product maximum delivery time in days.
+	 */
 	public function get_product_delivery_days_max( $product ) {
 		$delivery_days_max = $product->get_meta( '_kuantokusta_delivery_days_max' );
 		if ( empty( $delivery_days_max ) ) {
@@ -1178,7 +1246,12 @@ final class WC_Feed_KuantoKusta {
 		return $delivery_days_max;
 	}
 
-	/* Get product EAN */
+	/**
+	 * Get the product EAN
+	 *
+	 * @param WC_Product $product The product object.
+	 * @return string The product EAN.
+	 */
 	public function get_product_ean( $product ) {
 		if ( version_compare( WC_VERSION, '9.2', '>=' ) ) {
 			$ean = $product->get_global_unique_id();
@@ -1199,7 +1272,12 @@ final class WC_Feed_KuantoKusta {
 		return get_the_terms( $product->get_id(), 'product_brand' );
 	}
 
-	/* Get product brand */
+	/**
+	 * Get the product brand
+	 *
+	 * @param WC_Product $product The product object.
+	 * @return string The product brand.
+	 */
 	public function get_product_brand( $product ) {
 		if ( version_compare( WC_VERSION, '9.6', '>=' ) ) {
 			$brands = $this->get_product_brands_terms( $product );
@@ -1212,25 +1290,6 @@ final class WC_Feed_KuantoKusta {
 		}
 		// Return from old field if brands are not set as taxonomy terms
 		return $product->get_meta( '_kuantokusta_brand' );
-	}
-
-	/**
-	 * Convert "stock_availability" to "availability" for the new field name
-	 * Not in use
-	 */
-	function convert_stock_availability_to_availability( $value, $xml_fields ) {
-		return $value === 'Y' ? 'Sim' : 'Não';
-	}
-
-	/**
-	 * Convert "current_price" to "sale_price" for the new field name
-	 * Not in use
-	 */
-	function convert_current_price_to_sale_price( $value, $xml_fields ) {
-		if ( $value < $xml_fields['regular_price']['value'] ) {
-			return $value;
-		}
-		return '';
 	}
 }
 

@@ -115,6 +115,7 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 
 = 4.1 - 2025-04-20 =
 * [NEW] We are now called Naked Cat Plugins 😻
+* [DEV] Tested with WordPress 6.8 and WooCommerce 9.8.1
 
 = 4.0 - 2025-03-31 =
 * [NEW] Adjust price to send to KuantoKusta: add/subtract percentage, round up/down, add/subtract value to all products, and avoid current/sale price higher than regular price [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)

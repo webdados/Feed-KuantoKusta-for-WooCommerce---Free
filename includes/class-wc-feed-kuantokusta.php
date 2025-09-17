@@ -529,8 +529,8 @@ final class WC_Feed_KuantoKusta {
 		// Query - Current WordPress
 		$args = array(
 			'status' => 'publish',
-			'type' => $this->get_setting( 'product_types' ),
-			'limit' => $posts_per_page,
+			'type'   => $this->get_setting( 'product_types' ),
+			'limit'  => $posts_per_page,
 			'offset' => $offset,
 		);
 		if ( count( $exclude ) > 0 ) $args['exclude'] = $exclude;
@@ -852,7 +852,7 @@ final class WC_Feed_KuantoKusta {
 				'alias_key' => 'shipping',
 			),
 		);
-		if ( $this->mode == 'marketplace' ) {
+		if ( $this->mode === 'marketplace' ) {
 			// Marketplace
 			unset( $xml_fields['stock'] );
 			$stock_qty            = apply_filters( 'kuantokusta_product_node_variation_marketplace_stock', $this->get_marketplace_product_variation_stock( $product, $variation ), $product, $variation );

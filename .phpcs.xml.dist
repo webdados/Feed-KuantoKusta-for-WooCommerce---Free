@@ -3,7 +3,11 @@
 
 	<!-- Files to check. -->
 	<file>.</file>
+
 	<!-- Exclude paths. -->
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+
 	<!-- Only scan PHP files. -->
 	<arg name="extensions" value="php"/>
 	<!-- The report types to print. -->
@@ -21,8 +25,6 @@
 
 	<config name="minimum_supported_wp_version" value="6.2"/>
 
-	<!-- VariableAnalysis. -->
-	<rule ref="VariableAnalysis"/>
 	<!-- PHPCompatibilityWP -->
 	<!--<rule ref="PHPCompatibilityWP"/>-->
 	<!-- WordPress Coding Standards -->

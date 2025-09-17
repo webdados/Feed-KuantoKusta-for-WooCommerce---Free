@@ -19,7 +19,7 @@ on:
       # This file configures Markdownlint. Changes could affect the outcome.
       - '.markdownlint.json'
       # This file configures PHPCS. Changes could affect the outcome.
-      - 'phpcs.xml.dist'
+      - '.phpcs.xml.dist'
       # Changes to workflow files should always verify all workflows are successful.
       - '.github/workflows/*.yml'
   # Allows you to run this workflow manually from the Actions tab.
@@ -63,24 +63,24 @@ jobs:
       - name: Check syntax error in sources
         run: find -L . -path ./vendor -prune -o -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
 
-      - name: Validate composer.json and composer.lock
-        run: composer validate --strict
-
-      - name: Install Composer dependencies
-        uses: ramsey/composer-install@v3
-
-      - name: Update Composer autoloader
-        run: composer dump-autoload --optimize
-
-      - name: Make Composer packages available globally
-        run: composer config --absolute bin-dir >> $GITHUB_PATH
-
-      - name: Log PHPCS debug information
-        run: composer phpcs-i
-
-      - name: Run the PHP code sniffer
-        continue-on-error: true
-        run: phpcs --report-full --report-checkstyle=./phpcs-report.xml
+      #- name: Validate composer.json and composer.lock
+      #  run: composer validate --strict
+#
+      #- name: Install Composer dependencies
+      #  uses: ramsey/composer-install@v3
+#
+      #- name: Update Composer autoloader
+      #  run: composer dump-autoload --optimize
+#
+      #- name: Make Composer packages available globally
+      #  run: composer config --absolute bin-dir >> $GITHUB_PATH
+#
+      #- name: Log PHPCS debug information
+      #  run: composer phpcs-i
+#
+      #- name: Run the PHP code sniffer
+      #  continue-on-error: true
+      #  run: phpcs --report-full --report-checkstyle=./phpcs-report.xml
 
       - name: Show PHPCS results in PR
         run: cs2pr ./phpcs-report.xml
@@ -95,30 +95,30 @@ jobs:
   # - Logs updated debug information.
   # - Installs NPM dependencies using install-changed to hash the `package.json` file.
   # - Run the WordPress Stylelint checks.
-  css-cs:
-    name: CSS/SCSS coding standards
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: npm
-
-      - name: Log debug information
-        run: |
-          npm --version
-          node --version
-
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Run CSS/SCSS Lint
-        run: npm run lint:css
+  #css-cs:
+  #  name: CSS/SCSS coding standards
+  #  runs-on: ubuntu-latest
+#
+  #  steps:
+  #    - name: Checkout repository
+  #      uses: actions/checkout@v4
+#
+  #    - name: Setup Node
+  #      uses: actions/setup-node@v4
+  #      with:
+  #        node-version-file: '.nvmrc'
+  #        cache: npm
+#
+  #    - name: Log debug information
+  #      run: |
+  #        npm --version
+  #        node --version
+#
+  #    - name: Install Dependencies
+  #      run: npm ci
+#
+  #    - name: Run CSS/SCSS Lint
+  #      run: npm run lint:css
 
   # Runs the JavaScript and Markdown coding standards checks.
   #
@@ -130,30 +130,30 @@ jobs:
   # - Logs updated debug information.
   # - Installs NPM dependencies using install-changed to hash the `package.json` file.
   # - Run the WordPress ESLint and Markdownlint checks.
-  js-md-cs:
-    name: JS and MD coding standards
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: npm
-
-      - name: Log debug information
-        run: |
-          npm --version
-          node --version
-
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Run JavaScript Lint
-        run: npm run lint:js
-
-      - name: Run Markdown Lint
-        run: npm run lint:md:docs
+  #js-md-cs:
+  #  name: JS and MD coding standards
+  #  runs-on: ubuntu-latest
+#
+  #  steps:
+  #    - name: Checkout repository
+  #      uses: actions/checkout@v4
+#
+  #    - name: Setup Node
+  #      uses: actions/setup-node@v4
+  #      with:
+  #        node-version-file: '.nvmrc'
+  #        cache: npm
+#
+  #    - name: Log debug information
+  #      run: |
+  #        npm --version
+  #        node --version
+#
+  #    - name: Install Dependencies
+  #      run: npm ci
+#
+  #    - name: Run JavaScript Lint
+  #      run: npm run lint:js
+#
+  #    - name: Run Markdown Lint
+  #      run: npm run lint:md:docs

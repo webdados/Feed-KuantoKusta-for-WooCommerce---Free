@@ -1,22 +1,47 @@
 <?php
+/**
+ * KuantoKusta Settings Page
+ *
+ * This file renders the main settings page for the KuantoKusta for WooCommerce plugin.
+ * It includes sections for configuring feed options, displaying the feed URL,
+ * promoting the PRO version, and comprehensive documentation for developers
+ * including available hooks and filters.
+ */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 ?>
-	<h2 class="kk_section_title"><?php
-	echo apply_filters( 'kuantokusta_settings_title', sprintf(
-		__( 'KuantoKusta settings (%s)', '' ),
-		$this->version
-	) );
-	?></h2>
+	<h2 class="kk_section_title">
+	<?php
+	echo wp_kses_post(
+		apply_filters(
+			'kuantokusta_settings_title',
+			sprintf(
+				/* translators: 1: plugin version */
+				__( 'KuantoKusta settings (%s)', 'feed-kuantokusta-for-woocommerce' ),
+				$this->version
+			)
+		)
+	);
+	?>
+	</h2>
 
 	<div class="kk_settings_section" id="kk_wrap">
 		<?php if ( ! apply_filters( 'kuantokusta_hide_settings_right_bar', false ) ) { ?>
 			<div id="kk_rightbar">
-				<h4><?php _e( 'Commercial information', 'feed-kuantokusta-for-woocommerce' ); ?>:</h4>
-				<p><a href="https://www.kuantokusta.pt/<?php echo esc_attr( $this->out_link_utm ); ?>" title="<?php echo esc_attr( sprintf( __( 'Please contact %s', 'feed-kuantokusta-for-woocommerce' ), 'KuantoKusta' ) ); ?>" target="_blank"><img src="<?php echo plugins_url( '../../images/kk.svg', __FILE__ ); ?>" width="200"/></a></p>
-				<h4><?php _e( 'Technical support or custom WordPress/WooCommerce development', 'feed-kuantokusta-for-woocommerce' ); ?>:</h4>
-				<p><a href="https://www.webdados.pt/contactos/<?php echo esc_attr( $this->out_link_utm); ?>" title="<?php echo esc_attr( sprintf( __( 'Please contact %s', 'feed-kuantokusta-for-woocommerce' ), 'Webdados' ) ); ?>" target="_blank"><img src="<?php echo plugins_url( '../../images/webdados.svg', __FILE__ ); ?>" width="200"/></a></p>
-				<h4><?php _e( 'Please rate our plugin at WordPress.org', 'feed-kuantokusta-for-woocommerce' ); ?>:</h4>
+				<h4><?php esc_html_e( 'Commercial information', 'feed-kuantokusta-for-woocommerce' ); ?>:</h4>
+				<?php
+				$link_title = sprintf(
+					/* translators: 1: Which company to contact */
+					__( 'Please contact %s', 'feed-kuantokusta-for-woocommerce' ),
+					'KuantoKusta'
+				);
+				?>
+				<p><a href="https://www.kuantokusta.pt/<?php echo esc_attr( $this->out_link_utm ); ?>" title="<?php echo esc_attr( $link_title ); ?>" target="_blank"><img src="<?php echo esc_url( plugins_url( '../../images/kk.svg', __FILE__ ) ); ?>" width="200"/></a></p>
+				<h4><?php esc_html_e( 'Technical support or custom WordPress/WooCommerce development', 'feed-kuantokusta-for-woocommerce' ); ?>:</h4>
+				<p><a href="https://www.webdados.pt/contactos/<?php echo esc_attr( $this->out_link_utm ); ?>" title="<?php echo esc_attr( $link_title ); ?>" target="_blank"><img src="<?php echo esc_url( plugins_url( '../../images/webdados.svg', __FILE__ ) ); ?>" width="200"/></a></p>
+				<h4><?php esc_html_e( 'Please rate our plugin at WordPress.org', 'feed-kuantokusta-for-woocommerce' ); ?>:</h4>
 				<a href="https://wordpress.org/support/view/plugin-reviews/feed-kuantokusta-for-woocommerce?filter=5#postform" target="_blank" style="text-align: center; display: block;">
 					<div class="star-rating"><div class="star star-full"></div><div class="star star-full"></div><div class="star star-full"></div><div class="star star-full"></div><div class="star star-full"></div></div>
 				</a>
@@ -28,11 +53,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 				$links = array(
 					array(
 						'text' => __( 'Buy PRO add-on', 'feed-kuantokusta-for-woocommerce' ),
-						'url'  => 'https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/'.$this->out_link_utm,
+						'url'  => 'https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/' . $this->out_link_utm,
 					),
 					array(
 						'text' => __( 'Create an account on KuantoKusta', 'feed-kuantokusta-for-woocommerce' ),
-						'url'  => 'https://www.kuantokusta.pt/autenticacao'.$this->out_link_utm,
+						'url'  => 'https://www.kuantokusta.pt/autenticacao' . $this->out_link_utm,
 					),
 					array(
 						'text' => __( 'Free plugin on WordPress.org', 'feed-kuantokusta-for-woocommerce' ),
@@ -40,7 +65,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 					),
 					array(
 						'text' => __( 'PRO add-on technical support', 'feed-kuantokusta-for-woocommerce' ),
-						'url'  => 'https://nakedcatplugins.com/my-account/'.$this->out_link_utm,
+						'url'  => 'https://nakedcatplugins.com/my-account/' . $this->out_link_utm,
 					),
 					array(
 						'text' => __( 'Free plugin support forum', 'feed-kuantokusta-for-woocommerce' ),
@@ -72,7 +97,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 			<?php if ( ! apply_filters( 'kuantokusta_hide_settings_pro_ad', false ) ) { ?>
 				<h3>
 					<a href="https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/<?php echo esc_attr( $this->out_link_utm ); ?>" target="_blank">
-						<?php _e( 'Get the PRO add-on and get more features', 'feed-kuantokusta-for-woocommerce' ); ?>
+						<?php esc_html_e( 'Get the PRO add-on and get more features', 'feed-kuantokusta-for-woocommerce' ); ?>
 					</a>
 				</h3>
 				<ul>
@@ -105,13 +130,13 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 		<?php do_action( 'kuantokusta_documentation_before_fields' ); ?>
 
-		<h2 class="kk_section_title"><?php _e( 'Documentation', 'feed-kuantokusta-for-woocommerce' ); ?></h2>
+		<h2 class="kk_section_title"><?php esc_html_e( 'Documentation', 'feed-kuantokusta-for-woocommerce' ); ?></h2>
 		
 		<div class="kk_settings_section kk_settings_section_hide_free">
 	
 			<?php
 			$fields = array(
-				'mode' => array(
+				'mode'                     => array(
 					'desc'        => __( 'The mode the plugin is running on.', 'feed-kuantokusta-for-woocommerce' ),
 					'filter'      => false,
 					'comparison'  => true,
@@ -123,79 +148,79 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 					'comparison'  => true,
 					'marketplace' => true,
 				),
-				'id_product' => array(
+				'id_product'               => array(
 					'desc'        => __( 'From the database product id.', 'feed-kuantokusta-for-woocommerce' ),
 					'filter'      => false,
 					'comparison'  => true,
 					'marketplace' => true,
 				),
-				'product_url' => array(
+				'product_url'              => array(
 					'desc'        => __( 'The product URL.', 'feed-kuantokusta-for-woocommerce' ),
 					'filter'      => false,
 					'comparison'  => true,
 					'marketplace' => true,
 				),
-				'designation' => array(
+				'designation'              => array(
 					'desc'        => __( 'The product title. (In variations the variation description field is concatenated to the product title).', 'feed-kuantokusta-for-woocommerce' ),
 					'filter'      => true,
 					'comparison'  => true,
 					'marketplace' => true,
 				),
-				'regular_price' => array(
+				'regular_price'            => array(
 					'desc'        => __( 'The product regular price.', 'feed-kuantokusta-for-woocommerce' ),
 					'filter'      => true,
 					'comparison'  => true,
 					'marketplace' => true,
 				),
-				'current_price' => array(
+				'current_price'            => array(
 					'desc'        => __( 'The product current price.', 'feed-kuantokusta-for-woocommerce' ),
 					'filter'      => true,
 					'comparison'  => true,
 					'marketplace' => true,
 				),
-				'stock' => array(
+				'stock'                    => array(
 					'desc'        => __( 'The product stock status (Y/N) or quantity, depending on the global and product settings.', 'feed-kuantokusta-for-woocommerce' ),
 					'filter'      => true,
 					'comparison'  => true,
 					'marketplace' => false,
 				),
-				'stock_qty' => array(
+				'stock_qty'                => array(
 					'desc'        => __( 'The product stock quantity.', 'feed-kuantokusta-for-woocommerce' ),
 					'filter'      => true,
 					'comparison'  => false,
 					'marketplace' => true,
 				),
-				'stock_availability' => array(
+				'stock_availability'       => array(
 					'desc'        => __( 'The product stock status (Y/N).', 'feed-kuantokusta-for-woocommerce' ),
 					'filter'      => true,
 					'comparison'  => false,
 					'marketplace' => true,
 				),
-				'category' => array(
+				'category'                 => array(
 					'desc'        => __( 'The product category tree. Only the first category found is used and it\'s entire path is used.', 'feed-kuantokusta-for-woocommerce' ),
 					'filter'      => true,
 					'comparison'  => true,
 					'marketplace' => true,
 				),
-				'image_url' => array(
+				'image_url'                => array(
 					'desc'        => __( 'The product main image url.', 'feed-kuantokusta-for-woocommerce' ),
 					'filter'      => true,
 					'comparison'  => true,
 					'marketplace' => true,
 				),
-				'description' => array(
+				'description'              => array(
 					'desc'        => __( 'The product long or short description (depending on the settings above). (In variations the variation description field is concatenated to the product description)', 'feed-kuantokusta-for-woocommerce' ),
 					'filter'      => true,
 					'comparison'  => true,
 					'marketplace' => true,
 				),
-				'brand' => array(
-					'desc' => __( 'The product brand from the KuantoKusta metabox on the product edit screen.', 'feed-kuantokusta-for-woocommerce' ),
+				'brand'                    => array(
+					'desc'        => __( 'The product brand from the KuantoKusta metabox on the product edit screen.', 'feed-kuantokusta-for-woocommerce' ),
 					'filter'      => true,
 					'comparison'  => true,
 					'marketplace' => true,
 				),
-				'upc_ean' => array(
+				'upc_ean'                  => array(
 					'desc'        =>
 						version_compare( WC_VERSION, '9.2', '>=' )
 						?
@@ -206,31 +231,31 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 					'comparison'  => true,
 					'marketplace' => true,
 				),
-				'reference' => array(
+				'reference'                => array(
 					'desc'        => __( 'The product SKU.', 'feed-kuantokusta-for-woocommerce' ),
 					'filter'      => true,
 					'comparison'  => true,
 					'marketplace' => true,
 				),
-				'weight' => array(
+				'weight'                   => array(
 					'desc'        => __( 'The product weight in kg.', 'feed-kuantokusta-for-woocommerce' ),
 					'filter'      => true,
 					'comparison'  => true,
 					'marketplace' => true,
 				),
-				'shipping_cost' => array(
+				'shipping_cost'            => array(
 					'desc'        => __( 'The product shipping cost from the KuantoKusta metabox on the product edit screen. If not set, the default value above is used.', 'feed-kuantokusta-for-woocommerce' ),
 					'filter'      => true,
 					'comparison'  => true,
 					'marketplace' => true,
 				),
-				'preparation_days_max' => array(
+				'preparation_days_max'     => array(
 					'desc'        => __( 'The maximum amount of days a product takes to be prepared before it is shipped, from the KuantoKusta metabox on the product edit screen. If not set, the default value above is used.', 'feed-kuantokusta-for-woocommerce' ),
 					'filter'      => true,
 					'comparison'  => false,
 					'marketplace' => true,
 				),
-				'delivery_days_max' => array(
+				'delivery_days_max'        => array(
 					'desc'        => __( 'The maximum amount of days the shipping of a product takes, from the KuantoKusta metabox on the product edit screen. If not set, the default value above is used.', 'feed-kuantokusta-for-woocommerce' ),
 					'filter'      => true,
 					'comparison'  => false,
@@ -240,7 +265,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 			$fields = apply_filters( 'kuantokusta_documentation_fields', $fields );
 			?>
 
-			<h3><?php _e( 'KuantoKusta feed fields', 'feed-kuantokusta-for-woocommerce' ); ?></h3>
+			<h3><?php esc_html_e( 'KuantoKusta feed fields', 'feed-kuantokusta-for-woocommerce' ); ?></h3>
 			<?php
 			foreach ( $fields as $field => $args ) {
 				?>
@@ -248,9 +273,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 					<code><strong><?php echo $field; ?></strong></code>
 					<br/>
 					<?php echo $args['desc']; ?>
-					<?php echo $args['filter'] ? __( 'Filterable.', 'feed-kuantokusta-for-woocommerce' ) : '' ; ?>
-					<?php echo $args['comparison'] ? __( 'Comparison.', 'feed-kuantokusta-for-woocommerce' ) : '' ; ?>
-					<?php echo $args['marketplace'] ? __( 'Marketplace.', 'feed-kuantokusta-for-woocommerce' ) : '' ; ?>
+					<?php echo $args['filter'] ? __( 'Filterable.', 'feed-kuantokusta-for-woocommerce' ) : ''; ?>
+					<?php echo $args['comparison'] ? __( 'Comparison.', 'feed-kuantokusta-for-woocommerce' ) : ''; ?>
+					<?php echo $args['marketplace'] ? __( 'Marketplace.', 'feed-kuantokusta-for-woocommerce' ) : ''; ?>
 				</p>
 				<?php
 			}
@@ -259,50 +284,50 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 			<?php
 			$hooks = array(
 				'filters' => array(
-					'wc_settings_kuantokusta_settings' => array(
+					'wc_settings_kuantokusta_settings'     => array(
 						'arguments' => array(
 							'$settings',
 							'$mode',
 						),
-						'desc' => __( 'Add settings to this page.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Add settings to this page.', 'feed-kuantokusta-for-woocommerce' ),
 					),
-					'kuantokusta_query_args' => array(
+					'kuantokusta_query_args'               => array(
 						'arguments' => array(
 							'$args',
 						),
-						'desc' => __( 'Products query arguments for the wc_get_products function.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Products query arguments for the wc_get_products function.', 'feed-kuantokusta-for-woocommerce' ),
 					),
-					'kuantokusta_product_node_show' => array(
+					'kuantokusta_product_node_show'        => array(
 						'arguments' => array(
 							'$bool',
 							'$product',
 							'$product_type',
 						),
-						'desc' => __( 'Either to include (or not) the product on the feed.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Either to include (or not) the product on the feed.', 'feed-kuantokusta-for-woocommerce' ),
 					),
-					'kuantokusta_variation_node_show' => array(
+					'kuantokusta_variation_node_show'      => array(
 						'arguments' => array(
 							'$bool',
 							'$product',
 							'$variation',
 						),
-						'desc' => __( 'Either to include (or not) the product variation on the feed.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Either to include (or not) the product variation on the feed.', 'feed-kuantokusta-for-woocommerce' ),
 					),
-					'kuantokusta_product_node_default' => array(
+					'kuantokusta_product_node_default'     => array(
 						'arguments' => array(
 							'$product_node',
 							'$product',
 							'$product_type',
 						),
-						'desc' => __( 'Filter on the product node XML.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product node XML.', 'feed-kuantokusta-for-woocommerce' ),
 					),
-					'kuantokusta_product_node_variation' => array(
+					'kuantokusta_product_node_variation'   => array(
 						'arguments' => array(
 							'$product_node',
 							'$product',
 							'$variation',
 						),
-						'desc' => __( 'Filter on the product variation node XML.', 'feed-kuantokusta-for-woocommerce' ).' '.__( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product variation node XML.', 'feed-kuantokusta-for-woocommerce' ) . ' ' . __( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_default_title' => array(
 						'arguments' => array(
@@ -310,7 +335,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$product_type',
 						),
-						'desc' => __( 'Filter on the product title.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product title.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_variation_title' => array(
 						'arguments' => array(
@@ -318,7 +343,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$variation',
 						),
-						'desc' => __( 'Filter on the product variation title.', 'feed-kuantokusta-for-woocommerce' ).' '.__( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product variation title.', 'feed-kuantokusta-for-woocommerce' ) . ' ' . __( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_default_regular_price' => array(
 						'arguments' => array(
@@ -326,7 +351,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$product_type',
 						),
-						'desc' => __( 'Filter on the product regular price.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product regular price.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_variation_regular_price' => array(
 						'arguments' => array(
@@ -334,7 +359,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$variation',
 						),
-						'desc' => __( 'Filter on the product variation regular price.', 'feed-kuantokusta-for-woocommerce' ).' '.__( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product variation regular price.', 'feed-kuantokusta-for-woocommerce' ) . ' ' . __( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_default_current_price' => array(
 						'arguments' => array(
@@ -342,7 +367,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$product_type',
 						),
-						'desc' => __( 'Filter on the product current price.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product current price.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_variation_current_price' => array(
 						'arguments' => array(
@@ -350,7 +375,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$variation',
 						),
-						'desc' => __( 'Filter on the product variation current price.', 'feed-kuantokusta-for-woocommerce' ).' '.__( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product variation current price.', 'feed-kuantokusta-for-woocommerce' ) . ' ' . __( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_default_comparison_stock' => array(
 						'arguments' => array(
@@ -358,7 +383,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$product_type',
 						),
-						'desc' => __( 'Filter on the product stock in comparison mode.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product stock in comparison mode.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_default_marketplace_stock' => array(
 						'arguments' => array(
@@ -366,7 +391,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$product_type',
 						),
-						'desc' => __( 'Filter on the product stock in marketplace mode.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product stock in marketplace mode.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_default_marketplace_availability' => array(
 						'arguments' => array(
@@ -374,7 +399,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$product_type',
 						),
-						'desc' => __( 'Filter on the product availability in marketplace mode.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product availability in marketplace mode.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_variation_comparison_stock' => array(
 						'arguments' => array(
@@ -382,7 +407,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$variation',
 						),
-						'desc' => __( 'Filter on the product variation stock in comparison mode.', 'feed-kuantokusta-for-woocommerce' ).' '.__( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product variation stock in comparison mode.', 'feed-kuantokusta-for-woocommerce' ) . ' ' . __( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_variation_marketplace_stock' => array(
 						'arguments' => array(
@@ -390,7 +415,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$variation',
 						),
-						'desc' => __( 'Filter on the product variation stock in marketplace mode.', 'feed-kuantokusta-for-woocommerce' ).' '.__( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product variation stock in marketplace mode.', 'feed-kuantokusta-for-woocommerce' ) . ' ' . __( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_variation_marketplace_availability' => array(
 						'arguments' => array(
@@ -398,7 +423,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$variation',
 						),
-						'desc' => __( 'Filter on the product variation availability in marketplace mode.', 'feed-kuantokusta-for-woocommerce' ).' '.__( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product variation availability in marketplace mode.', 'feed-kuantokusta-for-woocommerce' ) . ' ' . __( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_default_categories' => array(
 						'arguments' => array(
@@ -406,7 +431,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$product_type',
 						),
-						'desc' => __( 'Filter on the product categories.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product categories.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_variation_categories' => array(
 						'arguments' => array(
@@ -414,7 +439,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$variation',
 						),
-						'desc' => __( 'Filter on the product variation categories.', 'feed-kuantokusta-for-woocommerce' ).' '.__( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product variation categories.', 'feed-kuantokusta-for-woocommerce' ) . ' ' . __( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_default_image' => array(
 						'arguments' => array(
@@ -422,7 +447,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$product_type',
 						),
-						'desc' => __( 'Filter on the product image url.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product image url.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_variation_image' => array(
 						'arguments' => array(
@@ -430,7 +455,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$variation',
 						),
-						'desc' => __( 'Filter on the product variation image url.', 'feed-kuantokusta-for-woocommerce' ).' '.__( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product variation image url.', 'feed-kuantokusta-for-woocommerce' ) . ' ' . __( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_default_description' => array(
 						'arguments' => array(
@@ -438,7 +463,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$product_type',
 						),
-						'desc' => __( 'Filter on the product description.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product description.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_variation_description' => array(
 						'arguments' => array(
@@ -446,7 +471,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$variation',
 						),
-						'desc' => __( 'Filter on the product variation description.', 'feed-kuantokusta-for-woocommerce' ).' '.__( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product variation description.', 'feed-kuantokusta-for-woocommerce' ) . ' ' . __( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_default_brand' => array(
 						'arguments' => array(
@@ -454,7 +479,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$product_type',
 						),
-						'desc' => __( 'Filter on the product brand.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product brand.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_variation_brand' => array(
 						'arguments' => array(
@@ -462,7 +487,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$variation',
 						),
-						'desc' => __( 'Filter on the product variation brand.', 'feed-kuantokusta-for-woocommerce' ).' '.__( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product variation brand.', 'feed-kuantokusta-for-woocommerce' ) . ' ' . __( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_default_ean' => array(
 						'arguments' => array(
@@ -470,7 +495,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$product_type',
 						),
-						'desc' => __( 'Filter on the product ean barcode.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product ean barcode.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_variation_ean' => array(
 						'arguments' => array(
@@ -478,7 +503,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$variation',
 						),
-						'desc' => __( 'Filter on the product variation ean barcode.', 'feed-kuantokusta-for-woocommerce' ).' '.__( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product variation ean barcode.', 'feed-kuantokusta-for-woocommerce' ) . ' ' . __( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_default_reference' => array(
 						'arguments' => array(
@@ -486,7 +511,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$product_type',
 						),
-						'desc' => __( 'Filter on the product sku.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product sku.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_variation_reference' => array(
 						'arguments' => array(
@@ -494,7 +519,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$variation',
 						),
-						'desc' => __( 'Filter on the product variation sku.', 'feed-kuantokusta-for-woocommerce' ).' '.__( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product variation sku.', 'feed-kuantokusta-for-woocommerce' ) . ' ' . __( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_default_weight' => array(
 						'arguments' => array(
@@ -502,7 +527,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$product_type',
 						),
-						'desc' => __( 'Filter on the product weight.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product weight.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_variation_weight' => array(
 						'arguments' => array(
@@ -510,7 +535,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$variation',
 						),
-						'desc' => __( 'Filter on the product variation weight.', 'feed-kuantokusta-for-woocommerce' ).' '.__( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product variation weight.', 'feed-kuantokusta-for-woocommerce' ) . ' ' . __( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_default_shipping' => array(
 						'arguments' => array(
@@ -518,7 +543,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$product_type',
 						),
-						'desc' => __( 'Filter on the product shipping cost.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product shipping cost.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_variation_shipping' => array(
 						'arguments' => array(
@@ -526,7 +551,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$variation',
 						),
-						'desc' => __( 'Filter on the product variation shipping cost.', 'feed-kuantokusta-for-woocommerce' ).' '.__( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product variation shipping cost.', 'feed-kuantokusta-for-woocommerce' ) . ' ' . __( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_default_preparation_days_max' => array(
 						'arguments' => array(
@@ -534,7 +559,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$product_type',
 						),
-						'desc' => __( 'Filter on the product maximum preparation time.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product maximum preparation time.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_variation_preparation_days_max' => array(
 						'arguments' => array(
@@ -542,7 +567,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$variation',
 						),
-						'desc' => __( 'Filter on the product variation maximum preparation time.', 'feed-kuantokusta-for-woocommerce' ).' '.__( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product variation maximum preparation time.', 'feed-kuantokusta-for-woocommerce' ) . ' ' . __( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_default_delivery_days_max' => array(
 						'arguments' => array(
@@ -550,7 +575,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$product_type',
 						),
-						'desc' => __( 'Filter on the product maximum delivery time.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product maximum delivery time.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_variation_delivery_days_max' => array(
 						'arguments' => array(
@@ -558,31 +583,31 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$variation',
 						),
-						'desc' => __( 'Filter on the product variation maximum delivery time.', 'feed-kuantokusta-for-woocommerce' ).' '.__( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter on the product variation maximum delivery time.', 'feed-kuantokusta-for-woocommerce' ) . ' ' . __( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
 					),
-					//'kuantokusta_product_node_default_extra_fields' => array(
-					//	'arguments' => array(
-					//		'$empty',
-					//		'$product',
-					//		'$product_type',
-					//	),
-					//	'desc' => __( 'Allows to add extra fields to the product variation node XML.', 'feed-kuantokusta-for-woocommerce' ).' '.__( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
-					//),
-					//'kuantokusta_product_node_variation_extra_fields' => array(
-					//	'arguments' => array(
-					//		'$empty',
-					//		'$product',
-					//		'$variation',
-					//	),
-					//	'desc' => __( 'Allows to add extra fields to the product variation node XML.', 'feed-kuantokusta-for-woocommerce' ).' '.__( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
-					//),
+					// 'kuantokusta_product_node_default_extra_fields' => array(
+					// 'arguments' => array(
+					// '$empty',
+					// '$product',
+					// '$product_type',
+					// ),
+					// 'desc' => __( 'Allows to add extra fields to the product variation node XML.', 'feed-kuantokusta-for-woocommerce' ).' '.__( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
+					// ),
+					// 'kuantokusta_product_node_variation_extra_fields' => array(
+					// 'arguments' => array(
+					// '$empty',
+					// '$product',
+					// '$variation',
+					// ),
+					// 'desc' => __( 'Allows to add extra fields to the product variation node XML.', 'feed-kuantokusta-for-woocommerce' ).' '.__( 'If "Include each product variation" is choosen.', 'feed-kuantokusta-for-woocommerce' ),
+					// ),
 					'kuantokusta_product_node_default_xml_fields' => array(
 						'arguments' => array(
 							'$xml_fields',
 							'$product',
 							'$product_type',
 						),
-						'desc' => __( 'Allows to add extra fields to the product node XML.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Allows to add extra fields to the product node XML.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_product_node_variation_xml_fields' => array(
 						'arguments' => array(
@@ -590,38 +615,37 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							'$product',
 							'$variation',
 						),
-						'desc' => __( 'Allows to add extra fields to the product node XML.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Allows to add extra fields to the product node XML.', 'feed-kuantokusta-for-woocommerce' ),
 					),
-					'kuantokusta_process_product_meta' => array(
+					'kuantokusta_process_product_meta'     => array(
 						'arguments' => array(
 							'meta',
 						),
-						'desc' => __( 'Allows to save to the database the extra fields of the KuantoKusta panel on the product edit screen, by adding them to the $meta array.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Allows to save to the database the extra fields of the KuantoKusta panel on the product edit screen, by adding them to the $meta array.', 'feed-kuantokusta-for-woocommerce' ),
 					),
-					'kuantokusta_documentation_fields' => array(
+					'kuantokusta_documentation_fields'     => array(
 						'arguments' => array(
 							'$fields',
 						),
-						'desc' => __( 'Filter for this documentation fields array.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter for this documentation fields array.', 'feed-kuantokusta-for-woocommerce' ),
 					),
-					'kuantokusta_documentation_hooks' => array(
+					'kuantokusta_documentation_hooks'      => array(
 						'arguments' => array(
 							'$fields',
 						),
-						'desc' => __( 'Filter for this documentation hooks array.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Filter for this documentation hooks array.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 				),
 				'actions' => array(
-					'kuantokusta_product_data_panel_end' => array(
-						'arguments' => array(
-						),
-						'desc' => __( 'Allows to add extra fields to the KuantoKusta panel on the product edit screen.', 'feed-kuantokusta-for-woocommerce' ),
+					'kuantokusta_product_data_panel_end'   => array(
+						'arguments' => array(),
+						'desc'      => __( 'Allows to add extra fields to the KuantoKusta panel on the product edit screen.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 					'kuantokusta_process_product_meta_end' => array(
 						'arguments' => array(
 							'post_id',
 						),
-						'desc' => __( 'Allows to save to the database the extra fields of the KuantoKusta panel on the product edit screen, if the `kuantokusta_process_product_meta` filter was not used, which is the preferred method.', 'feed-kuantokusta-for-woocommerce' ),
+						'desc'      => __( 'Allows to save to the database the extra fields of the KuantoKusta panel on the product edit screen, if the `kuantokusta_process_product_meta` filter was not used, which is the preferred method.', 'feed-kuantokusta-for-woocommerce' ),
 					),
 				),
 			);
@@ -639,14 +663,14 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 						<?php
 						$temp_args = array();
 						foreach ( $args['arguments'] as $argument ) {
-							$temp_args[] = '<code>'.$argument.'</code>';
+							$temp_args[] = '<code>' . $argument . '</code>';
 						}
 						if ( count( $temp_args ) > 0 ) {
-							echo '<br/>'.__( 'Arguments', 'feed-kuantokusta-for-woocommerce' ).': '.implode( ', ' , $temp_args );
+							echo '<br/>' . __( 'Arguments', 'feed-kuantokusta-for-woocommerce' ) . ': ' . implode( ', ', $temp_args );
 						}
 						?>
 						<br/>
-						<?php echo $args['desc'] ?>
+						<?php echo $args['desc']; ?>
 					</p>
 					<?php
 				}
@@ -657,8 +681,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 		<div class="kk_settings_section kk_settings_section_hide_pro">
 			<p>
-				<a href="<?php echo esc_url( 'https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/'.$this->out_link_utm ); ?>" target="_blank">
-					<?php _e( 'Available on the PRO add-on', 'feed-kuantokusta-for-woocommerce' ); ?>
+				<a href="<?php echo esc_url( 'https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/' . $this->out_link_utm ); ?>" target="_blank">
+					<?php esc_html_e( 'Available on the PRO add-on', 'feed-kuantokusta-for-woocommerce' ); ?>
 				</a>
 			</p>
 		</div>

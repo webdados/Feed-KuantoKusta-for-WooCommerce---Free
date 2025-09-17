@@ -1,7 +1,31 @@
 <?xml version="1.0"?>
 <ruleset name="KuantoKusta">
-	<config name="testVersion" value="7.0-"/>
-	<rule ref="PHPCompatibilityWP"/>
+
+	<!-- Files to check. -->
+	<file>.</file>
+	<!-- Exclude paths. -->
+	<!-- Only scan PHP files. -->
+	<arg name="extensions" value="php"/>
+	<!-- The report types to print. -->
+	<arg name="report" value="summary,source,full"/>
+	<!-- Show sniff and progress. -->
+	<arg value="sp"/>
+	<!-- Strip the file paths down to the relevant bit. -->
+	<arg name="basepath" value="./"/>
+	<!-- Check up to 20 files simultaneously. -->
+	<arg name="parallel" value="20"/>
+	<!-- Whenever possible, cache the scan results and re-use those for unchanged files on the next scan. -->
+	<arg name="cache"/>
+	<!-- Enable colors in report. -->
+	<arg name="colors"/>
+
+	<config name="minimum_supported_wp_version" value="6.2"/>
+
+	<!-- VariableAnalysis. -->
+	<rule ref="VariableAnalysis"/>
+	<!-- PHPCompatibilityWP -->
+	<!--<rule ref="PHPCompatibilityWP"/>-->
+	<!-- WordPress Coding Standards -->
 	<rule ref="WordPress">
 		<!-- Ignore the need @package tag on the file comments + full stop at the end of comments -->
 		<exclude name="Squiz.Commenting.FileComment.MissingPackageTag"/>
@@ -12,4 +36,15 @@
 		<!-- Query Monitor -->
 		<exclude name="WordPress.NamingConventions.ValidHookName.UseUnderscores"/>
 	</rule>
+
+	<!-- Textdomain -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<!-- Set the Text Domain. -->
+			<property name="text_domain" type="array">
+				<element value="feed-kuantokusta-for-woocommerce"/>
+			</property>
+		</properties>
+	</rule>
+
 </ruleset>

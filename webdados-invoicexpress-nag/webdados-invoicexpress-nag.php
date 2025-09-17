@@ -1,4 +1,12 @@
 <?php
+/**
+ * InvoiceXpress for WooCommerce Promotional Notice
+ *
+ * This file contains the functionality to display and manage a promotional
+ * admin notice for the InvoiceXpress for WooCommerce plugin. The notice
+ * encourages store owners to consider using automated invoicing solutions
+ * and offers a discount coupon.
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly

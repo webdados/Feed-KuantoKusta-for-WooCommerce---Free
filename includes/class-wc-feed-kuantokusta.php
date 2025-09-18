@@ -29,7 +29,7 @@ final class WC_Feed_KuantoKusta {
 	public $settings = array();
 
 	/* Single instance */
-	protected static $_instance = null;
+	protected static $instance = null;
 
 	//phpcs:enable
 
@@ -52,10 +52,10 @@ final class WC_Feed_KuantoKusta {
 	 * Get the unique instance of the class
 	 */
 	public static function instance() {
-		if ( is_null( self::$_instance ) ) {
-			self::$_instance = new self();
+		if ( is_null( self::$instance ) ) {
+			self::$instance = new self();
 		}
-		return self::$_instance;
+		return self::$instance;
 	}
 
 	/**

@@ -120,7 +120,7 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 
 == Changelog ==
 
-= 5.0 - ? =
+= 5.0 - 2025-11-12 =
 * [TWEAK] Product brands on the feed are now only supported in the [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [DEV] Remove `load_plugin_textdomain` calls as they’re not needed anymore
 * [DEV] Apply some WordPress Coding Standards

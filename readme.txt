@@ -4,7 +4,7 @@ Tags: marketplace, feed, comparison, e-commerce, Portugal
 Requires at least: 6.2
 Tested up to: 6.8
 Requires PHP: 7.2
-Stable tag: 4.1
+Stable tag: 5.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -49,6 +49,13 @@ In addition to all you can do with the free plugin, the [paid add-on](https://na
 * Custom attributes (like flavor, colour, genre, material, size, etc.) based on WooCommerce product attributes;
 * [Discount Rules for WooCommerce](https://wordpress.org/plugins/woo-discount-rules/) beta and limited compatibility;
 * Continued development;
+
+== Important changes since version 5.0 ==
+
+* Since version 5.0, both plugins (Free and PRO add-on) require each other on this version or above;
+* The Free plugin will not generate a feed if the PRO add-on is installed and is below version 5.0 - You need to either disable the PRO add-on or update it;
+* The Pro add-on will not run if the Free plugin is below version 5.0 - You need to update it;
+* Brand fields are now exclusive of the PRO add-on;
 
 == Already know our other WooCommerce (premium) plugins? ==
 
@@ -112,6 +119,13 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 2. Product level settings
 
 == Changelog ==
+
+= 5.0 - ? =
+* [TWEAK] Product brands on the feed are now only supported in the [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [DEV] Remove `load_plugin_textdomain` calls as they’re not needed anymore
+* [DEV] Apply some WordPress Coding Standards
+* [DEV] Both Free and Pro add-on versions need each other’s version 5.0
+* [DEV] Tested with WordPress 6.9-beta4-61186 and WooCommerce 10.3.4
 
 = 4.1 - 2025-04-20 =
 * [NEW] We are now called Naked Cat Plugins 😻

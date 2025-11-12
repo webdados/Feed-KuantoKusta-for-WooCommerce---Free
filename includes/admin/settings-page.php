@@ -108,7 +108,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<li><?php esc_html_e( 'Variation-level EAN/UPC and Brand SKU/MPN;', 'feed-kuantokusta-for-woocommerce' ); ?>
 					<li><?php esc_html_e( 'Append variation description to the product title;', 'feed-kuantokusta-for-woocommerce' ); ?>
 					<li><?php esc_html_e( 'Get EAN/UPC from the WooCommerce “unique identifier” product field (default since WooCommerce 9.2 - our field before that), any taxonomy, or any custom field (for integration with other plugins)', 'feed-kuantokusta-for-woocommerce' ); ?>
-					<li><?php esc_html_e( 'Get Brand, Brand SKU/MPN and EAN/UPC from our product field (default), any taxonomy, any custom field (for integration with other plugins), or from the default brand settings field;', 'feed-kuantokusta-for-woocommerce' ); ?>
+					<li><?php esc_html_e( 'Get Brand from the WooCommerce taxonomy (default since WooCommerce 9.6 - our field before that), any taxonomy, any custom field (for integration with other plugins), or from the default brand settings field', 'feed-kuantokusta-for-woocommerce' ); ?>
+					<li><?php esc_html_e( 'Get Brand SKU/MPN from our product field (default), any taxonomy, or any custom field (for integration with other plugins)', 'feed-kuantokusta-for-woocommerce' ); ?>
 					<li><?php esc_html_e( 'Get Category from the native WooCommerce product categories, any other taxonomy, or any custom field (for integration with other plugins);', 'feed-kuantokusta-for-woocommerce' ); ?>
 					<li><?php esc_html_e( 'Integration with BigBuy Dropshipping Connector for WooCommerce: get EAN from the BigBuy’s reference table', 'feed-kuantokusta-for-woocommerce' ); ?>
 					<li><?php esc_html_e( 'Up to 5 photos per product;', 'feed-kuantokusta-for-woocommerce' ); ?>
@@ -210,12 +211,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 				),
 				'description'              => array(
 					'desc'        => __( 'The product long or short description (depending on the settings above). (In variations the variation description field is concatenated to the product description)', 'feed-kuantokusta-for-woocommerce' ),
-					'filter'      => true,
-					'comparison'  => true,
-					'marketplace' => true,
-				),
-				'brand'                    => array(
-					'desc'        => __( 'The product brand from the KuantoKusta metabox on the product edit screen.', 'feed-kuantokusta-for-woocommerce' ),
 					'filter'      => true,
 					'comparison'  => true,
 					'marketplace' => true,

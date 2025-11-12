@@ -3,16 +3,16 @@
  * Plugin Name:          Feed KuantoKusta for WooCommerce - Free
  * Plugin URI:           https://www.webdados.pt/wordpress/plugins/feed-kuantokusta-para-woocommerce/
  * Description:          This plugin allows you to generate a WooCommerce product feed to submit to KuantoKusta, a portuguese price comparison website and marketplace.
- * Version:              4.1
+ * Version:              5.0
  * Author:               Naked Cat Plugins (by Webdados)
  * Author URI:           https://nakedcatplugins.com
  * Text Domain:          feed-kuantokusta-for-woocommerce
  * Domain Path:          /languages
  * Requires at least:    6.2
- * Tested up to:         6.8
+ * Tested up to:         6.9
  * Requires PHP:         7.2
  * WC requires at least: 8.0
- * WC tested up to:      9.8
+ * WC tested up to:      10.3
  * Requires Plugins:     woocommerce
  **/
 
@@ -21,16 +21,6 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-
-/**
- * Load plugin textdomain for translations.
- *
- * @return void
- */
-function fkkwc_load_textdomain() {
-	load_plugin_textdomain( 'feed-kuantokusta-for-woocommerce' );
-}
-add_action( 'init', 'fkkwc_load_textdomain', 0 );
 
 /**
  * Initialize the plugin.
@@ -93,6 +83,21 @@ function fkkwc_admin_notices_woocommerce_not_active() {
 			<?php
 			echo wp_kses_post(
 				__( '<strong>Feed KuantoKusta for WooCommerce</strong> is installed and active but <strong>WooCommerce (8.0 or above)</strong> is not.', 'feed-kuantokusta-for-woocommerce' )
+			);
+			?>
+		</p>
+	</div>
+	<?php
+}
+
+
+function fkkwc_admin_notices_pro_incompatible() {
+	?>
+	<div class="notice notice-error is-dismissible">
+		<p>
+			<?php
+			echo wp_kses_post(
+				__( '<strong>Feed KuantoKusta for WooCommerce</strong> is installed and active but <strong>KuantoKusta PRO (5.0 or above)</strong> is not. You need to update the PRO plugin or disable it for the feed to be generated.', 'feed-kuantokusta-for-woocommerce' )
 			);
 			?>
 		</p>

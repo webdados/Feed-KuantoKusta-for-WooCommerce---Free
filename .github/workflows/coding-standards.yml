@@ -60,6 +60,7 @@ jobs:
           php --version
           composer --version
 
+      # What is the purpose of this command?
       - name: Check syntax error in sources
         run: find -L . -path ./vendor -prune -o -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
 
@@ -76,7 +77,7 @@ jobs:
         run: composer config --absolute bin-dir >> $GITHUB_PATH
 
       - name: Log PHPCS debug information
-        run: composer phpcs-i
+        run: phpcs -i
 
       - name: Run the PHP code sniffer
         continue-on-error: true

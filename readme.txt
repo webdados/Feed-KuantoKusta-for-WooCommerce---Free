@@ -4,7 +4,7 @@ Tags: marketplace, feed, comparison, e-commerce, Portugal
 Requires at least: 6.2
 Tested up to: 6.8
 Requires PHP: 7.2
-Stable tag: 5.0
+Stable tag: 5.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -119,6 +119,13 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 2. Product level settings
 
 == Changelog ==
+
+= 5.1 - 2026-01-21 =
+* [FIX] Plugin license validation when running in WP CLI [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [DEV] New updater v12.2 with multisite support improvements [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [DEV] Implement GitHub actions [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [DEV] Improve WordPress Coding Standards
+* [DEV] Tested with WordPress 7.0-alpha-61496 and WooCommerce 10.5.0-beta.1
 
 = 5.0 - 2025-11-12 =
 * [TWEAK] Product brands on the feed are now only supported in the [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)

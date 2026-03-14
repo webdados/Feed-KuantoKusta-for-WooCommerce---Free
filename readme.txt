@@ -123,7 +123,7 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 = 5.2 - 2026-03-14 =
 
 // TO DO: palette: settings + abrir feed
-
+* [TWEAK] XML output is now prettified (can be disabled by returning `false` to the `kuantokusta_prettify_xml` filter)
 * [DEV] New updater v13.1I [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [DEV] Enforce hooks to be initialized only if the license is activeI [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [DEV] Enforce WordPress Coding Standards on all the codebase

@@ -597,6 +597,7 @@ final class WC_Feed_KuantoKusta {
 		$offset         = isset( $_GET['LIMIT'] ) ? intval( $_GET['LIMIT'] ) : 0;
 		$posts_per_page = isset( $_GET['TOTAL_PRODUTOS'] ) ? intval( $_GET['TOTAL_PRODUTOS'] ) : -1;
 		// phpcs:enable
+		ob_start();
 		do_action( 'kuantokusta_render_products_feed_start' );
 		echo '<?xml version="1.0" encoding="' . esc_attr( get_option( 'blog_charset' ) ) . '"?' . '>
 ';
@@ -674,6 +675,32 @@ final class WC_Feed_KuantoKusta {
 
 </products>
 		<?php
+		// This is XML, so we cannot escape it
+		// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
+		$xml_string = ob_get_clean();
+		if ( apply_filters( 'kuantokusta_prettify_xml', true ) && class_exists( 'DOMDocument' ) ) {
+			libxml_use_internal_errors( true );
+			$dom                     = new DOMDocument( '1.0', 'UTF-8' );
+			$dom->preserveWhiteSpace = false; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+			$dom->formatOutput       = true; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+			$ok                      = $dom->loadXML( $xml_string, LIBXML_NOBLANKS | LIBXML_NOERROR | LIBXML_NOWARNING );
+			if ( ! $ok ) {
+				// If it fails, output the non-formatted XML and log the error
+				error_log( 'KuantoKusta feed XML parsing errors:' ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+				foreach ( libxml_get_errors() as $error ) {
+					error_log( $error->message ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+					error_log( 'Line: ' . $error->line . ' Column: ' . $error->column ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+				}
+				libxml_clear_errors();
+				echo $xml_string;
+			}
+			libxml_clear_errors();
+			// Keep empty tags instead of self-closing tags, as we don't know if KuantoKusta accepts self-closing tags
+			echo preg_replace( '/<(\w+)\/>/', '<$1></$1>', $dom->saveXML() );
+		} else {
+			echo $xml_string;
+		}
+		// phpcs:enable
 	}
 
 	/**

@@ -507,7 +507,7 @@ final class WC_Feed_KuantoKusta {
 			<script type="text/javascript">
 				jQuery( function( $ ) {
 					function kk_hide_fields() {
-						if ( $( '#_kuantokusta_hide' ).is(":checked") ) {
+						if ( $( '#_kuantokusta_hide' ).is( ':checked' ) ) {
 							$( '#kuantokusta p.form-field' ).hide();
 							$( '#kuantokusta p.kuantokusta-title' ).hide();
 							$( '#kuantokusta  p.form-field._kuantokusta_hide_field' ).show();

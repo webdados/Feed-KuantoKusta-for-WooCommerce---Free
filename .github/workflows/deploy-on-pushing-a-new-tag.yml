@@ -15,4 +15,3 @@ jobs:
         SVN_PASSWORD: ${{ secrets.WPORG_SVN_PASSWORD }}
         SVN_USERNAME: ${{ secrets.WPORG_SVN_USERNAME }}
         SLUG: feed-kuantokusta-for-woocommerce # optional, remove if GitHub repo name matches SVN slug, including capitalization
-

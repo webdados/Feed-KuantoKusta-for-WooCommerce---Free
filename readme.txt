@@ -120,6 +120,16 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 
 == Changelog ==
 
+= 5.2 - 2026-03-14 =
+
+// TO DO: palette: settings + abrir feed
+
+* [DEV] New updater v13.1I [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [DEV] Enforce hooks to be initialized only if the license is activeI [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [DEV] Enforce WordPress Coding Standards on all the codebase
+* [DEV] Update GitHub actions
+* [DEV] Tested with WordPress 7.0-beta5-61992 and WooCommerce 10.6.1
+
 = 5.1 - 2026-01-21 =
 * [FIX] Plugin license validation when running in WP CLI [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [DEV] New updater v12.2 with multisite support improvements [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)

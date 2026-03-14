@@ -9,10 +9,10 @@
  * Text Domain:          feed-kuantokusta-for-woocommerce
  * Domain Path:          /languages
  * Requires at least:    6.2
- * Tested up to:         6.9
+ * Tested up to:         7.0
  * Requires PHP:         7.2
  * WC requires at least: 8.0
- * WC tested up to:      10.5
+ * WC tested up to:      10.6
  * Requires Plugins:     woocommerce
  **/
 
@@ -90,7 +90,11 @@ function fkkwc_admin_notices_woocommerce_not_active() {
 	<?php
 }
 
-
+/**
+ * Incompatible version of KuantoKusta PRO notice
+ *
+ * @return void
+ */
 function fkkwc_admin_notices_pro_incompatible() {
 	?>
 	<div class="notice notice-error is-dismissible">

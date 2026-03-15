@@ -2,9 +2,9 @@
 Contributors: nakedcatplugins, webdados 
 Tags: marketplace, feed, comparison, e-commerce, Portugal
 Requires at least: 6.2
-Tested up to: 6.8
+Tested up to: 7.0
 Requires PHP: 7.2
-Stable tag: 4.1
+Stable tag: 5.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -49,6 +49,13 @@ In addition to all you can do with the free plugin, the [paid add-on](https://na
 * Custom attributes (like flavor, colour, genre, material, size, etc.) based on WooCommerce product attributes;
 * [Discount Rules for WooCommerce](https://wordpress.org/plugins/woo-discount-rules/) beta and limited compatibility;
 * Continued development;
+
+== Important changes since version 5.0 ==
+
+* Since version 5.0, both plugins (Free and PRO add-on) require each other on this version or above;
+* The Free plugin will not generate a feed if the PRO add-on is installed and is below version 5.0 - You need to either disable the PRO add-on or update it;
+* The Pro add-on will not run if the Free plugin is below version 5.0 - You need to update it;
+* Brand fields are now exclusive of the PRO add-on;
 
 == Already know our other WooCommerce (premium) plugins? ==
 
@@ -113,8 +120,32 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 
 == Changelog ==
 
+= 5.2 - 2026-03-14 =
+
+* [TWEAK] XML output is now prettified (can be disabled by returning `false` to the `kuantokusta_prettify_xml` filter)
+* [DEV] New updater v13.1I [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [DEV] Enforce hooks to be initialized only if the license is activeI [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [DEV] Enforce WordPress Coding Standards on all the codebase
+* [DEV] Update GitHub actions
+* [DEV] Tested with WordPress 7.0-beta5-61992 and WooCommerce 10.6.1
+
+= 5.1 - 2026-01-21 =
+* [FIX] Plugin license validation when running in WP CLI [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [DEV] New updater v12.2 with multisite support improvements [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [DEV] Implement GitHub actions [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [DEV] Improve WordPress Coding Standards
+* [DEV] Tested with WordPress 7.0-alpha-61496 and WooCommerce 10.5.0-beta.1
+
+= 5.0 - 2025-11-12 =
+* [TWEAK] Product brands on the feed are now only supported in the [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
+* [DEV] Remove `load_plugin_textdomain` calls as they’re not needed anymore
+* [DEV] Apply some WordPress Coding Standards
+* [DEV] Both Free and Pro add-on versions need each other’s version 5.0
+* [DEV] Tested with WordPress 6.9-beta4-61186 and WooCommerce 10.3.4
+
 = 4.1 - 2025-04-20 =
 * [NEW] We are now called Naked Cat Plugins 😻
+* [DEV] Tested with WordPress 6.8 and WooCommerce 9.8.1
 
 = 4.0 - 2025-03-31 =
 * [NEW] Adjust price to send to KuantoKusta: add/subtract percentage, round up/down, add/subtract value to all products, and avoid current/sale price higher than regular price [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)

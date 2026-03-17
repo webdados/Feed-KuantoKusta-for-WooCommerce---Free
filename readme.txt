@@ -120,6 +120,11 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 
 == Changelog ==
 
+= 5.3 - 2026-03-17 =
+
+* [TWEAK] Revert from 5.2: XML output is NOT prettified by default (can be enabled by returning `true` to the `kuantokusta_prettify_xml` filter)
+* [TWEAK] Content Type is now set to `application/xml` instead of `application/rss+xml`
+
 = 5.2 - 2026-03-14 =
 
 * [TWEAK] XML output is now prettified (can be disabled by returning `false` to the `kuantokusta_prettify_xml` filter)

@@ -588,7 +588,7 @@ final class WC_Feed_KuantoKusta {
 		if ( ! defined( 'DONOTCACHEPAGE' ) ) {
 			define( 'DONOTCACHEPAGE', true ); // Cache plugins
 		}
-		header( 'Content-Type: application/rss+xml; charset=utf-8' );
+		header( 'Content-Type: application/xml; charset=utf-8' );
 		header( 'Expires: ' . gmdate( 'D, d M Y H:i:s', time() - 86400 ) . ' GMT' ); // Yesterday
 		header( 'Cache-Control: no-store, no-cache, must-revalidate, max-age=0' );
 		header( 'Cache-Control: post-check=0, pre-check=0', false );
@@ -678,7 +678,7 @@ final class WC_Feed_KuantoKusta {
 		// This is XML, so we cannot escape it
 		// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
 		$xml_string = ob_get_clean();
-		if ( apply_filters( 'kuantokusta_prettify_xml', true ) && class_exists( 'DOMDocument' ) ) {
+		if ( apply_filters( 'kuantokusta_prettify_xml', false ) && class_exists( 'DOMDocument' ) ) {
 			libxml_use_internal_errors( true );
 			$dom                     = new DOMDocument( '1.0', 'UTF-8' );
 			$dom->preserveWhiteSpace = false; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase

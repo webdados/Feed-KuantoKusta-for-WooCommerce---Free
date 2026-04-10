@@ -42,6 +42,31 @@ function fkkwc_init() {
 add_action( 'init', 'fkkwc_init', 1 );
 
 /**
+ * On activation, set a transient so we can redirect to the settings page.
+ */
+function fkkwc_activation_redirect() {
+	set_transient( 'fkkwc_activation_redirect', true, 30 );
+}
+register_activation_hook( __FILE__, 'fkkwc_activation_redirect' );
+
+/**
+ * Redirect to the settings page after single (non-bulk) activation.
+ */
+add_action(
+	'admin_init',
+	function () {
+		if ( get_transient( 'fkkwc_activation_redirect' ) ) {
+			delete_transient( 'fkkwc_activation_redirect' );
+			// Do not redirect on bulk activation.
+			if ( ! isset( $_GET['activate-multi'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+				wp_safe_redirect( admin_url( 'admin.php?page=wc-settings&tab=kuantokusta' ) );
+				exit;
+			}
+		}
+	}
+);
+
+/**
  * Load the main class.
  *
  * @return WC_Feed_KuantoKusta

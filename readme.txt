@@ -4,7 +4,7 @@ Tags: marketplace, feed, comparison, e-commerce, Portugal
 Requires at least: 6.2
 Tested up to: 7.0
 Requires PHP: 7.2
-Stable tag: 5.2
+Stable tag: 5.3
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -120,13 +120,15 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 
 == Changelog ==
 
-= 5.3 - 2026-03-17 =
+= 5.3.1 =
+* [DEV] Fix vulnerability (thanks TruongLV1 From FPT Night Wolf for disclosing via Patchstack)
+* [TWEAK] Redirect to plugin settings after activation
 
+= 5.3 - 2026-03-17 =
 * [TWEAK] Revert from 5.2: XML output is NOT prettified by default (can be enabled by returning `true` to the `kuantokusta_prettify_xml` filter)
 * [TWEAK] Content Type is now set to `application/xml` instead of `application/rss+xml`
 
 = 5.2 - 2026-03-14 =
-
 * [TWEAK] XML output is now prettified (can be disabled by returning `false` to the `kuantokusta_prettify_xml` filter)
 * [DEV] New updater v13.1I [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [DEV] Enforce hooks to be initialized only if the license is activeI [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)

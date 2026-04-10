@@ -611,7 +611,8 @@ final class WC_Feed_KuantoKusta {
 		// Debug and only include specific SKU
 		// phpcs:disable WordPress.Security.NonceVerification.Recommended
 		if ( isset( $_GET['sku'] ) && trim( sanitize_text_field( wp_unslash( $_GET['sku'] ) ) ) !== '' ) {
-			$sql_exclude .= " || ( meta_key = '_sku' AND meta_value NOT LIKE '%" . trim( sanitize_text_field( wp_unslash( $_GET['sku'] ) ) ) . "%' )";
+			$sku_like     = '%' . trim( sanitize_text_field( wp_unslash( $_GET['sku'] ) ) ) . '%';
+			$sql_exclude .= $wpdb->prepare( " || ( meta_key = '_sku' AND meta_value NOT LIKE %s )", $sku_like );
 		}
 		// phpcs:enable
 		$results = $wpdb->get_results( $sql_exclude, ARRAY_A ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.NotPrepared

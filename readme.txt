@@ -4,7 +4,7 @@ Tags: marketplace, feed, comparison, e-commerce, Portugal
 Requires at least: 6.2
 Tested up to: 7.0
 Requires PHP: 7.2
-Stable tag: 5.3
+Stable tag: 5.3.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -120,7 +120,7 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 
 == Changelog ==
 
-= 5.3.1 =
+= 5.3.1 - 2026-04-13 =
 * [DEV] Fix vulnerability (thanks TruongLV1 From FPT Night Wolf for disclosing via Patchstack)
 * [TWEAK] Redirect to plugin settings after activation
 

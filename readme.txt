@@ -120,6 +120,10 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 
 == Changelog ==
 
+= 5.4 - TBA =
+* TRANSFER WP.ORG
+* [TWEAK] Added [our ifthenpay plugin](https://wordpress.org/plugins/multibanco-ifthen-software-gateway-for-woocommerce/) as a suggested payment gateway in WooCommerce, if still not present (can be removed by setting the `NAKEDCAT_RECOMMEND_IFTHENPAY` constant to true)
+
 = 5.3.1 - 2026-04-13 =
 * [DEV] Fix vulnerability (thanks TruongLV1 From FPT Night Wolf for disclosing via Patchstack)
 * [TWEAK] Redirect to plugin settings after activation

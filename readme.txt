@@ -4,7 +4,7 @@ Tags: marketplace, feed, comparison, e-commerce, Portugal
 Requires at least: 6.2
 Tested up to: 7.0
 Requires PHP: 7.2
-Stable tag: 5.3.1
+Stable tag: 5.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -120,9 +120,10 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 
 == Changelog ==
 
-= 5.4 - TBA =
-* TRANSFER WP.ORG
+= 5.4 - 2026-04-17 =
+* [NEW] Plugin ownership transferred from [Marco Almeida | Webdados](https://profiles.wordpress.org/webdados/) to [Naked Cat Plugins](https://profiles.wordpress.org/nakedcatplugins/) on WordPress.org - No worries, we’re the same people :-)
 * [TWEAK] Added [our ifthenpay plugin](https://wordpress.org/plugins/multibanco-ifthen-software-gateway-for-woocommerce/) as a suggested payment gateway in WooCommerce, if still not present (can be removed by setting the `NAKEDCAT_RECOMMEND_IFTHENPAY` constant to true)
+* [DEV] Tested up to WordPress 7.0-RC2-62241 and WooCommerce 10.7.0
 
 = 5.3.1 - 2026-04-13 =
 * [DEV] Fix vulnerability (thanks TruongLV1 From FPT Night Wolf for disclosing via Patchstack)
@@ -138,25 +139,25 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 * [DEV] Enforce hooks to be initialized only if the license is activeI [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [DEV] Enforce WordPress Coding Standards on all the codebase
 * [DEV] Update GitHub actions
-* [DEV] Tested with WordPress 7.0-beta5-61992 and WooCommerce 10.6.1
+* [DEV] Tested up to WordPress 7.0-beta5-61992 and WooCommerce 10.6.1
 
 = 5.1 - 2026-01-21 =
 * [FIX] Plugin license validation when running in WP CLI [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [DEV] New updater v12.2 with multisite support improvements [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [DEV] Implement GitHub actions [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [DEV] Improve WordPress Coding Standards
-* [DEV] Tested with WordPress 7.0-alpha-61496 and WooCommerce 10.5.0-beta.1
+* [DEV] Tested up to WordPress 7.0-alpha-61496 and WooCommerce 10.5.0-beta.1
 
 = 5.0 - 2025-11-12 =
 * [TWEAK] Product brands on the feed are now only supported in the [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [DEV] Remove `load_plugin_textdomain` calls as they’re not needed anymore
 * [DEV] Apply some WordPress Coding Standards
 * [DEV] Both Free and Pro add-on versions need each other’s version 5.0
-* [DEV] Tested with WordPress 6.9-beta4-61186 and WooCommerce 10.3.4
+* [DEV] Tested up to WordPress 6.9-beta4-61186 and WooCommerce 10.3.4
 
 = 4.1 - 2025-04-20 =
 * [NEW] We are now called Naked Cat Plugins 😻
-* [DEV] Tested with WordPress 6.8 and WooCommerce 9.8.1
+* [DEV] Tested up to WordPress 6.8 and WooCommerce 9.8.1
 
 = 4.0 - 2025-03-31 =
 * [NEW] Adjust price to send to KuantoKusta: add/subtract percentage, round up/down, add/subtract value to all products, and avoid current/sale price higher than regular price [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
@@ -165,7 +166,7 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 * [TWEAK] Remove tracking as it was not being used by KuantoKusta anymore
 * [TWEAK] Remove `kuantokusta_product_node_default_extra_fields` and `kuantokusta_product_node_variation_extra_fields` filters
 * [DEV] Requires WordPress 6.2, WooCommerce 8.0, and PHP 7.2
-* [DEV] Tested with WordPress 6.8-beta2-59993 and WooCommerce 9.8.0-beta.1
+* [DEV] Tested up to WordPress 6.8-beta2-59993 and WooCommerce 9.8.0-beta.1
 
 = 3.4 - 2025-03-18 =
 * [TWEAK] Show Pro add-on functionalities on the settings screen
@@ -175,13 +176,13 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 * [TWEAK] In comparison mode, if product does not have managed stock, return 1 or 0 in the stock field instead of “Y” and “N”
 * [TWEAK] In marketplace mode, if product does not have managed stock, return 1 instead of 0 if the deafult stock setting is not set
 * [TWEAK] Change feed instructions from 100 to 1000 products at a time
-* [DEV] Tested with WordPress 6.8-alpha-59604 and WooCommerce 9.7.0-beta.1
+* [DEV] Tested up to WordPress 6.8-alpha-59604 and WooCommerce 9.7.0-beta.1
 
 = 3.2 - 2024-11-13 =
 * [FIX] Fatal error when WooCommerce is running update routines for 9.4 [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [DEV] License validation on websites with WPML set to have different domains per language [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [DEV] Recheck for the free plugin class again on the pro class (just in case) [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
-* [DEV] Tested with WordPress 6.7 and WooCommerce 9.4.1
+* [DEV] Tested up to WordPress 6.7 and WooCommerce 9.4.1
 
 = 3.1 - 2024-10-08 =
 * [FIX] Load text domain at the right time to avoid PHP notices on WordPress 6.7 and above
@@ -191,60 +192,60 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 * [NEW] Use the new “GTIN, UPC, EAN or ISBN” field from WooCommerce 9.2 and above instead of our field for EAN
 * [NEW] Migration utility to move our EAN field value to the new WooCommerce 9.2 and above field [only on the Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * [DEV] Requires WooCommerce 7.0
-* [DEV] Tested with WordPress 6.7-beta1-59184 and WooCommerce 9.4.0-beta.2
+* [DEV] Tested up to WordPress 6.7-beta1-59184 and WooCommerce 9.4.0-beta.2
 
 = 2.8 - 2024-08-02 =
 * [NEW] Get “Other attributes” from parent (variable) product when not present on the product variation (not used for variations) [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
-* [DEV] Tested with WordPress 6.7-alpha-58841 and WooCommerce 9.2.0-beta.1
+* [DEV] Tested up to WordPress 6.7-alpha-58841 and WooCommerce 9.2.0-beta.1
 
 = 2.7 - 2024-04-30 =
 * [TWEAK] New `KK_IS_FEED` constant that is set to `true` when the feed is being shown
 * [NEW] “Default brand” setting, if not set on the chosen custom field or taxonomy, or our field [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
-* [DEV] Tested with WordPress 6.6-alpha-58055 and WooCommerce 9.0.0-dev
+* [DEV] Tested up to WordPress 6.6-alpha-58055 and WooCommerce 9.0.0-dev
 
 = 2.6 - 2024-04-02 =
 * [FIX] Deprecated: Creation of dynamic property in PHP 8.3
 * [DEV] Add “Requires Plugins” header
 * [DEV] Improve plugin updater – Show translation update notices [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
-* [DEV] Tested with WordPress 6.5-RC4-57894 and WooCommerce 8.8.0-beta.1
+* [DEV] Tested up to WordPress 6.5-RC4-57894 and WooCommerce 8.8.0-beta.1
 
 = 2.5 - 2024-01-24 =
 * Feedback when the license is expired [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
-* Tested with WordPress 6.5-alpha-57299 and WooCommerce 8.5.1
+* Tested up to WordPress 6.5-alpha-57299 and WooCommerce 8.5.1
 
 = 2.4 - 2023-12-12 =
 * Declare WooCommerce block-based Cart and Checkout compatibility
 * Requires WordPress 5.4
-* Tested with WordPress 6.5-alpha-57159 and WooCommerce 8.4.0-rc.1
+* Tested up to WordPress 6.5-alpha-57159 and WooCommerce 8.4.0-rc.1
 
 = 2.3 - 2023-11-16 =
 * Instructions about flushing the permalinks if the feed URL is returning a 404 error
 * Clarification about Brand SKU being the MPN (Manufacturer Part Number) [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
-* Tested with WordPress 6.5-alpha-57110 and WooCommerce 8.3.0-rc.3
+* Tested up to WordPress 6.5-alpha-57110 and WooCommerce 8.3.0-rc.3
 
 = 2.2 - 2023-10-06 =
 * Integration with BigBuy Dropshipping Connector for WooCommerce: New option to get EAN from the BigBuy’s reference table [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
-* Tested with WordPress 6.4-beta2-56771 and WooCommerce 8.2.0-rc.1
+* Tested up to WordPress 6.4-beta2-56771 and WooCommerce 8.2.0-rc.1
 
 = 2.1 - 2023-09-11 =
 * Option to to our field if Brand, Brand SKU/MPN or EAN custom origins are empty [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
 * Fix jQuery deprecations
-* Tested with WordPress 6.4-alpha-56530 and WooCommerce 8.1.0-rc.2
+* Tested up to WordPress 6.4-alpha-56530 and WooCommerce 8.1.0-rc.2
 
 = 2.0 - 2023-05-16 =
 * Bugfix: when the product only had one category, the entire path was not used.
 * Requires WooCoomerce 5.0 or above
-* Tested with WordPress 6.3-alpha-55693 and WooCommerce 7.7
+* Tested up to WordPress 6.3-alpha-55693 and WooCommerce 7.7
 
 = 1.9.0 - 2023-02-01 =
 * Tested and confirmed WooCommerce HPOS compatibility
 * Force the inclusion of attribute names on the variation title even if it was removed via the `woocommerce_product_variation_title_include_attributes` filter [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
-* Tested with WordPress 6.2-alpha-55171 and WooCommerce 7.4.0-beta.2
+* Tested up to WordPress 6.2-alpha-55171 and WooCommerce 7.4.0-beta.2
 
 = 1.8.1 - 2022-06-27 =
 * Update readme.txt
 * Requires PHP 7, WooCoomerce 4.0 and WordPress 5.0 or above
-* Tested with WordPress 6.1-alpha-53556 and WooCommerce 6.7.0-beta.1
+* Tested up to WordPress 6.1-alpha-53556 and WooCommerce 6.7.0-beta.1
 
 = 1.8.0 - 2022-05-23 =
 * New brand: PT Woo Plugins 🥳
@@ -253,7 +254,7 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 = 1.7.0 - 2022-05-04 =
 * May the 4th be with you
 * Option to remove description from variation designation [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
-* Tested with WordPress 6.0-beta2-53236 and WooCommerce 6.5.0-rc.1
+* Tested up to WordPress 6.0-beta2-53236 and WooCommerce 6.5.0-rc.1
 
 = 1.6.0 =
 * [Discount Rules for WooCommerce](https://wordpress.org/plugins/woo-discount-rules/) beta and limited compatibility [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin) - Sponsored by [Royal Work](https://www.royalwork.pt/)
@@ -262,10 +263,10 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 
 = 1.5.3 - 2021-03-23 =
 * Bugfix: it’s now possible to set shipping cost to zero at the product level
-* Tested with WordPress 5.8-alpha-50563, WooCommerce 5.2.0-beta.1 and PHP 8.0.16
+* Tested up to WordPress 5.8-alpha-50563, WooCommerce 5.2.0-beta.1 and PHP 8.0.16
 
 = 1.5.2 - 2021-03-10 =
-* Tested with WordPress 5.8-alpha-50516 and WooCommerce 5.1.0
+* Tested up to WordPress 5.8-alpha-50516 and WooCommerce 5.1.0
 
 = 1.5.1 - 2020-11-25 =
 * CSS fix on the settings page
@@ -273,15 +274,15 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 = 1.5.0 - 2020-11-25 =
 * Integration with the KuantoKusta javascript tracking code
 * Add expiration header to the feed
-* Tested with WordPress 5.6-RC1-49690 and WooCommerce 4.8.0-rc.1
+* Tested up to WordPress 5.6-RC1-49690 and WooCommerce 4.8.0-rc.1
 
 = 1.4.3 - 2020-10-18 =
 * New action `kuantokusta_settings_footer` to allow the Pro plugin to add scripts to the footer of the settings page
-* Tested with WordPress 5.6-alpha-49109 and WooCommerce 4.6.0
+* Tested up to WordPress 5.6-alpha-49109 and WooCommerce 4.6.0
 
 = 1.4.2 - 2020-07-30 =
 * Fix KuantoKusta link on readme.txt
-* Tested with WordPress 5.5-beta4-48649 and WooCommerce 4.4.0-beta.1
+* Tested up to WordPress 5.5-beta4-48649 and WooCommerce 4.4.0-beta.1
 
 = 1.4.1 =
 * Changes on the InvoiceXpress banner
@@ -289,21 +290,21 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 = 1.4.0 =
 * Enhanced Multiselect fields
 * Re-organize feed URL and Documentation on the settings page
-* Tested with WordPress 5.3.3-alpha-46995 and WooCommerce 3.9.0-rc.2
+* Tested up to WordPress 5.3.3-alpha-46995 and WooCommerce 3.9.0-rc.2
 * Happy New Year
 
 = 1.3.0 =
-* Tested with WordPress 5.3.2-alpha-46956 and WooCommerce 3.9.0-beta.1
+* Tested up to WordPress 5.3.2-alpha-46956 and WooCommerce 3.9.0-beta.1
 
 = 1.2.6 =
 * Hide the InvoiceXpress nag if the invoicing is already installed and active
-* Tested with WordPress 5.3.1-alpha-46798 and WooCommerce 3.8.1
+* Tested up to WordPress 5.3.1-alpha-46798 and WooCommerce 3.8.1
 
 = 1.2.5 =
 * InvoiceXpress plugin promotion
 
 = 1.2.4 =
-* Tested with WordPress 5.2.4-alpha-46074 and WooCommerce 3.8.0-beta.1
+* Tested up to WordPress 5.2.4-alpha-46074 and WooCommerce 3.8.0-beta.1
 
 = 1.2.3 =
 * Fix variation shipping cost when the default value is zero
@@ -314,20 +315,20 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 * Use variation method `get_name` instead of product `get_title` for variation designations
 * WordPress 4.9 minimum requirement
 * PHP 5.6 minimum requirement
-* Tested with WooCommerce 3.7.0-beta.1
+* Tested up to WooCommerce 3.7.0-beta.1
 
 = 1.2.1 =
 * Bugfix when changing KuantoKusta mode
-* Tested with WordPress 5.2.3-alpha and WooCommerce 3.6.4
+* Tested up to WordPress 5.2.3-alpha and WooCommerce 3.6.4
 
 = 1.2 =
 * Bugfix on default stock when the product is not managing it and is out of stock
-* Tested with WordPress 5.1.1 and WooCommerce 3.6.0 (beta 1)
+* Tested up to WordPress 5.1.1 and WooCommerce 3.6.0 (beta 1)
 
 = 1.1 =
 * Better feed URL documentation
 * WPML feed URL information (on the PRO add-on)
-* Tested with WordPress 5.1 and WooCommerce 3.5.5
+* Tested up to WordPress 5.1 and WooCommerce 3.5.5
 
 = 1.0.2 =
 * Hide publicity if the PRO add-on is installed and active
@@ -340,7 +341,7 @@ Sure. Go to [GlotPress](https://translate.wordpress.org/projects/wp-plugins/feed
 * New KuantoKusta Marketplace mode
 * New fields
 * Integration with [Pro add-on](https://nakedcatplugins.com/product/feed-kuantokusta-for-woocommerce-pro/?utm_source=wordpress.org&utm_medium=link&utm_campaign=kk_woocommerce_plugin)
-* Tested with WordPress 5.0.2 and WooCommerce 3.5.3
+* Tested up to WordPress 5.0.2 and WooCommerce 3.5.3
 * Dropped WooCommerce legacy support (before 3.0)
 
 = 0.2.1 =

@@ -8,7 +8,7 @@ on:
       # Any change on the WordPress.org plugin repository-specific assets that belong in the top-level assets directory.
       - '.wordpress-org/**'
       # The readme.txt.
-      - 'readme.txt'
+      # - 'readme.txt'
       # Changes to workflow files should always verify all workflows are successful.
       - '.github/workflows/*.yml'
   # Allows you to run this workflow manually from the Actions tab.
@@ -26,7 +26,7 @@ jobs:
     - name: WordPress.org Plugin Readme/Assets Update
       uses: 10up/action-wordpress-plugin-asset-update@2.2.0
       env:
+        SVN_PASSWORD: ${{ secrets.NAKEDCAT_WPROG_SVN_PASSWORD }}
+        SVN_USERNAME: ${{ secrets.NAKEDCAT_WPROG_SVN_USERNAME }}
         SLUG: feed-kuantokusta-for-woocommerce
-        SVN_USERNAME: ${{ secrets.WPORG_SVN_USERNAME }}
-        SVN_PASSWORD: ${{ secrets.WPORG_SVN_PASSWORD }}
         IGNORE_OTHER_FILES: true
